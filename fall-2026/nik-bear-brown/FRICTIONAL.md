@@ -6,10 +6,11 @@
 
 **Why read it.** It's a real example of the log, not a constructed one. It shows the instructor's own work run through the same record students keep.
 
-**What it records so far.** One working session on 2026-09-23, in three parts.
+**What it records so far.** One working session on 2026-09-23, in three parts, and a check on 2026-09-26.
 - **The assignment.** An audit of the Reallocation Engine against an old version of its student assignment turned up paths that no longer exist, commands that don't run on a fresh copy, and a scoring signal that counts for nothing. That led to a rewritten 100-point assignment: a recipe plus a rough working prototype, framed around the 3-3-2 split.
 - **The demo.** Turning the CV into a facts file, and running the engine's job-board watcher on Figma with that CV. That part hit three points of friction. The first match looked wrong because it was wrong. The results didn't add up to the score because of a real bug. And the demo's first choice of résumé got replaced mid-session.
 - **The dream-job recipe.** The folder README now holds an eight-step recipe (Figma first, then similar companies, gaps in my CV) mapped onto Assignment 2, with a first gap table built from quoted posting lines and quoted CV facts.
+- **The check (2026-09-26).** The rewritten assignment exists and is still accurate, but it was never pushed, so the version students see still says "modes."
 - **My own question.** A first recipe asking whether Figma has advocate or education work on flexible terms. The board's answer is no: both advocate roles are full-time, nothing mentions universities, and nothing is part-time or contract. So it's a networking question.
 
 Every push to GitHub is listed at the bottom with its date and commit note.
@@ -155,6 +156,24 @@ Every push to GitHub is listed at the bottom with its date and commit note.
 
 ---
 
+### 2026-09-26 — The assignment students see still says "modes"
+
+- **Date and what I was working on:** Checking that the Reallocation Engine assignment reflects the recipe rename and the rewrite from September 23.
+- **I tried / expected:** I pasted the old 25-point "Mode Design Assignment" and said: "I think these are called recipes rather than modes now. And we made those changes. There should be an update to the assignment reflecting ..." I expected the updated version to be in place.
+- **What happened:** The update exists, but it never left my machine.
+  - **The rewrite is there.** `course/assignments/reallocation-engine-recipe-build.md` in the-reallocation-engine is the September 23 version. It says "recipe" throughout, and "mode" appears only in its closing note on the rename.
+  - **It is still accurate.** Every repo path it cites exists today, except `logs/gate-decisions/` and the full sponsorship data file. The assignment itself lists those two as missing. The engine repo has no commits since September 23.
+  - **It was never committed or pushed,** so it isn't on GitHub. The 25-point text I pasted isn't in any local repo, so the copy students see is presumably the one on Canvas.
+  - **An unrelated loose end.** In this course's repo, the committed assignment `assignments/assignment-reallocation-engine-recipe-step.md` is deleted in the local working copy, uncommitted. Nothing in this log says why. It was left untouched.
+- **What I did:** Pointed out that the assignment still says modes, and that the rename and the rewrite should show up in it.
+- **What Claude or another person contributed:** Claude Code (Opus 5.5) found the rewrite, checked each path it cites against the repo, confirmed the engine repo hasn't changed, and spotted the local deletion. I haven't checked those findings yet.
+- **What I understand now / still do not understand:** Not yet stated by me.
+- **Evidence and next step:**
+  - Evidence: `course/assignments/reallocation-engine-recipe-build.md` in the-reallocation-engine (local, uncommitted); this entry.
+  - Next, three decisions of mine: whether to push the rewrite to the-reallocation-engine (each push there needs my go-ahead), whether to keep the proposed rubric weights, and whether the 25-point Canvas text gets replaced by the rewrite. Also: why the recipe-step assignment is deleted locally.
+
+---
+
 ## Evidence
 
 Where to check each claim in this log. Commits in this repository are listed in the push table below; their IDs are in `git log`, and the links here are added one push later, because a commit can't link to itself.
@@ -192,3 +211,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-23 | feat(fall-2026): start the Figma advocate and flexible-work recipe with a checkable scan |
 | 2026-09-23 | feat(fall-2026): keep the relevant Figma postings in professor-bear-figma.json and .md |
 | 2026-09-23 | docs(fall-2026): add the dream-job recipe in steps with a first gap analysis for Assignment 2 |
+| 2026-09-26 | docs(fall-2026): log that the rewritten Reallocation Engine assignment was never pushed |
