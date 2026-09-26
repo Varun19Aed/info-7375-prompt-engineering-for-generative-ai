@@ -10,7 +10,7 @@ is discarded, so you can't read confidence from how large a logit is.
 completely in a few minutes, and it corrects a real misconception: that a big
 score means a confident model.
 
-**Runtime:** 2:17 (draft 1 — final to be confirmed) · 16:9 · narration is a synthetic Kokoro voice (`af_bella`)
+**Runtime:** 2:38 (158.5 s) · 16:9 · narration is a synthetic Kokoro voice (`af_bella`)
 
 **Video:** `w1-softmax-offset.mp4`
 
@@ -23,7 +23,7 @@ score means a confident model.
 | File | What it is |
 |---|---|
 | `w1-softmax-offset.mp4` | the rendered video |
-| `beat_sheet.json` | the reviewed narration + visual plan (16 beats, measured durations) |
+| `beat_sheet.json` | the reviewed narration + visual plan (18 beats, measured durations) |
 | `BUILD-PROMPT.md` | the prompts and exact commands that rebuild it |
 | `SOURCES.md` | what I made, what Claude contributed, tools, licences |
 | `FRICTIONAL.md` | dated log |
@@ -32,7 +32,7 @@ score means a confident model.
 | `reference-output.txt`, `offset-output.txt`, `intermediates-output.txt` | the evidence: every on-screen number comes from these |
 | `offset_evidence.py`, `intermediates_evidence.py` | scripts that print the evidence |
 | `tools/` | beat-sheet builder, audio-cue sync, number verifier |
-| `remotion/` | the custom Remotion component + the patch that registers it |
+| `remotion/` | the custom Remotion component + the patch that registers it (compiles inside the Brutalist toolkit; editors show type errors here because React/Remotion are not installed in this repo) |
 
 ## Rebuild
 

@@ -95,6 +95,15 @@ def r(pair, at=0, **kw):
 
 
 beats = [
+    # ── 0 · the question (added after draft 1: the start felt abrupt) ───────
+    beat("B00", "0 question",
+         "If a language model gives a word a huge score, does that mean it's confident? "
+         "Not necessarily. Here's why.",
+         {"mode": "card", "light": True, "bodyScale": 1.45, "lines": [
+             {"text": "INFO 7375 · WEEK 1 · SOFTMAX", "atS": 0.3},
+             {"text": "Does a huge score mean a confident model?", "atS": 0.6, "strong": True},
+             {"text": "What softmax keeps — and what it throws away.", "atS": 3.0},
+         ]}, 6, {"lines.2.atS": "p2"}),
     # ── 1 · the engine ──────────────────────────────────────────────────────
     beat("B01A", "1 engine",
          "When a language model writes, it doesn't retrieve an answer. For every possible "
@@ -102,9 +111,10 @@ beats = [
          {"mode": "pipeline", "step": 1, "title": "How the next token is chosen",
           "label": "diagram"}, 8, {"stepAtS": "p2"}),
     beat("B01B", "1 engine",
-         "Those scores get converted into probabilities that add up to one.",
+         "Those scores get converted into probabilities that add up to one. That conversion "
+         "is called softmax: it makes every score positive, then divides each by the total.",
          {"mode": "pipeline", "step": 2, "title": "How the next token is chosen",
-          "label": "diagram"}, 4),
+          "label": "diagram"}, 9),
     beat("B01C", "1 engine",
          "Then the model rolls a weighted die and picks one. That's the loop.",
          {"mode": "pipeline", "step": 3, "title": "How the next token is chosen",
@@ -196,7 +206,7 @@ beats = [
          "probabilities are calibrated. Sixty-six point five two percent is not evidence "
          "that the token is correct sixty-six point five two percent of the time. Nothing "
          "here says the model is right.",
-         {"mode": "card", "lines": [
+         {"mode": "card", "light": True, "bodyScale": 1.12, "lines": [
              {"text": "WHAT THIS DOES NOT SHOW", "atS": 0.3},
              {"text": "Shown: the shared size of the scores carries no information after softmax.", "atS": 2.5},
              {"text": "Not shown: that the probabilities are calibrated.", "atS": 7.0},
@@ -204,7 +214,25 @@ beats = [
              {"text": "Nothing here says the model is right.", "atS": 17.0, "strong": True},
          ]}, 20,
          {"lines.1.atS": "p1", "lines.2.atS": "p2", "lines.3.atS": "p3", "lines.4.atS": "p6"}),
+    # ── 6 · the close (added after draft 1: the ending felt abrupt) ─────────
+    beat("B06", "6 close",
+         "So, in one line: softmax keeps the gaps and throws away the size. A big score, "
+         "on its own, is not confidence.",
+         {"mode": "card", "light": True, "bodyScale": 1.45, "lines": [
+             {"text": "IN ONE LINE", "atS": 0.3},
+             {"text": "Softmax keeps the gaps between scores.", "atS": 1.2},
+             {"text": "It throws away their shared size.", "atS": 3.0},
+             {"text": "A big score, on its own, is not confidence.", "atS": 5.0, "strong": True},
+         ]}, 8, {"lines.1.atS": "p1", "lines.2.atS": "p1+1.6", "lines.3.atS": "p2"}),
 ]
+
+# Text cards reveal one line per spoken sentence, so a mid-beat frame is emptier
+# by design. Declared for Gate V (toolkit: qc.sparse_by_design); the fully
+# revealed card is sized to fill the frame on its own.
+SPARSE = "line-by-line reveal timed to the narration; the full card fills the safe area"
+for b in beats:
+    if b["shot"]["remotion"]["props"]["mode"] == "card":
+        b["qc"] = {"sparse_by_design": True, "sparse_reason": SPARSE}
 
 old_path = HERE / "beat_sheet.json"
 if old_path.exists():

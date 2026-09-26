@@ -83,3 +83,32 @@ timestamps) and my answers in chat. Understanding and decisions are mine, in my 
   These make the video longer, but for a reason a viewer gave, not padding.
 - **Evidence:** next commit (revision). Folder decided: `fall-2026/ashwin-t/week-01-video/`.
   Still open: fork vs. direct push.
+
+## 2026-09-24 — Drafts 2 and 3 (Gate V again)
+
+- **Expected:** the revision plus the B01A/B05 fixes would pass Gate V.
+- **Happened:** draft 2 failed with 5 MAJOR underfill defects, now on the text cards: B00 29%,
+  B05 34%, B06 42% of the safe area at mid-beat. They reveal one line per sentence, so halfway
+  through they are mostly empty. B01A (faint outline boxes) passed.
+- **Did:** made the cards genuinely larger, and declared the line-by-line reveal to the toolkit
+  (`qc.sparse_by_design` with a written reason in `beat_sheet.json`) instead of switching the
+  check off. Draft 3: Gate V clean, 36 frames, 0 defects. Runtime 2:38.
+- **Claude:** found the toolkit's documented option and made both changes.
+
+## 2026-09-26 — Understanding the topic; checking the numbers myself
+
+- **Happened:** after draft 3 I still didn't see the point of adding big numbers "to make them
+  small", or what the topic is called and how it connects to Chapter 1.
+- **Claude:** explained there are two different changes: +1000 is a *test* of whether size
+  matters, and subtracting the max is the code's *safety trick* against overflow. The topic is
+  softmax shift invariance; Chapter 1 covers it in "The subtraction that changes nothing
+  important". Also showed which Part 2 concepts sit next to mine, so the video doesn't drift.
+- **Did:** ran `main.py` myself. The numbers match `reference-output.txt`.
+- **Still open:** why the exponential is the right transform in the first place (from my first entry).
+
+## 2026-09-26 — Draft 4: one palette
+
+- **Did:** asked for one consistent palette. B05 was the only dark card; now it's cream like
+  every other beat. Skipped an extra "softmax arithmetic" beat on Claude's recommendation, to stay
+  on one concept. Gate V clean again (0 defects).
+- **Evidence:** commit 3 (this revision).

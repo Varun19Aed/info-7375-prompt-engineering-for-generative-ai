@@ -7,7 +7,8 @@ Each beat's clip is exactly as long as its measured narration.
 
 | Beat | Mode | What moves | Label on screen |
 |---|---|---|---|
-| B01A | pipeline step 1 | SCORES box springs in | diagram |
+| B00 | card (cream) | question card: "Does a huge score mean a confident model?" | — |
+| B01A | pipeline step 1 | all three boxes shown as faint dashed outlines; SCORES brightens in | diagram |
 | B01B | pipeline step 2 | → PROBABILITIES box springs in | diagram |
 | B01C | pipeline step 3 | → PICK box; "that's the loop" caption | diagram |
 | B01D | pipeline step 4 | PROBABILITIES box highlighted, others fade; question appears | diagram |
@@ -22,4 +23,8 @@ Each beat's clip is exactly as long as its measured narration.
 | B04B | rows | `[0, 0]`, `[-5, -5]` rows appear on cue | recorded output |
 | B04C | rows | first three dim; `[1, 2]` and `[1001, 1002]` appear highlighted as a pair | recorded output |
 | B04D | rows | "A huge logit is not a confident model."; dark box: `naive exp at [1000, 1000]:` / `OverflowError: math range error` | recorded output |
-| B05 | card | dark card, lines reveal: WHAT THIS DOES NOT SHOW → shown / not shown / 66.52% / nothing here says the model is right | — |
+| B05 | card (cream) | lines reveal: WHAT THIS DOES NOT SHOW → shown / not shown / 66.52% / nothing here says the model is right | — |
+| B06 | card (cream) | recap: keeps the gaps / throws away the shared size / a big score alone is not confidence | — |
+
+Palette: one palette throughout — cream ground, warm ink, terracotta accent (B05 was dark in drafts 1–3; made cream in draft 4 for consistency).
+Text cards (B00, B05, B06) carry `qc.sparse_by_design` in `beat_sheet.json`: they reveal one line per spoken sentence, so Gate V's mid-beat fill check is waived for them with a written reason; the fully revealed cards fill the frame.

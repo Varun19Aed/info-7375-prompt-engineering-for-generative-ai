@@ -34,6 +34,8 @@ export const softmaxOffsetSchema = z.object({
   mode: z.enum(['pipeline', 'table', 'shift', 'compare', 'cancel', 'intermediates', 'rows', 'card']),
   // card
   lines: z.array(z.object({text: z.string(), atS: z.number().default(0), strong: z.boolean().default(false)})).default([]),
+  light: z.boolean().default(false),
+  bodyScale: z.number().default(1),      // enlarge body lines on short cards
   durationS: z.number().default(15),     // copied from the beat's measured narration by sync_cues.py
   eyebrow: z.string().default('SOFTMAX · THE SHARED OFFSET'),
   title: z.string().default(''),
@@ -118,23 +120,24 @@ const Pipeline: React.FC<SoftmaxOffsetProps> = (p) => {
   const focus = useIn(p.step >= 4 ? p.stepAtS : -1);
   const loopIn = useIn(p.step === 3 ? p.captionAtS : -1);
   const askIn = useIn(p.step >= 4 ? p.captionAtS : -1);
-  const vis = (i: number) => (i >= shown ? 0 : p.step === i + 1 ? ins[i] : 1);
+  const vis = (i: number) => (i >= shown ? 1 : p.step === i + 1 ? ins[i] : 1);
   return (
     <Chrome {...p}>
       <div style={{position: 'absolute', top: 330, left: 96, right: 96, display: 'flex',
         justifyContent: 'space-between', alignItems: 'center'}}>
         {BOXES.map((b, i) => {
           const o = vis(i);
+          const ghost = i >= shown;
           const hot = i === 1 && focus > 0;
           const faded = p.step >= 4 && i !== 1;
           return (
             <React.Fragment key={b.h}>
               {i > 0 && <div style={{fontFamily: SANS, fontSize: 64, color: CLAUDE.SPARK,
-                opacity: vis(i)}}>→</div>}
+                opacity: ghost ? 0.25 : vis(i)}}>→</div>}
               <div style={{width: 440, minHeight: 260, background: CLAUDE.CARD, borderRadius: 18,
-                border: `${hot ? 5 : 2}px solid ${hot ? CLAUDE.SPARK : CLAUDE.BORDER}`,
+                border: `${hot ? 5 : 2}px ${ghost ? 'dashed' : 'solid'} ${hot ? CLAUDE.SPARK : ghost ? CLAUDE.GHOST : CLAUDE.BORDER}`,
                 padding: '34px 30px', boxShadow: '0 6px 24px rgba(61,57,41,0.08)',
-                opacity: o * (faded ? 0.4 : 1), transform: `translateY(${(1 - o) * 24}px) scale(${1 + 0.04 * (hot ? focus : 0)})`}}>
+                opacity: ghost ? 0.35 : (0.35 + 0.65 * o) * (faded ? 0.4 : 1), transform: `translateY(${(1 - o) * 24}px) scale(${1 + 0.04 * (hot ? focus : 0)})`}}>
                 <div style={{fontFamily: SANS, fontSize: 40, fontWeight: 800, letterSpacing: 3,
                   color: hot ? CLAUDE.SEND : CLAUDE.INK}}>{b.h}</div>
                 <div style={{fontFamily: SERIF, fontSize: 34, lineHeight: 1.3, marginTop: 18,
@@ -356,16 +359,17 @@ const Rows: React.FC<SoftmaxOffsetProps> = (p) => {
 };
 
 // ── card (plain, high-contrast boundary statement) ───────────────────────────
-const CardLine: React.FC<{l: {text: string; atS: number; strong: boolean}; first: boolean}> = ({l, first}) => {
+const CardLine: React.FC<{l: {text: string; atS: number; strong: boolean}; first: boolean; light: boolean; bodyScale: number}> = ({l, first, light, bodyScale}) => {
   const o = useIn(l.atS);
-  return <div style={{fontFamily: first ? SANS : SERIF, fontSize: first ? 64 : 50,
-    fontWeight: first || l.strong ? 700 : 400, letterSpacing: first ? 5 : 0, lineHeight: 1.25,
-    color: first ? '#F2A58A' : CLAUDE.PAGE, marginBottom: first ? 56 : 30, opacity: o,
+  return <div style={{fontFamily: first ? SANS : SERIF, fontSize: first ? 84 : Math.round(66 * bodyScale),
+    fontWeight: first || l.strong ? 700 : 400, letterSpacing: first ? 5 : 0, lineHeight: 1.2,
+    color: first ? (light ? CLAUDE.SEND : '#F2A58A') : (light ? CLAUDE.INK : CLAUDE.PAGE),
+    marginBottom: first ? 90 : 52, opacity: o,
     transform: `translateY(${(1 - o) * 12}px)`}}>{l.text}</div>;
 };
 const Card: React.FC<SoftmaxOffsetProps> = (p) => (
-  <AbsoluteFill style={{background: '#1F1D18', padding: '0 150px', justifyContent: 'center'}}>
-    {p.lines.map((l, i) => <CardLine key={i} l={l} first={i === 0} />)}
+  <AbsoluteFill style={{background: p.light ? CLAUDE.PAGE : '#1F1D18', padding: '0 130px', justifyContent: 'center'}}>
+    {p.lines.map((l, i) => <CardLine key={i} l={l} first={i === 0} light={p.light} bodyScale={p.bodyScale} />)}
   </AbsoluteFill>
 );
 

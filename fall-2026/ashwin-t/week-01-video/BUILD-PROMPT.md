@@ -18,6 +18,10 @@ no fabricated Claude output, one concept). The decisions made in that session:
    compute the exact same intermediate numbers — which is why every digit matches."*
 4. Voice: Kokoro `af_bella`.
 5. Build location: `~/Desktop/CSYE7375/`.
+6. After watching draft 1 (my notes: no clue what softmax is; start and end abrupt):
+   add B00 question, define softmax in B01B, add B06 recap. Fix Gate V underfill.
+7. Palette: one consistent cream palette (B05 no longer dark). Skipped an extra
+   "softmax arithmetic" beat to stay on one concept.
 
 ## 2. Layout expected by the commands
 

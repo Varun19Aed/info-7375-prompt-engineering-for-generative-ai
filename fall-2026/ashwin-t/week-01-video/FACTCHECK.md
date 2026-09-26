@@ -6,7 +6,9 @@ Numbers were checked by `tools/verify_numbers.py` (on-screen) and by hand (spoke
 
 | Beat | Claim | Support | Verdict |
 |---|---|---|---|
+| B00 | A huge score does not necessarily mean a confident model | B04A–B: [1000,1000] → 0.500000, 0.500000 | holds — the video's own evidence |
 | B01A | For every possible next token the model produces a raw score (a logit) | Chapter 1 Part 2; `probabilities(logits)` in `main.py` takes one score per candidate | holds — simplified (real vocabularies are large; three tokens is the lesson's toy) |
+| B01B | Softmax makes every score positive, then divides each by the total | `main.py`: `math.exp(...)` then `weight / total` | holds (positive via exp; the max-subtraction detail is B03D) |
 | B01B | Scores are converted into probabilities that add up to one | `main.py`: `weight / total`; printed values sum to 1 (0.0900… + 0.2447… + 0.6652…) | holds |
 | B01C | The model draws one token by weighted chance, in a loop | `main.py` `sample()` uses `rng.choices(..., probabilities)` | holds — `main.py` samples; "loop" is the Chapter 1 framing of repeated next-token prediction |
 | B02A | Scores one, two, three are the lesson's inputs | `main.py` `demo()` → `probabilities([1, 2, 3])` | holds — inputs are in the code, not the printout (credit line says so) |
@@ -23,6 +25,7 @@ Numbers were checked by `tools/verify_numbers.py` (on-screen) and by hand (spoke
 | B04C | "Only the gap survives" | follows from B03C; illustrated by the equal-gap rows | holds for softmax at a fixed temperature |
 | B04D | "A huge logit is not a confident model" | [1000,1000] → 50/50 | holds as stated about magnitude; a logit that is large *relative to the others* does raise its probability — the video's claim is about the shared size, and the gap rows say so |
 | B04D | A naive version overflows at 1000 | `offset-output.txt`: `OverflowError: math range error` from `math.exp(1000)` | holds for Python floats (IEEE-754 double, max ≈ 1.8e308) |
+| B06 | Softmax keeps the gaps and throws away the (shared) size | B03A–B04C | holds — restates the demonstrated result |
 | B05 | This does not show calibration | nothing in the evidence compares probabilities with observed correctness | holds — stated boundary |
 
 ## Claims deliberately NOT made

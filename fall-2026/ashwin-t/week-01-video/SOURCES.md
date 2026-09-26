@@ -8,6 +8,8 @@ Ashwin Thankachan · INFO 7375 · "[1000, 1000] → [0.5, 0.5], and what the sha
 - Wrote the narration script in the build brief (five beats) and approved the edits listed below.
 - Wrote `offset_evidence.py` (in the build brief).
 - Reviewed every beat, the fact-check and the rendered frames; approved or rejected each change.
+- Watched draft 1 and identified the revision: softmax was never defined, and the start and end felt abrupt. Chose a single consistent palette (draft 4).
+- Re-ran `main.py` myself (2026-09-26); the printed probabilities matched `reference-output.txt`.
 - `FRICTIONAL.md` is my own log.
 
 ## What Claude (Claude Code, Anthropic — model Claude Opus 5.5) contributed
@@ -19,6 +21,7 @@ Claude contributed to the build; it does not appear in the video. No Claude resp
 - Proposed and wrote `intermediates_evidence.py`, which prints the post-max-subtraction values and runs the 0–1000 offset sweep.
 - Proposed three narration edits, which I approved: Beat 1 "percentages" → "probabilities"; Beat 3 "here's why" rewritten so the cancellation is attributed to the common factor, and max-subtraction only to bitwise identity; and the beats split into sub-beats with unchanged wording.
 - Wrote the Remotion component `SoftmaxOffset.tsx`, `tools/build_beat_sheet.py`, `tools/sync_cues.py`, `tools/verify_numbers.py`, `FACTCHECK.md`, `SHOTLIST.md`, `PROMPTS.md`, and drafts of this file, `README.md` and `BUILD-PROMPT.md`.
+- Drafted the revision wording (B00 question, B01B softmax sentence, B06 recap) from my notes, which I approved; fixed the Gate V underfill defects (drafts 1–2).
 - Ran the audio and render commands and did the visual QC passes.
 
 ## Evidence (all on-screen numbers)

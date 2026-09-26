@@ -19,7 +19,7 @@ pct_ok = {f"{p * 100:.2f}" for p in printed_floats if 0 <= p <= 1}
 
 # layout/timing keys are not claims; only text a viewer reads is checked
 NOT_SHOWN = {"appearAtS", "atS", "probsAtS", "sourceAtS", "countStartS", "countDurS",
-             "sweepAtS", "verdictAtS", "errorAtS", "footerAtS", "step", "durationS"}
+             "sweepAtS", "verdictAtS", "errorAtS", "footerAtS", "step", "durationS", "bodyScale"}
 NUM = re.compile(r"-?\d+(?:\.\d+)?%?")
 
 
@@ -37,7 +37,12 @@ def walk(node, key=None):
         yield key, node
 
 
+LABELS = {"7375"}   # course code on the title card (INFO 7375) — a label, not a claim
+
+
 def traced(tok):
+    if tok in LABELS:
+        return True
     if tok.endswith("%"):
         return tok[:-1] in pct_ok
     return re.search(r"(?<![\d.])" + re.escape(tok) + r"(?![\d])", evidence) is not None

@@ -17,15 +17,66 @@
       "w1-evidence/intermediates-output.txt"
     ],
     "build": {
-      "at": "2026-09-23T22:22:59",
+      "at": "2026-09-26T11:49:02",
       "cut": "review",
-      "filled": 16,
-      "of": 16,
+      "filled": 18,
+      "of": 18,
       "slates": [],
       "skin_warnings": []
     }
   },
   "beats": [
+    {
+      "beat_id": "B00",
+      "act": "0 question",
+      "narration_text": "If a language model gives a word a huge score, does that mean it's confident? Not necessarily. Here's why.",
+      "estimated_duration_s": 6,
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "lane": "card",
+        "remotion": {
+          "pattern": "SoftmaxOffset",
+          "props": {
+            "mode": "card",
+            "light": true,
+            "bodyScale": 1.45,
+            "lines": [
+              {
+                "text": "INFO 7375 · WEEK 1 · SOFTMAX",
+                "atS": 0.3
+              },
+              {
+                "text": "Does a huge score mean a confident model?",
+                "atS": 0.6,
+                "strong": true
+              },
+              {
+                "text": "What softmax keeps — and what it throws away.",
+                "atS": 4.59
+              }
+            ],
+            "durationS": 6.76
+          },
+          "cues": {
+            "lines.2.atS": "p2"
+          }
+        }
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "line-by-line reveal timed to the narration; the full card fills the safe area"
+      },
+      "audio_file": "mp3/beat-B00.mp3",
+      "actual_duration_s": 6.76,
+      "render_duration_s": 6.791666666666667,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B00.mp4",
+        "filled_by": "media",
+        "at": "2026-09-26T11:49:02"
+      }
+    },
     {
       "beat_id": "B01A",
       "act": "1 engine",
@@ -47,10 +98,6 @@
           },
           "cues": {
             "stepAtS": "p2"
-          },
-          "rendered": {
-            "out": "media/B01A.mp4",
-            "at": "2026-09-24T02:16:41.938027+00:00"
           }
         }
       },
@@ -60,15 +107,15 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B01A.mp4",
-        "filled_by": "remotion:SoftmaxOffset",
-        "at": "2026-09-23T22:22:59"
+        "filled_by": "media",
+        "at": "2026-09-26T11:49:02"
       }
     },
     {
       "beat_id": "B01B",
       "act": "1 engine",
-      "narration_text": "Those scores get converted into probabilities that add up to one.",
-      "estimated_duration_s": 4,
+      "narration_text": "Those scores get converted into probabilities that add up to one. That conversion is called softmax: it makes every score positive, then divides each by the total.",
+      "estimated_duration_s": 9,
       "shot": {
         "type": "REMOTION",
         "source": "own",
@@ -80,22 +127,18 @@
             "step": 2,
             "title": "How the next token is chosen",
             "label": "diagram",
-            "durationS": 3.67
-          },
-          "rendered": {
-            "out": "media/B01B.mp4",
-            "at": "2026-09-24T02:16:53.414464+00:00"
+            "durationS": 10.56
           }
         }
       },
       "audio_file": "mp3/beat-B01B.mp3",
-      "actual_duration_s": 3.67,
-      "render_duration_s": 3.7083333333333335,
+      "actual_duration_s": 10.56,
+      "render_duration_s": 10.583333333333334,
       "build": {
         "status": "VIDEO",
         "src": "media/B01B.mp4",
-        "filled_by": "remotion:SoftmaxOffset",
-        "at": "2026-09-23T22:22:59"
+        "filled_by": "media",
+        "at": "2026-09-26T11:49:02"
       }
     },
     {
@@ -119,10 +162,6 @@
           },
           "cues": {
             "captionAtS": "p1"
-          },
-          "rendered": {
-            "out": "media/B01C.mp4",
-            "at": "2026-09-24T02:17:04.721612+00:00"
           }
         }
       },
@@ -132,8 +171,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B01C.mp4",
-        "filled_by": "remotion:SoftmaxOffset",
-        "at": "2026-09-23T22:22:59"
+        "filled_by": "media",
+        "at": "2026-09-26T11:49:02"
       }
     },
     {
@@ -157,10 +196,6 @@
           },
           "cues": {
             "captionAtS": "p1"
-          },
-          "rendered": {
-            "out": "media/B01D.mp4",
-            "at": "2026-09-24T02:17:21.319248+00:00"
           }
         }
       },
@@ -170,8 +205,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B01D.mp4",
-        "filled_by": "remotion:SoftmaxOffset",
-        "at": "2026-09-23T22:22:59"
+        "filled_by": "media",
+        "at": "2026-09-26T11:49:02"
       }
     },
     {
@@ -207,10 +242,6 @@
             "source": "source: lessons/01-randomness-and-first-prompts/code/main.py → reference-output.txt · inputs [1, 2, 3] from demo()",
             "probsAtS": -1,
             "durationS": 6.87
-          },
-          "rendered": {
-            "out": "media/B02A.mp4",
-            "at": "2026-09-24T02:17:38.888036+00:00"
           }
         }
       },
@@ -220,8 +251,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B02A.mp4",
-        "filled_by": "remotion:SoftmaxOffset",
-        "at": "2026-09-23T22:22:59"
+        "filled_by": "media",
+        "at": "2026-09-26T11:49:02"
       }
     },
     {
@@ -260,10 +291,6 @@
           },
           "cues": {
             "probsAtS": "p1"
-          },
-          "rendered": {
-            "out": "media/B02B.mp4",
-            "at": "2026-09-24T02:18:03.244281+00:00"
           }
         }
       },
@@ -273,8 +300,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B02B.mp4",
-        "filled_by": "remotion:SoftmaxOffset",
-        "at": "2026-09-23T22:22:59"
+        "filled_by": "media",
+        "at": "2026-09-26T11:49:02"
       }
     },
     {
@@ -311,10 +338,6 @@
             "probsAtS": 0,
             "sourceAtS": 0.4,
             "durationS": 3.16
-          },
-          "rendered": {
-            "out": "media/B02C.mp4",
-            "at": "2026-09-24T02:18:12.709744+00:00"
           }
         }
       },
@@ -324,8 +347,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B02C.mp4",
-        "filled_by": "remotion:SoftmaxOffset",
-        "at": "2026-09-23T22:22:59"
+        "filled_by": "media",
+        "at": "2026-09-26T11:49:02"
       }
     },
     {
@@ -369,10 +392,6 @@
           "cues": {
             "countStartS": "p1",
             "sweepAtS": "p4"
-          },
-          "rendered": {
-            "out": "media/B03A.mp4",
-            "at": "2026-09-24T02:18:46.402639+00:00"
           }
         }
       },
@@ -382,8 +401,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B03A.mp4",
-        "filled_by": "remotion:SoftmaxOffset",
-        "at": "2026-09-23T22:22:59"
+        "filled_by": "media",
+        "at": "2026-09-26T11:49:02"
       }
     },
     {
@@ -426,10 +445,6 @@
           },
           "cues": {
             "verdictAtS": "p2+0.9"
-          },
-          "rendered": {
-            "out": "media/B03B.mp4",
-            "at": "2026-09-24T02:19:10.228645+00:00"
           }
         }
       },
@@ -439,8 +454,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B03B.mp4",
-        "filled_by": "remotion:SoftmaxOffset",
-        "at": "2026-09-23T22:22:59"
+        "filled_by": "media",
+        "at": "2026-09-26T11:49:02"
       }
     },
     {
@@ -465,10 +480,6 @@
           "cues": {
             "probsAtS": "p2",
             "verdictAtS": "p4"
-          },
-          "rendered": {
-            "out": "media/B03C.mp4",
-            "at": "2026-09-24T02:19:43.036048+00:00"
           }
         }
       },
@@ -478,8 +489,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B03C.mp4",
-        "filled_by": "remotion:SoftmaxOffset",
-        "at": "2026-09-23T22:22:59"
+        "filled_by": "media",
+        "at": "2026-09-26T11:49:02"
       }
     },
     {
@@ -519,10 +530,6 @@
           },
           "cues": {
             "verdictAtS": "p2"
-          },
-          "rendered": {
-            "out": "media/B03D.mp4",
-            "at": "2026-09-24T02:20:07.161467+00:00"
           }
         }
       },
@@ -532,8 +539,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B03D.mp4",
-        "filled_by": "remotion:SoftmaxOffset",
-        "at": "2026-09-23T22:22:59"
+        "filled_by": "media",
+        "at": "2026-09-26T11:49:02"
       }
     },
     {
@@ -564,10 +571,6 @@
           },
           "cues": {
             "rows.0.outAtS": "p1"
-          },
-          "rendered": {
-            "out": "media/B04A.mp4",
-            "at": "2026-09-24T02:20:21.501429+00:00"
           }
         }
       },
@@ -577,8 +580,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B04A.mp4",
-        "filled_by": "remotion:SoftmaxOffset",
-        "at": "2026-09-23T22:22:59"
+        "filled_by": "media",
+        "at": "2026-09-26T11:49:02"
       }
     },
     {
@@ -622,10 +625,6 @@
             "rows.1.outAtS": "p1",
             "rows.2.appearAtS": "p2",
             "rows.2.outAtS": "p3"
-          },
-          "rendered": {
-            "out": "media/B04B.mp4",
-            "at": "2026-09-24T02:20:36.776555+00:00"
           }
         }
       },
@@ -635,8 +634,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B04B.mp4",
-        "filled_by": "remotion:SoftmaxOffset",
-        "at": "2026-09-23T22:22:59"
+        "filled_by": "media",
+        "at": "2026-09-26T11:49:02"
       }
     },
     {
@@ -696,10 +695,6 @@
             "rows.3.outAtS": "p2+0.9",
             "rows.4.appearAtS": "p3",
             "rows.4.outAtS": "p4"
-          },
-          "rendered": {
-            "out": "media/B04C.mp4",
-            "at": "2026-09-24T02:21:09.815841+00:00"
           }
         }
       },
@@ -709,8 +704,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B04C.mp4",
-        "filled_by": "remotion:SoftmaxOffset",
-        "at": "2026-09-23T22:22:59"
+        "filled_by": "media",
+        "at": "2026-09-26T11:49:02"
       }
     },
     {
@@ -746,10 +741,6 @@
           },
           "cues": {
             "errorAtS": "p3"
-          },
-          "rendered": {
-            "out": "media/B04D.mp4",
-            "at": "2026-09-24T02:21:42.511077+00:00"
           }
         }
       },
@@ -759,8 +750,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B04D.mp4",
-        "filled_by": "remotion:SoftmaxOffset",
-        "at": "2026-09-23T22:22:59"
+        "filled_by": "media",
+        "at": "2026-09-26T11:49:02"
       }
     },
     {
@@ -776,6 +767,8 @@
           "pattern": "SoftmaxOffset",
           "props": {
             "mode": "card",
+            "light": true,
+            "bodyScale": 1.12,
             "lines": [
               {
                 "text": "WHAT THIS DOES NOT SHOW",
@@ -809,9 +802,13 @@
           },
           "rendered": {
             "out": "media/B05.mp4",
-            "at": "2026-09-24T02:22:32.775390+00:00"
+            "at": "2026-09-26T15:48:48.611453+00:00"
           }
         }
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "line-by-line reveal timed to the narration; the full card fills the safe area"
       },
       "audio_file": "mp3/beat-B05.mp3",
       "actual_duration_s": 21.03,
@@ -820,7 +817,64 @@
         "status": "VIDEO",
         "src": "media/B05.mp4",
         "filled_by": "remotion:SoftmaxOffset",
-        "at": "2026-09-23T22:22:59"
+        "at": "2026-09-26T11:49:02"
+      }
+    },
+    {
+      "beat_id": "B06",
+      "act": "6 close",
+      "narration_text": "So, in one line: softmax keeps the gaps and throws away the size. A big score, on its own, is not confidence.",
+      "estimated_duration_s": 8,
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "lane": "card",
+        "remotion": {
+          "pattern": "SoftmaxOffset",
+          "props": {
+            "mode": "card",
+            "light": true,
+            "bodyScale": 1.45,
+            "lines": [
+              {
+                "text": "IN ONE LINE",
+                "atS": 0.3
+              },
+              {
+                "text": "Softmax keeps the gaps between scores.",
+                "atS": 1.45
+              },
+              {
+                "text": "It throws away their shared size.",
+                "atS": 3.05
+              },
+              {
+                "text": "A big score, on its own, is not confidence.",
+                "atS": 4.85,
+                "strong": true
+              }
+            ],
+            "durationS": 7.45
+          },
+          "cues": {
+            "lines.1.atS": "p1",
+            "lines.2.atS": "p1+1.6",
+            "lines.3.atS": "p2"
+          }
+        }
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "line-by-line reveal timed to the narration; the full card fills the safe area"
+      },
+      "audio_file": "mp3/beat-B06.mp3",
+      "actual_duration_s": 7.45,
+      "render_duration_s": 7.458333333333333,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B06.mp4",
+        "filled_by": "media",
+        "at": "2026-09-26T11:49:02"
       }
     }
   ]
