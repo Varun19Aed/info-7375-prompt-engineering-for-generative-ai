@@ -75,6 +75,7 @@ in `FACTCHECK.md`.
 | `SOURCES.md` | what I used / made / Claude contributed, with licences |
 | `FACTCHECK.md` | every on-screen claim and its verification |
 | `CHECKS-REPORT.md` | the proof gate: per-beat classification and QC results |
+| `SHOTLIST.md` | the typed work order: one row per beat — lane, fill, measured duration |
 | `FRICTIONAL.md` | dated honest log of what broke and what I did instead |
 | `make_srt.py` | builds the .srt from the word-level alignment |
 | `PROMPTS.md` | the on-screen prompts and the authoring prompt |
@@ -114,7 +115,9 @@ running `./art` — the scripts shell out to plain `python3`.
 
 ## Run — rebuild the video from this folder
 
-Copy `beat_sheet.json` and `scenes.py` into a reel folder, then, from the
+Copy `beat_sheet.json`, `scenes.py`, `make_srt.py` and the paperwork set
+(`FACTCHECK.md`, `SHOTLIST.md`, `PROMPTS.md`, `CHECKS-REPORT.md` — the pipeline's
+GATE F refuses to render without the first three) into a reel folder, then, from the
 toolkit with its venv active:
 
 ```bash
@@ -153,8 +156,13 @@ ffprobe -v error -show_entries format=duration -show_entries stream=width,height
 #    expect 187.875 s at 3840×2160
 ```
 
-A rebuild reproduces the *content*, not necessarily the same bytes — Manim and
-ffmpeg are not bit-deterministic across versions. The per-input SHA-256 record
+**Tested, not assumed.** On 2026-09-26 the video was rebuilt from a fresh folder
+containing only the seven files listed under **Run**, using those commands
+verbatim. Every gate passed, all ten beats rendered from scratch, and the rebuilt
+master was **byte-identical** to the submitted file — same SHA-256 — with
+identical narration audio and captions. On a different machine or toolchain
+version, expect the same content rather than the same bytes; Manim and ffmpeg
+are not bit-deterministic across versions. The per-input SHA-256 record
 for the submitted master is in the reel's `temperature-is-concentration.verified.json`.
 
 Renders are verified by **looking at frames**, not by the probe alone. Gate V

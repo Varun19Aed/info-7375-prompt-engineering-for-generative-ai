@@ -53,12 +53,13 @@ reel folder for the claim-by-claim table.
 
 ```bash
 mkdir -p ../week-01-video/reel
-cp beat_sheet.json scenes.py ../week-01-video/reel/     # from this submit folder
+cp beat_sheet.json scenes.py make_srt.py \
+   FACTCHECK.md SHOTLIST.md PROMPTS.md CHECKS-REPORT.md ../week-01-video/reel/   # from this submit folder
 ```
 
 The reel also needs its paperwork set, or GATE F refuses to render:
 `FACTCHECK.md`, `SHOTLIST.md`, `PROMPTS.md` (and `CHECKS-REPORT.md` for the
-PROOF GATE). Copies live in the reel folder.
+PROOF GATE). All four ship in this folder, and the `cp` above stages them.
 
 **No toolkit modification is required.** Every beat renders from either
 `scenes.py` (the five Manim beats, including the outro) or a composition the
@@ -76,10 +77,13 @@ done
 cd brutalist.art && source .venv/bin/activate
 REEL=../week-01-video/reel
 
-python3 runtime/scripts/generate_audio_kokoro.py "$REEL"   # 9 mp3s, af_bella, $0.00
-./art run "$REEL" --height 1080                            # gates + Manim + Remotion + review cut
+python3 runtime/scripts/generate_audio_kokoro.py "$REEL"   # 10 mp3s, af_bella, $0.00
+./art run "$REEL" --height 1080                            # gates + Manim + Remotion + review cut (1080 = faster QC pass)
 ./art todo "$REEL"                                         # must report zero open slots
-./art final "$REEL"                                        # 4K master -> temperature-is-concentration.mp4
+./art final "$REEL" --out "$REEL"                          # 4K master -> $REEL/temperature-is-concentration.mp4
+                                                           # (without --out it lands in the toolkit's renders/)
+python3 runtime/scripts/align.py "$REEL"                   # word timings -> $REEL/mp3/words.json
+python3 "$REEL/make_srt.py" "$REEL"                        # captions -> $REEL/temperature-is-concentration.srt
 ```
 
 Never hand-tune timing. If narration needs to change, edit `narration_text` in

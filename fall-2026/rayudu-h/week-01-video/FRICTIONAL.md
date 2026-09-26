@@ -393,6 +393,41 @@ says "change only for off-brand one-offs", so it was a one-line fix per beat to
 - **Result.** 3:08; captions 58 cues with zero timing errors; all gates clean;
   the whole-reel audit agrees with the narration beat by beat.
 
+## 2026-09-26 — pre-push audit: the folder could not rebuild itself
+
+- **What I asked.** Before pushing, I asked for every deliverable to be checked
+  against the rubric — the files themselves, not the earlier summaries of them.
+- **The real find: the submission could not rebuild the video.** The pipeline's
+  GATE F refuses to render without `SHOTLIST.md`, and it was not in the
+  submission folder — so the README's "how to rebuild" could not have worked
+  from the folder as submitted. The reel's own copy was also stale: nine beats,
+  2:27, and the ask → result pairs that were removed on 2026-09-25. It was
+  regenerated from `beat_sheet.json`, so its durations cannot drift, and shipped.
+- **Smaller gaps in the instructions.** The README's rebuild step did not copy
+  `make_srt.py` or the paperwork set; `BUILD-PROMPT.md` had no `--out` (the master
+  would have landed in the toolkit, the mistake logged on 2026-09-22), no caption
+  step, and still said "9 mp3s". All fixed.
+- **A check that failed, and was left failing on purpose.** `beat_sheet.json`
+  fails the toolkit's JSON schema on 14 values — `source: 'manim'` /
+  `'remotion'`, `type: 'UI'`. The toolkit's own ai-explainer example fails the
+  same way, and the router routes on exactly these values, so the schema is
+  stale, not the sheet. Rewriting routing fields the day before the deadline
+  would risk the render for no rubric gain; recorded in `CHECKS-REPORT.md`.
+- **Then the test that settles it.** A fresh folder holding only the seven files
+  the README says to copy, the README's commands run verbatim. Every gate
+  passed, all ten beats rendered from scratch, and the rebuilt master was
+  byte-identical to the submitted one — same SHA-256, identical audio, identical
+  captions, 21 of 21 sampled frames identical. The README now says this rather
+  than the weaker claim it made before.
+- **Commit trail.** Fork `hemanthrayuduu/info-7375-prompt-engineering-for-generative-ai`,
+  branch `week-01-video-rayudu-h`: `c31cc13` (2026-09-23, first posting, 2:54),
+  `945b4d6` (2026-09-25, overview fixed, implied Claude answers removed, 2:56),
+  `f16e9f6` (2026-09-26, cancellation shown, 3:08), then the final commit after
+  this audit — its hash is in the Canvas submission.
+- **Human and AI.** I asked for the audit and set the bar (check every
+  deliverable before pushing). Claude wrote and ran the checks, found and fixed
+  the gaps above, and ran the rebuild test.
+
 ---
 
 ## Human and AI contributions (retrospective — added 2026-09-23)

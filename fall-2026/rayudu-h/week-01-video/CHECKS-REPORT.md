@@ -246,3 +246,41 @@ across a label an ERROR and the gate was not loosened.
 | Whole-reel audit of the final master, every beat at 30 / 60 / 92 % | all agree |
 | Captions | 58 cues · longest line 42 · 0 timing errors |
 | Reel | 187.88 s (3:08), 3840×2160 |
+
+---
+
+## Pre-push audit of every deliverable (2026-09-26)
+
+Every deliverable checked against the assignment's list by verifying files,
+hashes and cross-consistency — not by re-reading earlier summaries.
+
+| Deliverable | Checks | Result |
+|---|---|---|
+| `temperature-is-concentration.mp4` | 3840×2160 H.264 24 fps + AAC; 187.88 s inside 2–4 min; identical to the reel master and the pipeline's `verified.json`; the clean master, not the marked review cut | PASS |
+| `beat_sheet.json` | narration word-count equals the aligned audio for all 10 beats; every `actual_duration_s` equals its measured mp3 | PASS |
+| | toolkit JSON schema | **14 enum errors — known toolkit inconsistency, not changed** (below) |
+| `README.md` | name, assignment, concept, why, runtime = actual, setup / run / verify, licence, credits; Contents lists exactly the files present | PASS after fix — rebuild step now copies `make_srt.py` and the paperwork set |
+| `BUILD-PROMPT.md` | audio / run / final commands, authoring prompt | PASS after fix — added `--out`, the caption step, 10 mp3s |
+| `SOURCES.md` | used / made / Claude contributed / licences | PASS |
+| `FRICTIONAL.md` | dated entries covering all five criteria of the Frictional guide | PASS |
+| `SHOTLIST.md` | **was missing from the submission** — GATE F refuses to render without it — and stale in the reel | FIXED — regenerated from the beat sheet and shipped |
+| Captions | caption text equals the narration verbatim, in order; 58 cues, longest line 42, 0 timing errors | PASS |
+| Safe sharing | no credentials, tokens, email addresses, local paths, caches or dotfiles | PASS |
+| Canvas zip | correct filename; entries equal `submit/`; integrity OK | PASS |
+| GitHub | fork public; folder link HTTP 200 without login | PASS — PR into the course repo not yet opened |
+
+**Schema note.** The sheet fails `runtime/schema/beat_sheet.schema.json` on
+`shot.source` (`'manim'`, `'remotion'`) and `shot.type` (`'UI'`). The toolkit's
+own ai-explainer example (`claude-debunked`) fails the same way — 10 errors, all
+`'remotion'` — and the router routes on exactly these values (`beat_plan.py`:
+`src == "manim"`). The schema is stale relative to the runtime. The routing
+fields were not rewritten, since the render depends on them and the rubric does
+not.
+
+**Rebuild from the folder alone.** A fresh directory holding only the seven
+files the README lists (`beat_sheet.json`, `scenes.py`, `make_srt.py`,
+`FACTCHECK.md`, `SHOTLIST.md`, `PROMPTS.md`, `CHECKS-REPORT.md`), built with the
+README's commands verbatim: every gate passed, 10/10 beats rendered from
+scratch, Gate V 0 / 0, and the master was **byte-identical** to the submitted
+file (SHA-256 `88bbcabc…`), with identical audio, identical captions, and 21/21
+sampled frames identical.
