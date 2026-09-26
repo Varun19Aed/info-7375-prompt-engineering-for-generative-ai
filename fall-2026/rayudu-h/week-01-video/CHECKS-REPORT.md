@@ -267,7 +267,7 @@ hashes and cross-consistency — not by re-reading earlier summaries.
 | Captions | caption text equals the narration verbatim, in order; 58 cues, longest line 42, 0 timing errors | PASS |
 | Safe sharing | no credentials, tokens, email addresses, local paths, caches or dotfiles | PASS |
 | Canvas zip | correct filename; entries equal `submit/`; integrity OK | PASS |
-| GitHub | fork public; folder link HTTP 200 without login | PASS — PR into the course repo not yet opened |
+| GitHub | posted directly to the course repository at `fall-2026/rayudu-h/week-01-video/`, with the write access the instructor granted; public; every pushed file checked byte-for-byte against this folder (the mp4 is excluded by the repo's media policy — it is the Canvas upload) | PASS |
 
 **Schema note.** The sheet fails `runtime/schema/beat_sheet.schema.json` on
 `shot.source` (`'manim'`, `'remotion'`) and `shot.type` (`'UI'`). The toolkit's

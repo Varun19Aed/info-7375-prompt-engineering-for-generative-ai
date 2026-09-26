@@ -419,11 +419,18 @@ says "change only for off-brand one-offs", so it was a one-line fix per beat to
   byte-identical to the submitted one — same SHA-256, identical audio, identical
   captions, 21 of 21 sampled frames identical. The README now says this rather
   than the weaker claim it made before.
-- **Commit trail.** Fork `hemanthrayuduu/info-7375-prompt-engineering-for-generative-ai`,
-  branch `week-01-video-rayudu-h`: `c31cc13` (2026-09-23, first posting, 2:54),
-  `945b4d6` (2026-09-25, overview fixed, implied Claude answers removed, 2:56),
-  `f16e9f6` (2026-09-26, cancellation shown, 3:08), then the final commit after
-  this audit — its hash is in the Canvas submission.
+- **Where it is posted, and the commit trail.** Until 2026-09-26 the posting
+  lived on a fork (`hemanthrayuduu/info-7375-prompt-engineering-for-generative-ai`,
+  branch `week-01-video-rayudu-h`), because my account showed no write access to
+  the course repository (`push: false`). The instructor had sent a write-access
+  invitation on 2026-09-24 that I had not accepted — GitHub does not switch
+  access on until the invitation is accepted. Once it was (via the GitHub API, at
+  my instruction), the same commits were merged with the current `main` and
+  pushed straight into `fall-2026/rayudu-h/week-01-video/` in the course
+  repository, so the trail carries over unchanged: `c31cc13` (2026-09-23, first
+  posting, 2:54), `945b4d6` (2026-09-25, overview fixed, implied Claude answers
+  removed, 2:56), `f16e9f6` (2026-09-26, cancellation shown, 3:08), `7b388a8`
+  (2026-09-26, this audit). The final commit's hash is in the Canvas submission.
 - **Human and AI.** I asked for the audit and set the bar (check every
   deliverable before pushing). Claude wrote and ran the checks, found and fixed
   the gaps above, and ran the rebuild test.
