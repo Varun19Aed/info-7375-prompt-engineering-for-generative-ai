@@ -200,6 +200,7 @@ Every push to GitHub is listed at the bottom with its date and commit note.
   - **The film's on-paper scorecard, from Figma's docs, before any testing.** Strong: the MCP server works on every Education account. Middle: the Figma agent and Make run on 3,000 credits a month, with no top-ups, and much of it is beta. Weak: Code Connect and branching aren't on Education, agents get 200 MCP calls a day, and K-12 accounts get no AI.
   - **Result:** a 4K master of 153.5 seconds, with every gate passing. It isn't staged or published; that waits for my word.
   - **Then I said: "Looks great,"** and pasted my standard publish runbook ("Claude" playlist at the top, facts signed off, GATE T still applies, upload only from TOPOST, verify at forced 2160p). Claude published it unlisted: https://youtu.be/iikHWZjfqQE. It's at the top of "Claude & Agentic AI" and also of "Figma for Educational AI", as that playlist's intro (Claude's call, done with no re-upload). A few minutes later YouTube was serving both Figma films at 3840×2160 (format 313, checked with `yt-dlp -F`).
+- **Then:** "List of things to try? A specific, detailed list of possible experiments or tasks?" Claude (Opus 5.5) wrote `EXPERIMENTS.md` in the private repo: 40 experiments in 7 groups (setup and budgets; design as spec; the agent writing to Figma; systems design in FigJam; agentic design; Make, Sites and Weave; teaching and critiques). Each has one question, a method, a measure, and its credit or call cost, and each ends in a strong/middle/weak verdict logged to `experiments/log.csv`. The suggested start: the plugin setup and the budget probes, then screenshot vs MCP (E04). I haven't picked yet.
 
 ### 2026-09-26 — The assignment went out, and its first worked recipe
 
@@ -267,3 +268,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-26 | docs(fall-2026): log the pushed recipe design assignment and the first worked recipe |
 | 2026-09-26 | docs(fall-2026): log the playlist intro going up unlisted on YouTube |
 | 2026-09-26 | docs(fall-2026): log that both Figma films serve 2160p |
+| 2026-09-26 | docs(fall-2026): log the Figma experiments list |
