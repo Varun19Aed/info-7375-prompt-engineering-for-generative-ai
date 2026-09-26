@@ -435,6 +435,12 @@ says "change only for off-brand one-offs", so it was a one-line fix per beat to
   deliverable before pushing). Claude wrote and ran the checks, found and fixed
   the gaps above, and ran the rebuild test.
 
+## 2026-09-26 — final review
+
+- I watched the final 3:08 cut and approved it for submission. Nothing further
+  to change. The review record, with every problem found, who found it, the fix
+  and how it was re-checked, is in `REVIEW.md`.
+
 ---
 
 ## Human and AI contributions (retrospective — added 2026-09-23)

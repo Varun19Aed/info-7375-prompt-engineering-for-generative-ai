@@ -284,3 +284,10 @@ README's commands verbatim: every gate passed, 10/10 beats rendered from
 scratch, Gate V 0 / 0, and the master was **byte-identical** to the submitted
 file (SHA-256 `88bbcabc…`), with identical audio, identical captions, and 21/21
 sampled frames identical.
+
+**Added after this audit**, per the course's film-folder guide
+(`youtube/README.md`): `REVIEW.md` with the author's review decision, *Audience*
+and *Status* lines in the README, and an explicit synthetic-narration disclosure
+in `SOURCES.md`. The guide's `final/` folder was not adopted: the assignment's
+deliverable list is flat, no classmate uses it, and moving the captions would
+break the rebuild paths verified above.

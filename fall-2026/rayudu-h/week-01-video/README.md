@@ -5,6 +5,8 @@
 **Course:** INFO 7375 · Prompt Engineering & Agentic AI · Fall 2026 · Section 01
 **Concept:** Temperature is a *concentration* control, not a fact checker
 **Source:** Chapter 1 — Randomness and first prompts, Part 2
+**Audience:** INFO 7375 classmates and graders, or anyone who's been told temperature is a "creativity dial"
+**Status:** reviewed local final, watched and approved by me on 2026-09-26 (see `REVIEW.md`). Not published.
 **Runtime:** 3:08 (187.88 s) · 3840×2160 · 24 fps · H.264 / AAC · captions included
 **Licence:** MIT for code, CC BY 4.0 for the video and documents — see `LICENSE`
 
@@ -77,6 +79,7 @@ in `FACTCHECK.md`.
 | `CHECKS-REPORT.md` | the proof gate: per-beat classification and QC results |
 | `SHOTLIST.md` | the typed work order: one row per beat — lane, fill, measured duration |
 | `FRICTIONAL.md` | dated honest log of what broke and what I did instead |
+| `REVIEW.md` | my review: every problem found, who found it, the fix, how it was re-checked, and my approval |
 | `make_srt.py` | builds the .srt from the word-level alignment |
 | `PROMPTS.md` | the on-screen prompts and the authoring prompt |
 | `LICENSE` | MIT (code) + CC BY 4.0 (video and documents) |

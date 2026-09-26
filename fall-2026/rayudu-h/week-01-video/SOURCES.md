@@ -23,6 +23,10 @@ No paid API was called at any point. No stock footage, no AI-generated images,
 no third-party imagery — every frame is drawn by Manim or Remotion from code in
 this folder plus the toolkit's registered compositions.
 
+**The narration is a synthetic voice.** Every word you hear is the Kokoro-82M
+text-to-speech model (voice `af_bella`) reading my script, generated locally. It
+is not my voice, and it is not a recording of anyone.
+
 ## Made
 
 - **`beat_sheet.json`** — the 9-beat plan: act structure, the `show` block for
