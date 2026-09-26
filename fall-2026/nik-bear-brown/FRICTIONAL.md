@@ -189,6 +189,7 @@ Every push to GitHub is listed at the bottom with its date and commit note.
   - **Next:** my GATE 1 in `PLAN.md`: the modules, the running example, the pilot module (suggested: Figma MCP + Claude Code), when to make the repo public, and a licence.
 - **Later the same day — Figma already knows me:** I said: "The CEO of Figma has reached out in the past, so note that," and pasted the January–February 2026 email thread about SheerID verification problems for NEU students. Claude recorded it in the private repo (`FIGMA-RELATIONSHIP.md`): who was on the thread, what I promised (a sign-up video, and videos for engineers and MBA students, including Weave), and what Figma's Education team offered (to review the video). Contact details and the full thread are kept out of this public log. So Module 01 of the plan is now that sign-up video.
 - **Then my first real question:** "OK, I have Figma for Education. I'm not a designer. I design agentic systems, but that includes websites and other things. How is Figma for Education useful for me?" Claude's answer is saved in the private repo as `research/why-figma-if-you-are-not-a-designer.md`. In short: for someone who builds agents, Figma is a structured picture of an interface that both people and agents can read and write, through the MCP server with Claude Code. I haven't checked it yet.
+- **Then the direction:** "Is one of the earlier things to teach the Figma MCP server? I want to really focus on integrating Claude or Codex or other agentic tools directly with Figma." Claude reordered `PLAN.md` around that. Part 1 is now connect, read and write: set-up, connecting Claude Code, Codex and an editor-based agent, a frame read into code, and the agent writing to the canvas. The design basics come after, each one framed as the fix for a mistake the agent made. There are 19 modules, and the suggested pilot is modules 02–03.
 
 ---
 
@@ -234,3 +235,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-26 | docs(fall-2026): log the new figma-for-educational-ai repo for the book, workshops, and playlist |
 | 2026-09-26 | docs(fall-2026): log the Figma relationship note and my first question about Figma for agentic work |
 | 2026-09-26 | docs(fall-2026): point the log at the saved answer on Figma for agentic work |
+| 2026-09-26 | docs(fall-2026): log the decision to teach the Figma MCP server and agent integration first |
