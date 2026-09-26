@@ -165,13 +165,15 @@ Every push to GitHub is listed at the bottom with its date and commit note.
   - **The rewrite is there.** `course/assignments/reallocation-engine-recipe-build.md` in the-reallocation-engine is the September 23 version. It says "recipe" throughout, and "mode" appears only in its closing note on the rename.
   - **It is still accurate.** Every repo path it cites exists today, except `logs/gate-decisions/` and the full sponsorship data file. The assignment itself lists those two as missing. The engine repo has no commits since September 23.
   - **It was never committed or pushed,** so it isn't on GitHub. The 25-point text I pasted isn't in any local repo, so the copy students see is presumably the one on Canvas.
+  - **Then two assignments, not one.** I said the paper version "should be called 'The Reallocation Engine — Recipe Design Assignment' … this is the first step. In a recipe implementation that will look more like this … write both assignments," and pasted a 100-point build version.
+  - **Two facts in my pasted build version were out of date.** It said every top-level recipe is still DRAFT; five promoted Summer 2026 recipes are marked RUNNABLE-SAMPLE or RUNNABLE-LIVE (the core workflow recipes are DRAFT). It listed SmartRecruiters under `scripts/ats/`, which has Greenhouse, Lever and Ashby only; SmartRecruiters is read by the greenhouse-watch skill. Both were corrected.
   - **An unrelated loose end.** In this course's repo, the committed assignment `assignments/assignment-reallocation-engine-recipe-step.md` is deleted in the local working copy, uncommitted. Nothing in this log says why. It was left untouched.
-- **What I did:** Pointed out that the assignment still says modes, and that the rename and the rewrite should show up in it.
-- **What Claude or another person contributed:** Claude Code (Opus 5.5) found the rewrite, checked each path it cites against the repo, confirmed the engine repo hasn't changed, and spotted the local deletion. I haven't checked those findings yet.
+- **What I did:** Pointed out that the assignment still says modes, and that the rename and the rewrite should show up in it. Then set the structure: a 25-point **Recipe Design Assignment** as step one (the old Mode Design, updated), and my pasted 100-point version as step two, the implementation.
+- **What Claude or another person contributed:** Claude Code (Opus 5.5) found the rewrite, checked each path it cites against the repo, confirmed the engine repo hasn't changed, and spotted the local deletion. I haven't checked those findings yet. It then wrote both assignments in the-reallocation-engine: `course/assignments/reallocation-engine-recipe-design.md` (25 points, from the old text plus the September 23 audit notes: correct paths, the facts that bite, the 3-3-2 fit, gates vs. votes, ran-vs-simulated labels) and `course/assignments/reallocation-engine-recipe-build.md` (my pasted version, formatted, with the two corrections). It titled the second one **Recipe Build Assignment** so the two steps don't share a name; that title is its proposal, not mine yet. The September 23 draft of the build file was replaced by my version.
 - **What I understand now / still do not understand:** Not yet stated by me.
 - **Evidence and next step:**
-  - Evidence: `course/assignments/reallocation-engine-recipe-build.md` in the-reallocation-engine (local, uncommitted); this entry.
-  - Next, three decisions of mine: whether to push the rewrite to the-reallocation-engine (each push there needs my go-ahead), whether to keep the proposed rubric weights, and whether the 25-point Canvas text gets replaced by the rewrite. Also: why the recipe-step assignment is deleted locally.
+  - Evidence: `course/assignments/reallocation-engine-recipe-design.md` and `course/assignments/reallocation-engine-recipe-build.md` in the-reallocation-engine (local, uncommitted); this entry.
+  - Next, three decisions of mine: whether to push both assignments to the-reallocation-engine (each push there needs my go-ahead), whether the second title is right, and replacing the Canvas text. Note the 25-point design assignment sits outside the course's standard 100-point cycle, like the Week 1 video. Also: why the recipe-step assignment is deleted locally.
 
 ### 2026-09-26 — Turning the figma-claude book into a tutorial portfolio for the advocate roles
 
@@ -286,3 +288,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-26 | docs(fall-2026): log that both Figma films serve 2160p |
 | 2026-09-26 | docs(fall-2026): log the Figma experiments list |
 | 2026-09-26 | docs(fall-2026): note that shared code is canonical in the Computational Skepticism folder |
+| 2026-09-26 | docs(fall-2026): log the two-step Reallocation Engine recipe assignments |
