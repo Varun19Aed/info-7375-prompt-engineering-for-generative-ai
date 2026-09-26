@@ -11,7 +11,7 @@
 - **The demo.** Turning the CV into a facts file, and running the engine's job-board watcher on Figma with that CV. That part hit three points of friction. The first match looked wrong because it was wrong. The results didn't add up to the score because of a real bug. And the demo's first choice of résumé got replaced mid-session.
 - **The dream-job recipe.** The folder README now holds an eight-step recipe (Figma first, then similar companies, gaps in my CV) mapped onto Assignment 2, with a first gap table built from quoted posting lines and quoted CV facts.
 - **The check (2026-09-26).** The rewritten assignment exists and is still accurate, but it was never pushed, so the version students see still says "modes."
-- **The portfolio (2026-09-26).** I decided to rewrite my figma-claude book as a Figma tutorial series, as portfolio evidence for the advocate roles. There's a plan to review; nothing is drafted yet.
+- **The portfolio (2026-09-26).** I decided to rewrite my figma-claude book as a Figma tutorial series, as portfolio evidence for the advocate roles. Then I moved it to a new repo, figma-for-educational-ai: a book, workshops and a YouTube playlist built on my Figma for Education account. There's a plan to review; nothing is drafted yet.
 - **My own question.** A first recipe asking whether Figma has advocate or education work on flexible terms. The board's answer is no: both advocate roles are full-time, nothing mentions universities, and nothing is part-time or contract. So it's a networking question.
 
 Every push to GitHub is listed at the bottom with its date and commit note.
@@ -184,6 +184,9 @@ Every push to GitHub is listed at the bottom with its date and commit note.
 - **Evidence and next step:**
   - Evidence: `TUTORIALS-PLAN.md` and tag `api-handbook-v1` in `bear-textbooks/books/figma-claude` (local, uncommitted); `figma/professor-bear-figma.md`.
   - Next, my GATE 1 calls: the tutorial list, the running example, rewriting in place or starting a new repo, and which pilot tutorial to build first.
+- **Later the same day — a new repo instead:** I said: "Create a new repo Figma for educational AI. This will be used for a book, workshops and a YouTube playlist. Using my Figma for Education account, to basically do everything that the account can do that might be useful, particularly around using AI for education and agentic AI and design, including design for engineers and non-designers." I pasted Figma's September 10 email: my educator status is valid for two years, and students re-verify every year through SheerID.
+  - **What Claude did (Claude Code, Opus 5.5):** It checked Figma's help pages as of today. As a higher-ed educator I have the Professional plan with AI: 3,000 AI credits a month (no rollover, no top-ups), the Figma agent, Make, one Site, and the MCP server at 200 calls a day. K-12 and high-school accounts get no AI. It created the private repo `nikbearbrown/figma-for-educational-ai` with `PLAN.md` (18 modules in 5 parts, each turned into a chapter, a workshop and a video), `CAPABILITIES.md` (what the account can do, with sources, and rows marked VERIFY to check in the account), `CLAUDE.md` and `research/sources.md`. The earlier `TUTORIALS-PLAN.md` is replaced by it. I haven't reviewed any of it yet.
+  - **Next:** my GATE 1 in `PLAN.md`: the modules, the running example, the pilot module (suggested: Figma MCP + Claude Code), when to make the repo public, and a licence.
 
 ---
 
@@ -226,3 +229,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-23 | docs(fall-2026): add the dream-job recipe in steps with a first gap analysis for Assignment 2 |
 | 2026-09-26 | docs(fall-2026): log that the rewritten Reallocation Engine assignment was never pushed |
 | 2026-09-26 | docs(fall-2026): log the plan to rewrite figma-claude as a Figma tutorial portfolio |
+| 2026-09-26 | docs(fall-2026): log the new figma-for-educational-ai repo for the book, workshops, and playlist |
