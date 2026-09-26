@@ -237,6 +237,22 @@ Where to check each claim in this log. Commits in this repository are listed in 
 | The live board fetches | `greenhouse-watch-demo/snapshots/figma-2026-09-23.json` (19:54 UTC) and `figma/figma-jobs-2026-09-23.json` (20:01 UTC), both Figma's API response, indented for reading, with the data unchanged |
 | The runs and their reasons | `greenhouse-watch-demo/runs/` and `greenhouse-watch-demo/whole-board/`: one JSON record and one Markdown report per run |
 
+### 2026-09-26 — This folder stopped being a place to edit shared code
+
+- **Date and what I was working on:** Keeping one live-coded project consistent across three classes.
+
+- **I tried / expected:** I expected the three `nik-bear-brown` folders to be roughly the same.
+
+- **What happened:** They had drifted. Branding had the collector, the watch list, the filter, and the ATS notes; Prompt Engineering had the CV facts and the earlier iterations but not the collector; Computational Skepticism had neither. I named **Computational Skepticism the canonical master**, which meant the master was the folder furthest behind at the moment it was declared.
+
+- **What I did:** The shared spine now lives in the master and is copied here by its `lectern/sync.sh`. This folder gained a `SYNC.md` saying it is **not** the master, and a Rule 0 in `CLAUDE.md` saying the same. The files that are copies are named there. Everything specific to this class — this log, the README, the assignment folders, the dated run outputs — is never copied in either direction, because a log overwritten by another class's log is a destroyed record.
+
+- **What Claude or another person contributed:** Claude Code (Opus 5) inventoried and diffed the three folders, built the sync script, and wrote the notes. I decided which class is master.
+
+- **What I understand now / still do not understand:** Drift is invisible until something diffs it. Still open: the recovery path — a shared file edited in the wrong repo — has not been exercised.
+
+- **Evidence and next step:** `SYNC.md` here, and `./lectern/sync.sh --check` in the master reporting all three in sync.
+
 ---
 
 ## GitHub pushes
@@ -269,3 +285,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-26 | docs(fall-2026): log the playlist intro going up unlisted on YouTube |
 | 2026-09-26 | docs(fall-2026): log that both Figma films serve 2160p |
 | 2026-09-26 | docs(fall-2026): log the Figma experiments list |
+| 2026-09-26 | docs(fall-2026): note that shared code is canonical in the Computational Skepticism folder |
