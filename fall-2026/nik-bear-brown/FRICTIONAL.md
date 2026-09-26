@@ -194,6 +194,7 @@ Every push to GitHub is listed at the bottom with its date and commit note.
   - **What Claude found:** the server is registered, but `claude mcp list` says "Needs authentication". I still have to sign in (`/mcp` → figma → Authenticate) in an interactive `claude` session.
   - **What Claude built (Claude Code, Opus 5.5):** a show-tell film in the new repo, `youtube/show-tell-figma-mcp-server/`. It's about 145 seconds, with every claim checked against Figma's docs: reading a frame into code, writing to the canvas (free in beta), the Education limit of 200 calls a day, and the two connection steps. The film stops at the 4K master; staging and publishing are mine to decide. I haven't watched it yet.
   - **Then I said: "Stage and publish it."** Claude staged it and uploaded it unlisted to my @NikBearBrown channel: https://youtu.be/L8XX50b-8y4. It's in a new playlist, "Figma for Educational AI", with captions attached. Making it public is a manual step in YouTube Studio.
+- **Then a research question:** "Research how Figma might be useful for all design, including agentic design and systems design. Engineers rarely use Figma, but with AI becoming more about design than coding ... how could Figma be useful ... comprehensive list." Claude (Opus 5.5) wrote `research/figma-for-engineers-and-agentic-design.md` in the private repo: 60 uses in 8 groups, each tagged with what my Education account allows, from Figma's own docs, plus where Figma is the wrong tool for engineers. It found two engineering features that aren't on Education: Code Connect (Organization and Enterprise only) and Make's GitHub pull-request flow (paid Full seats; unconfirmed for Education). I haven't read it yet.
 
 ---
 
@@ -242,3 +243,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-26 | docs(fall-2026): log the decision to teach the Figma MCP server and agent integration first |
 | 2026-09-26 | docs(fall-2026): log the Figma MCP setup check and the show-tell film request |
 | 2026-09-26 | docs(fall-2026): log the Figma MCP film going up unlisted on YouTube |
+| 2026-09-26 | docs(fall-2026): log the research on Figma for engineering, systems and agentic design |
