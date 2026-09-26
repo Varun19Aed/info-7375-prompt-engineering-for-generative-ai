@@ -193,6 +193,7 @@ Every push to GitHub is listed at the bottom with its date and commit note.
 - **Then the MCP server, and a film about it:** I ran `claude mcp add --scope user --transport http figma https://mcp.figma.com/mcp` (it answered "Added HTTP MCP server figma … to user config") and said: "I think the MCP server function works, double check that. Create a show and tell video … on what the Figma MCP server does and does for you, and how somebody with an education account would connect to it," with the show-tell skill.
   - **What Claude found:** the server is registered, but `claude mcp list` says "Needs authentication". I still have to sign in (`/mcp` → figma → Authenticate) in an interactive `claude` session.
   - **What Claude built (Claude Code, Opus 5.5):** a show-tell film in the new repo, `youtube/show-tell-figma-mcp-server/`. It's about 145 seconds, with every claim checked against Figma's docs: reading a frame into code, writing to the canvas (free in beta), the Education limit of 200 calls a day, and the two connection steps. The film stops at the 4K master; staging and publishing are mine to decide. I haven't watched it yet.
+  - **Then I said: "Stage and publish it."** Claude staged it and uploaded it unlisted to my @NikBearBrown channel: https://youtu.be/L8XX50b-8y4. It's in a new playlist, "Figma for Educational AI", with captions attached. Making it public is a manual step in YouTube Studio.
 
 ---
 
@@ -240,3 +241,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-26 | docs(fall-2026): point the log at the saved answer on Figma for agentic work |
 | 2026-09-26 | docs(fall-2026): log the decision to teach the Figma MCP server and agent integration first |
 | 2026-09-26 | docs(fall-2026): log the Figma MCP setup check and the show-tell film request |
+| 2026-09-26 | docs(fall-2026): log the Figma MCP film going up unlisted on YouTube |
