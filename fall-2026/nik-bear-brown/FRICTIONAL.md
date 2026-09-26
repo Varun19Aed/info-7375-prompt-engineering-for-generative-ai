@@ -11,6 +11,7 @@
 - **The demo.** Turning the CV into a facts file, and running the engine's job-board watcher on Figma with that CV. That part hit three points of friction. The first match looked wrong because it was wrong. The results didn't add up to the score because of a real bug. And the demo's first choice of résumé got replaced mid-session.
 - **The dream-job recipe.** The folder README now holds an eight-step recipe (Figma first, then similar companies, gaps in my CV) mapped onto Assignment 2, with a first gap table built from quoted posting lines and quoted CV facts.
 - **The check (2026-09-26).** The rewritten assignment exists and is still accurate, but it was never pushed, so the version students see still says "modes."
+- **The portfolio (2026-09-26).** I decided to rewrite my figma-claude book as a Figma tutorial series, as portfolio evidence for the advocate roles. There's a plan to review; nothing is drafted yet.
 - **My own question.** A first recipe asking whether Figma has advocate or education work on flexible terms. The board's answer is no: both advocate roles are full-time, nothing mentions universities, and nothing is part-time or contract. So it's a networking question.
 
 Every push to GitHub is listed at the bottom with its date and commit note.
@@ -172,6 +173,18 @@ Every push to GitHub is listed at the bottom with its date and commit note.
   - Evidence: `course/assignments/reallocation-engine-recipe-build.md` in the-reallocation-engine (local, uncommitted); this entry.
   - Next, three decisions of mine: whether to push the rewrite to the-reallocation-engine (each push there needs my go-ahead), whether to keep the proposed rubric weights, and whether the 25-point Canvas text gets replaced by the rewrite. Also: why the recipe-step assignment is deleted locally.
 
+### 2026-09-26 — Turning the figma-claude book into a tutorial portfolio for the advocate roles
+
+- **Date and what I was working on:** Acting on the Figma recipe's answer (network, don't apply) by building portfolio work that fits the two Designer Advocate postings.
+- **I tried / expected:** I asked what was in my `figma-claude` book, and said: "I want to rewrite this to be a series of tutorials for Figma for education." When Claude asked what "for education" meant, I said: "For my portfolio ... to build examples for applying to these types of roles," and pasted this folder's `figma/` README.
+- **What happened:** The book is a finished 100,000-word handbook on the Figma API, in 14 chapters written for design-systems engineers. Most of it doesn't fit a tutorial series as written. The source texts in its `pantry/` and the design-system, token and MCP chapters can be reused.
+- **What I did:** Set the goal: tutorials as portfolio examples for the roles in `figma/professor-bear-figma.md`.
+- **What Claude or another person contributed:** Claude Code (Opus 5.5) did three things. It surveyed the book. It wrote `TUTORIALS-PLAN.md` in the figma-claude repo: 11 tutorials, each mapped to a quoted posting line, each in four formats (written guide, video, Community file, workshop version), with a Medhavy study screen proposed as the one running example. And it tagged the current handbook `api-handbook-v1` locally, so nothing is lost. I haven't reviewed the plan yet.
+- **What I understand now / still do not understand:** Not yet stated by me.
+- **Evidence and next step:**
+  - Evidence: `TUTORIALS-PLAN.md` and tag `api-handbook-v1` in `bear-textbooks/books/figma-claude` (local, uncommitted); `figma/professor-bear-figma.md`.
+  - Next, my GATE 1 calls: the tutorial list, the running example, rewriting in place or starting a new repo, and which pilot tutorial to build first.
+
 ---
 
 ## Evidence
@@ -212,3 +225,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-23 | feat(fall-2026): keep the relevant Figma postings in professor-bear-figma.json and .md |
 | 2026-09-23 | docs(fall-2026): add the dream-job recipe in steps with a first gap analysis for Assignment 2 |
 | 2026-09-26 | docs(fall-2026): log that the rewritten Reallocation Engine assignment was never pushed |
+| 2026-09-26 | docs(fall-2026): log the plan to rewrite figma-claude as a Figma tutorial portfolio |
