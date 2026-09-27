@@ -7,6 +7,9 @@ Python 3.11.16, toolkit venv. Output: `code/temperature_results.json`.
 
 | Claim (beat) | Evidence | Status |
 |---|---|---|
+| A chatbot writes one token (roughly one word) at a time, scoring every possible next token (B01A) | Chapter 1 fig. 1 caption: "A chatbot is one prediction, run in a loop… one token is sampled and appended"; §35: "The machine does not predict words. It predicts tokens… a common word may be one token, a rare word several" → narration says "roughly one word", a simplification the chapter supports; §37: "a number for every token in the vocabulary" | ✓ |
+| Paris high, Lyon lower (B01A) | ILLUSTRATIVE only: bars carry no numbers and are stamped "ILLUSTRATIVE SCORES · NOT FROM A REAL MODEL"; no model was queried | ✓ (labelled) |
+| Softmax turns scores into chances that add up to one (B01A) | chapter's probabilities(): weights / total; §37 "arranged so the numbers are nonnegative and sum to one" | ✓ |
 | Scores [1, 2, 3] are constructed toy inputs (B02, B03, B07) | Chapter §"Temperature is a concentration control" uses these scores; labelled CONSTRUCTED on screen | ✓ |
 | T=1 → 0.0900 / 0.2447 / 0.6652 (B02) | run_temperature.py; matches chapter table to 10 d.p. | ✓ |
 | T=0.5 top 0.8668, T=2 top 0.5065, bottom 0.1863 at T=2 (B03, B00) | same; matches chapter table | ✓ |

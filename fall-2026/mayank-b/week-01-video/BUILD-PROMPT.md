@@ -26,7 +26,7 @@ cp remotion-src/TemperatureConcentration.tsx.txt $TK/runtime/remotion/src/Temper
 #    (7 Compositions, calculateMetadata from props.durationSeconds)
 
 # 2. audio — the master clock
-python3 $TK/runtime/scripts/generate_audio_kokoro.py .          # am_onyx, $0.00
+python3 $TK/runtime/scripts/generate_audio_kokoro.py . < /dev/null   # am_onyx, $0.00 (stdin closed: it can hang waiting on it)
 ffmpeg -y -f lavfi -t 0.8 -i anullsrc=r=24000:cl=mono -i mp3/beat-B01.mp3 \
   -filter_complex "[0:a][1:a]concat=n=2:v=0:a=1" mp3/_b01.mp3 && mv mp3/_b01.mp3 mp3/beat-B01.mp3
 #    then set B01.actual_duration_s to the new ffprobe duration

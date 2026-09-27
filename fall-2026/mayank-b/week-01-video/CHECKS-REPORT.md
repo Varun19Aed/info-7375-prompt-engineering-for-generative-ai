@@ -1,6 +1,6 @@
 # CHECKS-REPORT (written before the first render)
 
-7 SHOW / 0 justified-HOLD / 0 PUNT-flagged (body B02–B08); 5 bookends.
+8 SHOW / 0 justified-HOLD / 0 PUNT-flagged (body B01A–B08; B01A added in v5); 5 bookends.
 
 Teaching arc: FRAMEWORK ✓ (B02 softmax) | WORKED EXAMPLE ✓ (B03–B04 real numbers)
 | FALSIFIABILITY ✓ (B07 constructed wrong-answer case) | SCAFFOLDED TASK ✓ (BHTF prompt)

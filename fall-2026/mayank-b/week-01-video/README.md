@@ -4,13 +4,14 @@
 **Concept (Chapter 1):** Temperature controls how concentrated the choices are; it doesn't check facts.
 **Why this one:** "Low temperature = more accurate" is a common belief, and the chapter's own
 numbers can disprove it on screen — the ranking never moves, only the confidence does.
-**Runtime:** 2 min 39 s (159.5 s) · 1920×1080 · `temperature-concentration.mp4`
+**Runtime:** 2 min 55 s (174.8 s) · 1920×1080 · `temperature-concentration.mp4`
 
 ## What the video shows
 | Beat | What you see |
 |---|---|
 | B00 | The question, and the real output of the chapter's code (no model call) |
 | B01 | "creative" typed, then corrected to "concentrated" |
+| B01A | How a chatbot picks the next word: every candidate gets a score; softmax turns scores into chances (illustrative, unnumbered) |
 | B02 | Three constructed scores → softmax → 9.0% / 24.5% / 66.5% at T = 1 |
 | B03 | T sweeps 1 → 0.5 → 2; bars recomputed live; top outcome 86.7% → 50.6%; ranking unchanged |
 | B04 | Why: p_i/p_k = exp((z_i − z_k)/T) → ratios 54.60×, 7.39×, 2.72× |
@@ -29,7 +30,7 @@ Everything is free and local (Kokoro, Remotion, ffmpeg; no API keys). Full steps
 
 ## Files
 - `temperature-concentration.mp4` — the video
-- `beat_sheet.json` — narration + visual plan (show blocks) for all 12 beats
+- `beat_sheet.json` — narration + visual plan (show blocks) for all 13 beats
 - `BUILD-PROMPT.md` — prompts and commands that rebuild it
 - `SOURCES.md` — what I used, what I made, what Claude contributed, licences
 - `FRICTIONAL.md` — dated log of what went wrong and what I did instead

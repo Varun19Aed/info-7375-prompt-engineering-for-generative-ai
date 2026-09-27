@@ -53,7 +53,7 @@ file records *what changed*.
 - Added `README.md`, `SOURCES.md`, `.gitignore`, `_qc/MANUAL-QC.md` (my hand QC table; Gate V
   overwrites `_qc/REPORT.md` on every compile, its first failing run is kept in
   `_qc/GATE-V-REPORT-first-run.md`).
-- No change to narration, audio, or any visual. **← current version**
+- No change to narration, audio, or any visual.
 - Pushed to `nikbearbrown/info-7375-prompt-engineering-for-generative-ai`,
   `fall-2026/mayank-b/week-01-video/`.
 
@@ -74,3 +74,41 @@ file records *what changed*.
 - Added `code/check_repo_rules.py` (local copy of the CI rules); `publish.sh` now runs it before
   every commit and refuses to push on failure. Also adds `code/publish.sh` to the repo.
 - No change to the video.
+
+## 2026-09-26 → 27 — v5: new beat B01A "how a chatbot picks the next word"
+
+Why: reviewing the concept from first principles, we agreed the video skipped the basics. It
+jumped to "three scores, softmax" without saying that a chatbot picks the next token from scored
+options, or why scores must become chances.
+
+Done so far:
+- **New beat B01A** (after the Beat 2 summary, before B02). Narration (49 words, 15.34 s):
+  "First, what a chatbot does. It writes one token, roughly one word, at a time. At each step it
+  scores every possible next token: Paris high, Lyon lower. Scores aren't chances yet. A formula
+  called softmax turns them into chances that add up to one. Then the model draws."
+- Visual plan: "The capital of France is ___"; four candidates (Paris, Lyon, beautiful, a) with
+  **unnumbered** score bars and the stamp "ILLUSTRATIVE SCORES · NOT FROM A REAL MODEL"; a
+  "chance?" column; a softmax label; "Paris" drops into the blank.
+- Added to `code/author_sheet.py` and inserted into `beat_sheet.json` (13 beats now).
+- `mp3/beat-B01A.mp3` generated (Kokoro am_onyx). No other beat's audio touched.
+- New component `TcNextWord` in `TemperatureConcentration.tsx`, registered in `Root.tsx`;
+  B01A cue anchors added to `code/build_props.py`.
+- SHOTLIST (B01A row), CHECKS-REPORT (8 SHOW), FACTCHECK (three new claims, quoted from the
+  chapter's fig. 1 caption, §35 and §37) updated.
+
+Paused 2026-09-26 by the iCloud problem (FRICTIONAL). Resumed 2026-09-27 once the files were back:
+- Word alignment for B01A (49 words). Cues: sentence 1.54 s, scores 4.88 s, chance 8.42 s,
+  softmax 10.67 s, draw 13.58 s.
+- Test stills changed the design twice before the full render:
+  1. "Paris" landed right of the blank instead of in it → end position measured from a still (x≈862).
+  2. The flying word crossed the Paris bar and the SCORE label mid-flight → replaced the flight with
+     "the winning row lights up (bar turns terracotta) and fades, while Paris rises into the blank".
+  3. The word "softmax" was a second terracotta element → bold ink (one accent per beat).
+- Rendered B01A at 4K (Remotion).
+- **B01 fix found by the v5 QC pass:** the last line was still typing at the cut ("…answer is tr|").
+  My v2 claim that "all three lines finish inside the beat" was wrong. `charMs` 32 → 26;
+  re-rendered B01; the full sentence, period included, is on screen by 11.3 s and the
+  creative → concentrated correction still plays (`_qc/sheet-v5-B01*.png`).
+- Recompiled review cut + clean master: **174.8 s**, 13/13 beats filled, Gate V 0 BLOCKER / 0 MAJOR.
+- README (runtime, B01A row, 13 beats) and `remotion-src/TemperatureConcentration.tsx.txt` updated.
+- Narration of every other beat unchanged. **← current version**

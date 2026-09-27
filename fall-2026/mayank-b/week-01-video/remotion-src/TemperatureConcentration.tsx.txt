@@ -493,3 +493,78 @@ export const TcBoundary: React.FC<z.infer<typeof tcBoundarySchema>> = ({ sparkLi
     </Stage>
   );
 };
+
+// =============================================================================
+// B01A TcNextWord — a chatbot picks the next token from scored options.
+// Bars carry NO numbers: the ordering is illustrative (labelled on screen);
+// the real numbers start in B02.
+// =============================================================================
+export const tcNextWordSchema = z.object({
+  ...base,
+  prompt: z.string().default('The capital of France is'),
+  candidates: z.array(z.string()).default(['Paris', 'Lyon', 'beautiful', 'a']),
+  barLengths: z.array(z.number()).default([1, 0.62, 0.38, 0.22]),
+  stampText: z.string().default('ILLUSTRATIVE SCORES · NOT FROM A REAL MODEL'),
+  cues: z.object({ sentence: z.number(), scores: z.number(), chance: z.number(), softmax: z.number(), draw: z.number() })
+    .default({ sentence: 1, scores: 4, chance: 8, softmax: 10, draw: 14 }),
+});
+export const TcNextWord: React.FC<z.infer<typeof tcNextWordSchema>> = ({ sparkLine, prompt, candidates, barLengths, stampText, cues }) => {
+  const t = useT();
+  const sentO = ramp(t, cues.sentence, 0.5);
+  const drawP = ramp(t, cues.draw, 0.9);
+  const blankPulse = drawP > 0 ? 0 : 0.5 + 0.5 * Math.sin(t * 5);
+  const rowY = (i: number) => 400 + i * 128;
+  const listX = SX + 60, barX = SX + 420, barMax = 760;
+  // where the drawn word travels: from its row to the blank in the sentence
+  const blankX = 862, blankY = 180;   // blank starts at x≈862 (measured from a rendered still)
+  // no flight path (it crossed the bars/labels): the winning row lights up and fades,
+  // while the same word rises a few px into the blank
+  const riseY = interpolate(drawP, [0, 1], [blankY + 36, blankY], clamp);
+  return (
+    <Stage>
+      <SparkLine line={sparkLine} o={ramp(t, 0, 0.5)} />
+      <Stamp text={stampText} o={ramp(t, cues.scores, 0.4)} top={SY + 4} />
+      {/* the sentence so far + the blank */}
+      <div style={{ position: 'absolute', left: SX, width: SR - SX, top: 180, display: 'flex', alignItems: 'baseline',
+        fontFamily: SERIF, fontSize: 84, color: INK, opacity: sentO }}>
+        <span>{prompt}&nbsp;</span>
+        <span style={{ display: 'inline-block', minWidth: 300, borderBottom: `6px solid ${drawP > 0.98 ? 'transparent' : INK}`,
+          opacity: drawP > 0 ? 1 : 0.4 + 0.6 * blankPulse }}>{'\u00a0'}</span>
+      </div>
+      <div style={{ position: 'absolute', left: SX, top: 320, fontFamily: SANS, fontSize: 30, color: SOFT, opacity: ramp(t, cues.scores, 0.4) }}>
+        POSSIBLE NEXT TOKENS
+      </div>
+      <div style={{ position: 'absolute', left: barX, top: 320, fontFamily: SANS, fontSize: 30, color: SOFT, opacity: ramp(t, cues.scores, 0.4) }}>
+        SCORE (how much the model likes it)
+      </div>
+      {candidates.map((c, i) => {
+        const inP = ramp(t, cues.scores + i * 0.25, 0.5);
+        const grow = ramp(t, cues.scores + 0.3 + i * 0.25, 0.9);
+        const isWinner = i === 0;
+        return (
+          <React.Fragment key={c}>
+            <div style={{ position: 'absolute', left: listX - 40 * (1 - inP), top: rowY(i), opacity: inP * (isWinner ? 1 - 0.6 * drawP : 1),
+              fontFamily: SERIF, fontSize: 64, color: isWinner && drawP > 0 ? ACC_TEXT : INK }}>{c}</div>
+            <div style={{ position: 'absolute', left: barX, top: rowY(i) + 18, height: 52, width: barMax * barLengths[i] * grow,
+              background: isWinner && drawP > 0 ? ACC : INK, opacity: isWinner ? 0.9 : 0.55 }} />
+          </React.Fragment>
+        );
+      })}
+      {/* chance? column */}
+      <div style={{ position: 'absolute', left: barX + barMax + 70, top: 320, opacity: ramp(t, cues.chance, 0.4), fontFamily: SANS, fontSize: 30, color: SOFT }}>
+        CHANCE
+      </div>
+      {candidates.map((c, i) => (
+        <div key={`q${c}`} style={{ position: 'absolute', left: barX + barMax + 90, top: rowY(i) + 4, opacity: ramp(t, cues.chance + i * 0.12, 0.3),
+          fontFamily: SANS, fontWeight: 700, fontSize: 60, color: SOFT }}>?</div>
+      ))}
+      <div style={{ position: 'absolute', left: SX, width: SR - SX, top: 930, textAlign: 'center', opacity: ramp(t, cues.softmax, 0.5),
+        fontFamily: SERIF, fontSize: 52, color: INK }}>
+        <span style={{ fontWeight: 700 }}>softmax</span>: scores → chances that add up to 100% (next beat)
+      </div>
+      {/* the drawn token rises into the blank */}
+      {drawP > 0 && <div style={{ position: 'absolute', left: blankX, top: riseY, opacity: drawP, fontFamily: SERIF, fontSize: 84,
+        color: ACC_TEXT, fontWeight: 600, lineHeight: 'normal' }}>{candidates[0]}</div>}
+    </Stage>
+  );
+};

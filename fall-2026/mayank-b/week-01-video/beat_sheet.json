@@ -32,10 +32,10 @@
     "derived_from": "beat_sheet.json",
     "evidence": "code/run_temperature.py -> code/temperature_results.json (every on-screen number)",
     "build": {
-      "at": "2026-09-25T14:02:20",
+      "at": "2026-09-27T05:38:38",
       "cut": "master",
-      "filled": 12,
-      "of": 12,
+      "filled": 13,
+      "of": 13,
       "slates": [],
       "skin_warnings": []
     }
@@ -93,7 +93,7 @@
         "status": "VIDEO",
         "src": "media/B00.mp4",
         "filled_by": "remotion:ClaudeComposerAsk",
-        "at": "2026-09-25T14:02:20"
+        "at": "2026-09-27T05:38:38"
       }
     },
     {
@@ -131,14 +131,14 @@
             "fontSize": 76,
             "align": "center",
             "durationSeconds": 11.38,
-            "charMs": 32,
+            "charMs": 26,
             "mistakeRate": 3,
             "hesitateWithin": 1,
             "hesitateBetween": 8
           },
           "rendered": {
             "out": "media/B01.mp4",
-            "at": "2026-09-23T23:10:24.293841+00:00"
+            "at": "2026-09-27T09:37:43.779799+00:00"
           }
         }
       },
@@ -151,11 +151,87 @@
         "status": "VIDEO",
         "src": "media/B01.mp4",
         "filled_by": "remotion:BrutalistHesitantWriter",
-        "at": "2026-09-25T14:02:20"
+        "at": "2026-09-27T05:38:38"
       },
       "qc": {
         "sparse_by_design": true,
         "sparse_reason": "BrutalistHesitantWriter types the overview token by token (EXECUTIVE-SUMMARY LAW); mid-beat frames are mostly cream by design. Three lines at fontSize 76 is the largest size whose longest line stays inside SAFE. Frames read at 2.5/4.5/6.5/9.0/11.2 s: correction lands, all lines complete (_qc/fixsheet.png)."
+      }
+    },
+    {
+      "beat_id": "B01A",
+      "act": "setup — how a chatbot picks the next word",
+      "lane": "BODY",
+      "narration_text": "First, what a chatbot does. It writes one token, roughly one word, at a time. At each step it scores every possible next token: Paris high, Lyon lower. Scores aren't chances yet. A formula called softmax turns them into chances that add up to one. Then the model draws.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "illustrate",
+        "show": [
+          {
+            "at": "writes",
+            "event": "sentence 'The capital of France is ___' appears, blank pulsing"
+          },
+          {
+            "at": "scores every",
+            "event": "four candidate tokens slide in; unnumbered score bars grow (illustrative ordering only)"
+          },
+          {
+            "at": "Scores aren't",
+            "event": "a 'chance?' column appears beside the bars with a question mark"
+          },
+          {
+            "at": "softmax",
+            "event": "label 'softmax: scores → chances that add up to 100%' draws in under the bars"
+          },
+          {
+            "at": "draws",
+            "event": "'Paris' lifts out of the list into the blank (terracotta)"
+          }
+        ],
+        "remotion": {
+          "pattern": "TcNextWord",
+          "props": {
+            "sparkLine": "One word at a time.",
+            "prompt": "The capital of France is",
+            "candidates": [
+              "Paris",
+              "Lyon",
+              "beautiful",
+              "a"
+            ],
+            "barLengths": [
+              1.0,
+              0.62,
+              0.38,
+              0.22
+            ],
+            "stampText": "ILLUSTRATIVE SCORES · NOT FROM A REAL MODEL",
+            "durationSeconds": 15.34,
+            "cues": {
+              "sentence": 1.54,
+              "scores": 4.88,
+              "chance": 8.42,
+              "softmax": 10.67,
+              "draw": 13.58
+            }
+          },
+          "rendered": {
+            "out": "media/B01A.mp4",
+            "at": "2026-09-27T09:35:42.361488+00:00"
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B01A.mp3",
+      "actual_duration_s": 15.34,
+      "render_duration_s": 15.375,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B01A.mp4",
+        "filled_by": "remotion:TcNextWord",
+        "at": "2026-09-27T05:38:38"
       }
     },
     {
@@ -227,7 +303,7 @@
         "status": "VIDEO",
         "src": "media/B02.mp4",
         "filled_by": "remotion:TcScoresToOdds",
-        "at": "2026-09-25T14:02:20"
+        "at": "2026-09-27T05:38:38"
       }
     },
     {
@@ -289,7 +365,7 @@
         "status": "VIDEO",
         "src": "media/B03.mp4",
         "filled_by": "remotion:TcTemperatureDial",
-        "at": "2026-09-25T14:02:20"
+        "at": "2026-09-27T05:38:38"
       }
     },
     {
@@ -385,7 +461,7 @@
         "status": "VIDEO",
         "src": "media/B04.mp4",
         "filled_by": "remotion:TcRatio",
-        "at": "2026-09-25T14:02:20"
+        "at": "2026-09-27T05:38:38"
       }
     },
     {
@@ -443,7 +519,7 @@
         "status": "VIDEO",
         "src": "media/B05.mp4",
         "filled_by": "remotion:TcCode",
-        "at": "2026-09-25T14:02:20"
+        "at": "2026-09-27T05:38:38"
       }
     },
     {
@@ -523,7 +599,7 @@
         "status": "VIDEO",
         "src": "media/B06.mp4",
         "filled_by": "remotion:TcSampleCounts",
-        "at": "2026-09-25T14:02:20"
+        "at": "2026-09-27T05:38:38"
       }
     },
     {
@@ -585,7 +661,7 @@
         "status": "VIDEO",
         "src": "media/B07.mp4",
         "filled_by": "remotion:TcWrongAnswer",
-        "at": "2026-09-25T14:02:20"
+        "at": "2026-09-27T05:38:38"
       }
     },
     {
@@ -664,7 +740,7 @@
         "status": "VIDEO",
         "src": "media/B08.mp4",
         "filled_by": "remotion:TcBoundary",
-        "at": "2026-09-25T14:02:20"
+        "at": "2026-09-27T05:38:38"
       }
     },
     {
@@ -711,7 +787,7 @@
         "status": "VIDEO",
         "src": "media/BVDT.mp4",
         "filled_by": "remotion:ClaudeVerdictArtifact",
-        "at": "2026-09-25T14:02:20"
+        "at": "2026-09-27T05:38:38"
       }
     },
     {
@@ -757,7 +833,7 @@
         "status": "VIDEO",
         "src": "media/BHTF.mp4",
         "filled_by": "remotion:ClaudeComposerAsk",
-        "at": "2026-09-25T14:02:20"
+        "at": "2026-09-27T05:38:38"
       }
     },
     {
@@ -797,7 +873,7 @@
         "status": "VIDEO",
         "src": "media/BOUT.mp4",
         "filled_by": "remotion:ClaudeTitleOutro",
-        "at": "2026-09-25T14:02:20"
+        "at": "2026-09-27T05:38:38"
       }
     }
   ]

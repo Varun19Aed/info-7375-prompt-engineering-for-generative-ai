@@ -59,3 +59,22 @@ Dates are local. Each entry: what I tried → what broke → what I did instead.
   rejects TypeScript files anywhere in the repo, and my scene source is `.tsx`. I hadn't read the
   repo's rules before pushing. → Stored the source as `.tsx.txt`, and added a local copy of the CI
   checks that now runs before every push.
+
+## 2026-09-26 — v5 build stalled by iCloud
+- **Kokoro audio for B01A hung** with 0% CPU and no output. It was waiting on stdin. → Re-ran with
+  `< /dev/null`; it finished in seconds.
+- **The aligner then hung the same way, even with stdin closed.** A process sample showed it blocked
+  reading an ordinary `.pyc` inside the venv. `ls -lO` showed the file flagged `dataless`:
+  **~/Desktop syncs to iCloud Drive, the disk is 94% full (13 GB free), and macOS had offloaded
+  toolkit files to the cloud** to save space. Reading one waits for iCloud to download it.
+  `brctl download <file>` fixed a single file in seconds, but a bulk `brctl download` of the
+  project did not bring the rest back: test reads stayed blocked for 25 s+.
+  → Paused v5 at the alignment step. Needs a local fix (keep the folder downloaded / free disk).
+
+## 2026-09-27 — resolved
+- Mayank freed disk space (55 GB free, 73% used) and kept the folder downloaded. A scan found zero
+  `dataless` files in the venv, toolkit, reel and repo clone, and the aligner that had hung for 5+ min
+  finished in seconds. **Lesson:** don't keep a build toolkit in an iCloud-synced folder on a nearly
+  full disk. All pipeline commands now run with `< /dev/null`.
+- My v2 QC claim that B01 "finishes inside the beat" was wrong. Its last line was still typing at the
+  cut, and I only caught it in the v5 frame check. Fixed and logged in CHANGELOG v5.

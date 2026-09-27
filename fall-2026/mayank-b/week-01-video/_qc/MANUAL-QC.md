@@ -13,3 +13,11 @@ Frames sampled at 15/50/85% of every beat (`sheet1-3.png`), plus B01 at 2.5/4.5/
 | 6 | B08 | MINOR | dead space under the claims | bigger cards/type | fixed |
 | 7 | BVDT | MINOR | library recap page's text is smallish; component has no size prop | — | open |
 | 8 | B08 50% | — | cards overlap mid-flight while sorting | intended motion; settles by 85% | not a defect |
+
+## v5 (2026-09-27)
+| # | Beat | Severity | Defect | Fix | Status |
+|---|---|---|---|---|---|
+| 9 | B01A | MAJOR | "Paris" landed beside the blank, not in it (test still) | measured end position | fixed |
+| 10 | B01A | MAJOR | flying word crossed the bar and label mid-flight | fade-and-rise instead of a flight | fixed, re-checked (`sheet-v5-B01A.png`) |
+| 11 | B01A | MINOR | two terracotta elements | "softmax" in bold ink | fixed |
+| 12 | B01 | MAJOR | last line still typing at the cut ("…answer is tr") | charMs 32 → 26 | fixed, re-checked (`sheet-v5-B01.png`) |

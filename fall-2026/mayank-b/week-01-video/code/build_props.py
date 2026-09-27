@@ -43,6 +43,11 @@ def props(bid): return B[bid]["shot"]["remotion"]["props"]
 for b in sheet["beats"]:
     props(b["beat_id"])["durationSeconds"] = b["actual_duration_s"]
 
+p = props("B01A")
+p.update(cues={"sentence": cue("B01A", "writes"), "scores": cue("B01A", "scores every"),
+               "chance": cue("B01A", "Scores aren't"), "softmax": cue("B01A", "softmax"),
+               "draw": cue("B01A", "Then the model draws")})
+
 p = props("B02")
 p.update(scores=S, probsT1=P[1.0],
          formula=svg("softmax", r"p_i = \frac{\exp(z_i/T)}{\sum_j \exp(z_j/T)}"),

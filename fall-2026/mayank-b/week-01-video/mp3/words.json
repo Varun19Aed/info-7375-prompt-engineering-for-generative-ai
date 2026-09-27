@@ -2424,6 +2424,253 @@
         "startFrame": 89,
         "endFrame": 95
       }
+    ],
+    "B01A": [
+      {
+        "text": "First,",
+        "startFrame": 0,
+        "endFrame": 4
+      },
+      {
+        "text": "what",
+        "startFrame": 9,
+        "endFrame": 11
+      },
+      {
+        "text": "a",
+        "startFrame": 11,
+        "endFrame": 13
+      },
+      {
+        "text": "chatbot",
+        "startFrame": 13,
+        "endFrame": 23
+      },
+      {
+        "text": "does.",
+        "startFrame": 23,
+        "endFrame": 30
+      },
+      {
+        "text": "It",
+        "startFrame": 35,
+        "endFrame": 37
+      },
+      {
+        "text": "writes",
+        "startFrame": 37,
+        "endFrame": 40
+      },
+      {
+        "text": "one",
+        "startFrame": 40,
+        "endFrame": 48
+      },
+      {
+        "text": "token,",
+        "startFrame": 48,
+        "endFrame": 57
+      },
+      {
+        "text": "roughly",
+        "startFrame": 63,
+        "endFrame": 66
+      },
+      {
+        "text": "one",
+        "startFrame": 66,
+        "endFrame": 73
+      },
+      {
+        "text": "word,",
+        "startFrame": 73,
+        "endFrame": 79
+      },
+      {
+        "text": "at",
+        "startFrame": 79,
+        "endFrame": 83
+      },
+      {
+        "text": "a",
+        "startFrame": 83,
+        "endFrame": 85
+      },
+      {
+        "text": "time.",
+        "startFrame": 85,
+        "endFrame": 93
+      },
+      {
+        "text": "At",
+        "startFrame": 102,
+        "endFrame": 105
+      },
+      {
+        "text": "each",
+        "startFrame": 105,
+        "endFrame": 109
+      },
+      {
+        "text": "step",
+        "startFrame": 109,
+        "endFrame": 113
+      },
+      {
+        "text": "it",
+        "startFrame": 116,
+        "endFrame": 117
+      },
+      {
+        "text": "scores",
+        "startFrame": 117,
+        "endFrame": 122
+      },
+      {
+        "text": "every",
+        "startFrame": 122,
+        "endFrame": 131
+      },
+      {
+        "text": "possible",
+        "startFrame": 131,
+        "endFrame": 141
+      },
+      {
+        "text": "next",
+        "startFrame": 141,
+        "endFrame": 147
+      },
+      {
+        "text": "token:",
+        "startFrame": 147,
+        "endFrame": 157
+      },
+      {
+        "text": "Paris",
+        "startFrame": 163,
+        "endFrame": 167
+      },
+      {
+        "text": "high,",
+        "startFrame": 167,
+        "endFrame": 175
+      },
+      {
+        "text": "Lyon",
+        "startFrame": 180,
+        "endFrame": 187
+      },
+      {
+        "text": "lower.",
+        "startFrame": 187,
+        "endFrame": 193
+      },
+      {
+        "text": "Scores",
+        "startFrame": 202,
+        "endFrame": 209
+      },
+      {
+        "text": "aren't",
+        "startFrame": 209,
+        "endFrame": 215
+      },
+      {
+        "text": "chances",
+        "startFrame": 215,
+        "endFrame": 223
+      },
+      {
+        "text": "yet.",
+        "startFrame": 223,
+        "endFrame": 231
+      },
+      {
+        "text": "A",
+        "startFrame": 239,
+        "endFrame": 240
+      },
+      {
+        "text": "formula",
+        "startFrame": 240,
+        "endFrame": 248
+      },
+      {
+        "text": "called",
+        "startFrame": 248,
+        "endFrame": 256
+      },
+      {
+        "text": "softmax",
+        "startFrame": 256,
+        "endFrame": 269
+      },
+      {
+        "text": "turns",
+        "startFrame": 269,
+        "endFrame": 277
+      },
+      {
+        "text": "them",
+        "startFrame": 277,
+        "endFrame": 283
+      },
+      {
+        "text": "into",
+        "startFrame": 283,
+        "endFrame": 286
+      },
+      {
+        "text": "chances",
+        "startFrame": 286,
+        "endFrame": 296
+      },
+      {
+        "text": "that",
+        "startFrame": 296,
+        "endFrame": 302
+      },
+      {
+        "text": "add",
+        "startFrame": 302,
+        "endFrame": 307
+      },
+      {
+        "text": "up",
+        "startFrame": 307,
+        "endFrame": 310
+      },
+      {
+        "text": "to",
+        "startFrame": 310,
+        "endFrame": 313
+      },
+      {
+        "text": "one.",
+        "startFrame": 313,
+        "endFrame": 319
+      },
+      {
+        "text": "Then",
+        "startFrame": 326,
+        "endFrame": 330
+      },
+      {
+        "text": "the",
+        "startFrame": 330,
+        "endFrame": 334
+      },
+      {
+        "text": "model",
+        "startFrame": 334,
+        "endFrame": 339
+      },
+      {
+        "text": "draws.",
+        "startFrame": 339,
+        "endFrame": 348
+      }
     ]
   }
 }

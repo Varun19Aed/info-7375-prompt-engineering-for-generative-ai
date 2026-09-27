@@ -56,6 +56,21 @@ beats = [
         {"at": "concentrated", "event": "'how creative the model is' highlighted, deleted, retyped as 'how concentrated the choices are'"},
         {"at": "never checks", "event": "remaining two lines type in"}],
        lane="BOOKEND", lead_silence_s=0.8),
+  beat("B01A", "setup — how a chatbot picks the next word",
+       "First, what a chatbot does. It writes one token, roughly one word, at a time. "
+       "At each step it scores every possible next token: Paris high, Lyon lower. "
+       "Scores aren't chances yet. A formula called softmax turns them into chances that add up to one. "
+       "Then the model draws.",
+       "TcNextWord",
+       {"sparkLine": "One word at a time.", "prompt": "The capital of France is",
+        "candidates": ["Paris", "Lyon", "beautiful", "a"],
+        "barLengths": [1.0, 0.62, 0.38, 0.22],
+        "stampText": "ILLUSTRATIVE SCORES · NOT FROM A REAL MODEL"},
+       [{"at": "writes", "event": "sentence 'The capital of France is ___' appears, blank pulsing"},
+        {"at": "scores every", "event": "four candidate tokens slide in; unnumbered score bars grow (illustrative ordering only)"},
+        {"at": "Scores aren't", "event": "a 'chance?' column appears beside the bars with a question mark"},
+        {"at": "softmax", "event": "label 'softmax: scores → chances that add up to 100%' draws in under the bars"},
+        {"at": "draws", "event": "'Paris' lifts out of the list into the blank (terracotta)"}]),
   beat("B02", "framework — scores become odds",
        "Three outcomes, three scores: one, two, three. These are constructed toy scores from the chapter, not a real model. "
        "Softmax divides each score by temperature, exponentiates, and normalizes. "
