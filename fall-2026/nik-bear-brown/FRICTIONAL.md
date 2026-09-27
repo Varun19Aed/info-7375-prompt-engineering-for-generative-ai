@@ -242,6 +242,7 @@ Every push to GitHub is listed at the bottom with its date and commit note.
   - "Job-Hunting in Public, Without Needing a Job": https://youtu.be/U6UdCOMBuUI
 
   The "Figma for Educational AI" playlist now runs: context film → intro → MCP server → Cowork → Claude Code → Hand In the History.
+- **Then: "map out the next 15 films ... what's next?"** Claude wrote `FILMS-NEXT.md` in the Figma repo: 15 films, each tied to an experiment and a line in the Designer Advocate postings. The arc is setup and costs; screenshot vs frame; auto layout, variables and component descriptions as fixes for agent mistakes; the agent drawing while I merge; the Lectern diagram week over week; whiteboard to code; an agent's permissions; "I don't know" interface states; Make; Weave; and a real version log. Films 3–15 each need a real session I run. Suggested start: the sign-up film promised to Figma's Education team, then the cost film, then screenshot vs frame. I haven't picked yet.
 
 ### 2026-09-26 — The assignment went out, and its first worked recipe
 
@@ -348,3 +349,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-26 | docs(fall-2026): log the Claude Code film going up unlisted |
 | 2026-09-26 | docs(fall-2026): log the finished context film |
 | 2026-09-27 | docs(fall-2026): log the last two Figma films going up unlisted |
+| 2026-09-27 | docs(fall-2026): log the plan for the next 15 Figma films |
