@@ -319,3 +319,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-26 | docs(fall-2026): log the board render and the start of the cc-explainer build |
 | 2026-09-26 | docs(fall-2026): log the Figma version-history idea for Frictional |
 | 2026-09-26 | docs(fall-2026): log the Frictional and Figma film request and the date correction |
+| 2026-09-26 | chore(fall-2026): sync the reject sampler from the master |
