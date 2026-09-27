@@ -5,10 +5,6 @@
 **Author:** Meena P
 **Submitted:** 2026-09-26
 
-> Name given as first-name + last-initial to match the repository policy stated
-> in `fall-2026/README.md` ("No IDs and no full names are stored here"). The
-> Canvas archive carries the full name in its filename, as that submission
-> requires.
 
 ---
 
