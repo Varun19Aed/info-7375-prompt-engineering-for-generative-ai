@@ -326,3 +326,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-26 | docs(fall-2026): log the Figma version-history idea for Frictional |
 | | ↑ **the row above is the subject this commit actually carries.** The subject intended for it was *"chore(fall-2026): sync the reject sampler from the master"*; a scripting error reused an earlier commit's subject line. The content is correct; history was not rewritten to fix a label. |
 | 2026-09-26 | docs(fall-2026): log the three finished Figma films |
+| 2026-09-26 | chore(fall-2026): sync the title auditor from the master |
