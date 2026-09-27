@@ -19,6 +19,8 @@
 import React from 'react';
 import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, useVideoConfig, Easing } from 'remotion';
 import { z } from 'zod';
+import { CLAUDE, CLAUDE_FONT } from './tokens/claude';
+import { ANIMATIONS, AnimationName, computeAnimation, MascotSVG } from './scenes/ClaudeMascotScene';
 
 // -- Palette -----------------------------------------------------------------
 const BG = '#FAF9F5';
@@ -82,10 +84,13 @@ const SparkLine: React.FC<{ line: string; o: number }> = ({ line, o }) => (
   </div>
 );
 
-/** LOGO LAW: small low-opacity NBB bug, lower-right, inside SAFE. */
+/** Channel handle for this reel (v7: @NikBearBrown → @Mayank). */
+const HANDLE = '@Mayank';
+/** LOGO LAW: small low-opacity corner bug, lower-right, inside SAFE. No logo file for this
+ *  channel, so per the skill's fallback it is the handle as a serif wordmark. */
 const Bug: React.FC = () => (
-  <Img src={staticFile('temperature-concentration/nbb-logo.svg')}
-    style={{ position: 'absolute', right: 1920 - SR, bottom: 1080 - SB, height: 64, opacity: 0.35 }} />
+  <div style={{ position: 'absolute', right: 1920 - SR, bottom: 1080 - SB, fontFamily: SERIF, fontSize: 34,
+    color: INK, opacity: 0.45, lineHeight: 1 }}>{HANDLE}</div>
 );
 
 /** Honesty label for constructed material — always on screen while it applies. */
@@ -649,5 +654,48 @@ export const TcNextWord: React.FC<z.infer<typeof tcNextWordSchema>> = ({ sparkLi
       {drawP > 0 && <div style={{ position: 'absolute', left: blankX, top: riseY, opacity: drawP, fontFamily: SERIF, fontSize: 84,
         color: ACC_TEXT, fontWeight: 600, lineHeight: 'normal' }}>{candidates[0]}</div>}
     </Stage>
+  );
+};
+
+// =============================================================================
+// BOUT TcTitleOutro — a copy of the toolkit's ClaudeTitleOutro with the handle as a
+// prop. The original hardcodes '@NikBearBrown' (OUTRO-LOCK.md) and is left untouched;
+// this reel (v7) signs off as @Mayank. Layout, mascot seeding and polarity are identical.
+// =============================================================================
+export const tcTitleOutroSchema = z.object({
+  title: z.string().default('⚠ SET IN BEAT SHEET'),
+  slug: z.string().default(''),
+  handle: z.string().default(HANDLE),
+  durationSeconds: z.number().positive().default(5),
+});
+const seedHash = (str: string) => Array.from(str || 'default').reduce((acc, c) => acc + c.charCodeAt(0), 0);
+export const TcTitleOutro: React.FC<z.infer<typeof tcTitleOutroSchema>> = ({ title, slug, handle }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const o = Math.min(1, Math.max(0, interpolate(frame, [0, 14], [0, 1])));
+  const pm = title.match(/^([\s\S]*?)\s*([.?!…]+)\s*$/);
+  const titleBody = pm ? pm[1] : title;
+  const titlePunct = pm ? pm[2] : '.';
+  const seed = seedHash(slug || title);
+  const isDark = seed % 2 === 1;
+  const bg = isDark ? CLAUDE.INK : CLAUDE.PAGE;
+  const fg = isDark ? CLAUDE.PAGE : CLAUDE.INK;
+  const fgSend = isDark ? CLAUDE.PAGE : CLAUDE.SEND;
+  const anim: AnimationName = ANIMATIONS[seed % ANIMATIONS.length];
+  const mascotState = computeAnimation(anim, frame, fps);
+  const mascotH = 120, mascotW = Math.round((136 / 86) * mascotH);
+  return (
+    <AbsoluteFill style={{ background: bg, alignItems: 'center', justifyContent: 'center', flexDirection: 'column', opacity: o }}>
+      <div style={{ position: 'absolute', left: 96, top: 54, width: 3, height: 3, background: '#D4D4D4' }} />
+      <div style={{ position: 'absolute', right: 96, bottom: 123, width: 3, height: 3, background: '#D4D4D4' }} />
+      <div style={{ fontFamily: CLAUDE_FONT.serif, fontWeight: 700, fontSize: 72, color: fg, letterSpacing: '-0.02em',
+        textAlign: 'center', lineHeight: 1.08, maxWidth: 1080, padding: '0 60px' }}>
+        {titleBody}<span style={{ color: fgSend }}>{titlePunct}</span>
+      </div>
+      <div style={{ fontFamily: CLAUDE_FONT.serif, fontSize: 52, color: fg, marginTop: 28, opacity: 0.9 }}>{handle}</div>
+      <div style={{ width: mascotW, height: mascotH, marginTop: 28, overflow: 'visible' }}>
+        <MascotSVG s={mascotState} scale={1} />
+      </div>
+    </AbsoluteFill>
   );
 };

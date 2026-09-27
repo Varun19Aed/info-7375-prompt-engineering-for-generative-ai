@@ -3,174 +3,154 @@
   "beats": {
     "B00": [
       {
-        "text": "Hola",
-        "startFrame": 10,
-        "endFrame": 10
-      },
-      {
-        "text": "—",
-        "startFrame": 10,
-        "endFrame": 10
+        "text": "Hola,",
+        "startFrame": 7,
+        "endFrame": 7
       },
       {
         "text": "this",
-        "startFrame": 10,
-        "endFrame": 12
+        "startFrame": 7,
+        "endFrame": 11
       },
       {
         "text": "is",
-        "startFrame": 12,
+        "startFrame": 11,
         "endFrame": 16
       },
       {
-        "text": "Liam,",
+        "text": "Liam.",
         "startFrame": 16,
-        "endFrame": 24
-      },
-      {
-        "text": "in",
-        "startFrame": 24,
-        "endFrame": 31
-      },
-      {
-        "text": "for",
-        "startFrame": 31,
-        "endFrame": 35
-      },
-      {
-        "text": "Bear.",
-        "startFrame": 35,
-        "endFrame": 41
+        "endFrame": 23
       },
       {
         "text": "Turn",
-        "startFrame": 50,
-        "endFrame": 55
+        "startFrame": 32,
+        "endFrame": 35
       },
       {
         "text": "a",
-        "startFrame": 55,
-        "endFrame": 58
+        "startFrame": 35,
+        "endFrame": 38
       },
       {
         "text": "model's",
-        "startFrame": 58,
-        "endFrame": 69
+        "startFrame": 38,
+        "endFrame": 50
       },
       {
         "text": "temperature",
-        "startFrame": 69,
-        "endFrame": 78
+        "startFrame": 50,
+        "endFrame": 58
       },
       {
         "text": "down",
-        "startFrame": 78,
-        "endFrame": 86
+        "startFrame": 58,
+        "endFrame": 66
       },
       {
         "text": "and",
-        "startFrame": 86,
-        "endFrame": 90
+        "startFrame": 66,
+        "endFrame": 70
       },
       {
         "text": "its",
-        "startFrame": 90,
-        "endFrame": 94
+        "startFrame": 70,
+        "endFrame": 74
       },
       {
         "text": "answers",
-        "startFrame": 94,
-        "endFrame": 101
+        "startFrame": 74,
+        "endFrame": 81
       },
       {
         "text": "sound",
-        "startFrame": 101,
-        "endFrame": 109
+        "startFrame": 81,
+        "endFrame": 91
       },
       {
         "text": "more",
-        "startFrame": 109,
-        "endFrame": 115
+        "startFrame": 91,
+        "endFrame": 96
       },
       {
         "text": "certain.",
-        "startFrame": 115,
-        "endFrame": 125
+        "startFrame": 96,
+        "endFrame": 107
       },
       {
         "text": "Does",
-        "startFrame": 134,
-        "endFrame": 136
+        "startFrame": 119,
+        "endFrame": 121
       },
       {
         "text": "that",
-        "startFrame": 136,
-        "endFrame": 140
+        "startFrame": 121,
+        "endFrame": 124
       },
       {
         "text": "make",
-        "startFrame": 140,
-        "endFrame": 143
+        "startFrame": 124,
+        "endFrame": 128
       },
       {
         "text": "them",
-        "startFrame": 143,
-        "endFrame": 147
+        "startFrame": 128,
+        "endFrame": 132
       },
       {
         "text": "more",
-        "startFrame": 147,
-        "endFrame": 150
+        "startFrame": 132,
+        "endFrame": 136
       },
       {
         "text": "correct?",
-        "startFrame": 150,
-        "endFrame": 159
+        "startFrame": 136,
+        "endFrame": 144
       },
       {
         "text": "We",
-        "startFrame": 167,
-        "endFrame": 168
+        "startFrame": 152,
+        "endFrame": 154
       },
       {
         "text": "ran",
-        "startFrame": 168,
-        "endFrame": 173
+        "startFrame": 154,
+        "endFrame": 158
       },
       {
         "text": "the",
-        "startFrame": 173,
-        "endFrame": 176
+        "startFrame": 158,
+        "endFrame": 162
       },
       {
         "text": "chapter's",
-        "startFrame": 176,
-        "endFrame": 188
+        "startFrame": 162,
+        "endFrame": 174
       },
       {
         "text": "own",
-        "startFrame": 188,
-        "endFrame": 192
+        "startFrame": 174,
+        "endFrame": 177
       },
       {
         "text": "code",
-        "startFrame": 192,
-        "endFrame": 198
+        "startFrame": 177,
+        "endFrame": 184
       },
       {
         "text": "to",
-        "startFrame": 198,
-        "endFrame": 202
+        "startFrame": 184,
+        "endFrame": 188
       },
       {
         "text": "find",
-        "startFrame": 202,
-        "endFrame": 207
+        "startFrame": 188,
+        "endFrame": 194
       },
       {
         "text": "out.",
-        "startFrame": 207,
-        "endFrame": 214
+        "startFrame": 194,
+        "endFrame": 201
       }
     ],
     "B01": [
@@ -2557,72 +2537,42 @@
       {
         "text": "Temperature",
         "startFrame": 0,
-        "endFrame": 11
+        "endFrame": 12
       },
       {
         "text": "Is",
-        "startFrame": 11,
-        "endFrame": 14
+        "startFrame": 12,
+        "endFrame": 16
       },
       {
         "text": "Not",
-        "startFrame": 14,
-        "endFrame": 17
+        "startFrame": 16,
+        "endFrame": 21
       },
       {
         "text": "a",
-        "startFrame": 17,
-        "endFrame": 19
+        "startFrame": 21,
+        "endFrame": 23
       },
       {
         "text": "Fact",
-        "startFrame": 19,
-        "endFrame": 25
+        "startFrame": 23,
+        "endFrame": 29
       },
       {
         "text": "Checker.",
-        "startFrame": 25,
-        "endFrame": 37
+        "startFrame": 29,
+        "endFrame": 43
       },
       {
         "text": "At",
-        "startFrame": 37,
-        "endFrame": 45
-      },
-      {
-        "text": "Nik",
-        "startFrame": 47,
+        "startFrame": 43,
         "endFrame": 49
       },
       {
-        "text": "Bear",
+        "text": "Muh-yunk.",
         "startFrame": 49,
-        "endFrame": 55
-      },
-      {
-        "text": "Brown.",
-        "startFrame": 55,
-        "endFrame": 65
-      },
-      {
-        "text": "Liam,",
-        "startFrame": 72,
-        "endFrame": 77
-      },
-      {
-        "text": "in",
-        "startFrame": 77,
-        "endFrame": 85
-      },
-      {
-        "text": "for",
-        "startFrame": 85,
-        "endFrame": 89
-      },
-      {
-        "text": "Bear.",
-        "startFrame": 89,
-        "endFrame": 95
+        "endFrame": 49
       }
     ],
     "B01A": [

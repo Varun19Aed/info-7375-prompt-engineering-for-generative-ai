@@ -15,3 +15,7 @@ Deliberate deviations (logged, not silent):
   Removed at the author's request; the recap now leads straight into the outro.
 - (v6) One-accent rule deviation in B08: both NOT SHOWN items are red, at the author's request, so the
   two limits read as equally important.
+- (v7) IN-FOR-BEAR LAW deviation: the narrator introduces himself as "Liam" only (no "in for Bear"),
+  and the reel signs off "At Mayank". The channel handle is @Mayank everywhere, at the author's request.
+- (v7) OUTRO-LOCK: the toolkit's ClaudeTitleOutro hardcodes @NikBearBrown with no override. It was
+  left untouched; this reel uses a reel-local copy (TcTitleOutro) that is identical except for a handle prop.

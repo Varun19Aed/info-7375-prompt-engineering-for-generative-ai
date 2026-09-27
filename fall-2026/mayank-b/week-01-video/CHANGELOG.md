@@ -151,4 +151,30 @@ can follow the arithmetic, not just watch bars move.
   weights reproduce `probabilities()` to 1e-12.
 - Test stills → two fixes before the render (footers wrapped; raw "e^z" in a footer).
 - Re-rendered B02, B03, B08. Review cut + clean master: **166.5 s (2:47)**, 12 beats, Gate V 0 BLOCKER / 0 MAJOR.
-- README, SOURCES, SHOTLIST, CHECKS-REPORT, FACTCHECK, MANUAL-QC updated. **← current version**
+- README, SOURCES, SHOTLIST, CHECKS-REPORT, FACTCHECK, MANUAL-QC updated.
+- Pushed as commit `9bb6f99` (v6). CI still red only from the instructor's `nik-bear-brown/SYNC.md` broken link (unchanged since `d1d0743`); no error from this folder.
+
+## 2026-09-27 — v7: @NikBearBrown → @Mayank everywhere; intro "Hola, this is Liam"
+
+Why (Mayank's review): the outro (02:43) and the rest of the video carried the @NikBearBrown handle;
+the video should sign as @Mayank, and the intro should say "Hola, this is Liam".
+
+- **B00 narration:** "Hola — this is Liam, in for Bear. …" → "Hola, this is Liam. …" (rest unchanged;
+  9.62 s → 9.02 s). Speech-recognition check heard "Ola this is Liam, turn a model's temperature down…".
+- **B00 composer chip:** folderLabel `@NikBearBrown` → `@Mayank`.
+- **Corner bug on every body beat (B01A–B08):** the NikBearBrown logo SVG → an "@Mayank" serif wordmark
+  (the skill's LOGO LAW fallback when a channel has no logo file).
+- **Outro (BOUT):** handle `@NikBearBrown` → `@Mayank`. The toolkit's `ClaudeTitleOutro` hardcodes the
+  handle (OUTRO-LOCK), so it was left untouched and the reel now uses `TcTitleOutro`, a reel-local copy
+  with a `handle` prop (same layout, mascot seed and colours).
+- **Outro narration:** "Temperature Is Not a Fact Checker. At Nik Bear Brown. Liam, in for Bear." →
+  "Temperature Is Not a Fact Checker. At Muh-yunk." (4.74 s → 3.24 s). "Muh-yunk" is a respelling so
+  Kokoro says Mayank closer to right: plain "Mayank" came out "May-ink". Six candidate pronunciations
+  are in `_name-test/` (local only, not pushed) for Mayank to choose by ear.
+- **Metadata:** persona "Liam (in for Bear)" → "Liam"; `in_for_bear` true → false; folderLabel → `@Mayank`.
+  Same edits in `code/author_sheet.py`.
+- Re-rendered B00, B01A, B02, B03, B04, B05, B06, B07, B08, BOUT (every beat showing a handle).
+- Review cut + clean master: **164.4 s (2:44)**, 12 beats, Gate V 0 BLOCKER / 0 MAJOR. Frame check
+  (`_qc/sheet-v7.png`): @Mayank on the B00 chip, all 8 body-beat corners and the outro; no @NikBearBrown left.
+- SOURCES (logo row, outro credit), CHECKS-REPORT (IN-FOR-BEAR / OUTRO-LOCK deviations), FRICTIONAL updated.
+  **← current version**

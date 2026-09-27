@@ -7,3 +7,4 @@ _render.log
 .DS_Store
 __pycache__/
 *-slate.mp4
+_name-test/

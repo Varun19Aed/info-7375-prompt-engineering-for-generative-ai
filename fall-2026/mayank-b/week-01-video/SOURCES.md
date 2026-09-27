@@ -4,13 +4,13 @@
 | Item | Use | Licence / terms |
 |---|---|---|
 | Chapter 1, `01-randomness-and-first-prompts.md` (INFO 7375 course text) | concept, scores [1, 2, 3], the `probabilities()` / `sample()` code, the constructed wrong-answer counterexample, the boundary | course material, used for coursework |
-| brutalist.art toolkit (github.com/nikbearbrown/brutalist.art) | pipeline, bookend scenes (ClaudeComposerAsk, BrutalistHesitantWriter, ClaudeVerdictArtifact, ClaudeTitleOutro), compile + QC gates | public course toolkit; no licence file in the repo |
+| brutalist.art toolkit (github.com/nikbearbrown/brutalist.art) | pipeline, bookend scenes (ClaudeComposerAsk, BrutalistHesitantWriter, ClaudeVerdictArtifact; the outro is a reel-local copy of ClaudeTitleOutro with a handle prop), compile + QC gates | public course toolkit; no licence file in the repo |
 | Kokoro-82M via kokoro-onnx, voice `am_onyx` | narration, generated locally | Apache-2.0 |
 | Remotion 4 | rendering | Remotion licence (free for individuals) |
 | matplotlib mathtext (via `typeset_math.py`) | equation SVGs | matplotlib licence (PSF-style) |
 | faster-whisper (via `align.py`) | word timings only | MIT |
 | EB Garamond (bundled in the toolkit) | serif type | SIL Open Font License 1.1 |
-| NikBearBrown logo (`logos/bear-brown/bear-brown-logo-1.svg`, from the toolkit) | small corner mark, per the skill's LOGO LAW | the channel's own mark, supplied by the toolkit |
+| "@Mayank" corner wordmark and outro handle (v7) | channel mark per the skill's LOGO LAW fallback (no logo file → handle as a serif wordmark); replaced the NikBearBrown logo used in v1–v6 | made for this video |
 | Python `random` / `math` | sampling and arithmetic | PSF |
 
 No stock footage, no images, no music, no paid services.

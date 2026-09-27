@@ -26,7 +26,7 @@ CODE = '''def probabilities(logits, temperature=1.0):
 
 beats = [
   beat("B00", "cold open — the ask",
-       "Hola — this is Liam, in for Bear. Turn a model's temperature down and its answers sound more certain. "
+       "Hola, this is Liam. Turn a model's temperature down and its answers sound more certain. "
        "Does that make them more correct? We ran the chapter's own code to find out.",
        "ClaudeComposerAsk",
        {"greeting": "Hola, Liam", "topic": "CHAPTER 1 · TEMPERATURE", "segment": TITLE.rstrip('.'),
@@ -36,7 +36,7 @@ beats = [
                    "T = 0.5   top outcome  0.8668",
                    "T = 2.0   top outcome  0.5065",
                    "ranking at every T:  2 > 1 > 0"],
-        "folderLabel": "@NikBearBrown"},
+        "folderLabel": "@Mayank"},
        [{"at": "Hola", "event": "greeting + composer; the question types in"},
         {"at": "We ran", "event": "running indicator, then four stdout lines from run_temperature.py (real output, not a Claude reply)"}],
        lane="BOOKEND"),
@@ -147,9 +147,9 @@ beats = [
        [{"at": "The recap", "event": "artifact page; four findings reveal in narration order"}],
        lane="BOOKEND"),
   beat("BOUT", "outro — title restate",
-       "Temperature Is Not a Fact Checker. At Nik Bear Brown. Liam, in for Bear.",
-       "ClaudeTitleOutro", {"title": TITLE, "slug": SLUG},
-       [{"at": 0.0, "event": "title card, terracotta period, @NikBearBrown handle"}],
+       "Temperature Is Not a Fact Checker. At Muh-yunk.",  # spelled for Kokoro; on screen: @Mayank
+       "TcTitleOutro", {"title": TITLE, "slug": SLUG, "handle": "@Mayank"},
+       [{"at": 0.0, "event": "title card, terracotta period, @Mayank handle"}],
        lane="BOOKEND"),
 ]
 
@@ -157,12 +157,12 @@ sheet = {"metadata": {
     "title": TITLE, "slug": SLUG, "topic": "CHAPTER 1 · TEMPERATURE",
     "concept": "Temperature controls how concentrated the choices are; it doesn't check facts",
     "source": "01-randomness-and-first-prompts.md §'Temperature is a concentration control, not a fact checker'",
-    "register": "Teardown", "audience": "Claude", "brand": "claude-liam", "persona": "Liam (in for Bear)",
-    "in_for_bear": True, "voice": "am_onyx", "engine": "kokoro", "voice_kokoro": "am_onyx",
+    "register": "Teardown", "audience": "Claude", "brand": "claude-liam", "persona": "Liam",
+    "in_for_bear": False, "voice": "am_onyx", "engine": "kokoro", "voice_kokoro": "am_onyx",
     "palette": "claude", "style_preset": "claude", "ground": "#FAF9F5",
     "typography": {"serif": "Tiempos/EB Garamond", "ui": "system sans", "mono": "SF Mono"},
     "greeting": "Hola, Liam", "greeting_note": "hello lexicon: Spanish. Wagwan is Bear's only; Liam never takes it.",
-    "folderLabel": "@NikBearBrown", "aspect_ratio": "16:9", "target_runtime_s": [120, 180],
+    "folderLabel": "@Mayank", "aspect_ratio": "16:9", "target_runtime_s": [120, 180],
     "derived_from": "beat_sheet.json",
     "evidence": "code/run_temperature.py -> code/temperature_results.json (every on-screen number)",
   }, "beats": beats}

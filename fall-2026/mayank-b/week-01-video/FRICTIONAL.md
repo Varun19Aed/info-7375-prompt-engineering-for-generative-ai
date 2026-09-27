@@ -78,3 +78,11 @@ Dates are local. Each entry: what I tried → what broke → what I did instead.
   full disk. All pipeline commands now run with `< /dev/null`.
 - My v2 QC claim that B01 "finishes inside the beat" was wrong. Its last line was still typing at the
   cut, and I only caught it in the v5 frame check. Fixed and logged in CHANGELOG v5.
+
+## 2026-09-27 — rebrand to @Mayank (v7)
+- **The outro handle could not be changed through settings.** `ClaudeTitleOutro` hardcodes
+  `@NikBearBrown` ("no prop, no lookup, no override", per OUTRO-LOCK.md). → Left the shared component
+  alone (changing it would alter every other reel) and wrote a reel-local copy with a `handle` prop.
+- **Kokoro mispronounces "Mayank"**: speech recognition heard "May-ink" / "Millionk". Tried six
+  respellings; used "Muh-yunk" (heard as "my yonk"). A speech recogniser is a weak judge of a name,
+  so Mayank is checking the candidates by ear in `_name-test/`.

@@ -29,3 +29,7 @@ Frames: `sheet-v6.png` (B02 and B03 at 15/50/85%, B08 at 85%, BVDT → BOUT join
 | 13 | B02, B03 | MINOR | footers wrapped to two lines (test stills) | shorter text, nowrap | fixed |
 | 14 | B02 | MINOR | "e^z" as raw caret text in the footer (math rule) | "direct exponentials" | fixed |
 All numbers on screen checked against `code/build_props.py` output. BVDT → BOUT join clean.
+
+## v7 (2026-09-27)
+`sheet-v7.png`: B00 chip, outro card, and the lower-right corner of every beat. @Mayank everywhere a
+handle appears; no @NikBearBrown on screen. Gate V: 0 BLOCKER / 0 MAJOR.

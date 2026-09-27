@@ -8,8 +8,8 @@
     "register": "Teardown",
     "audience": "Claude",
     "brand": "claude-liam",
-    "persona": "Liam (in for Bear)",
-    "in_for_bear": true,
+    "persona": "Liam",
+    "in_for_bear": false,
     "voice": "am_onyx",
     "engine": "kokoro",
     "voice_kokoro": "am_onyx",
@@ -23,7 +23,7 @@
     },
     "greeting": "Hola, Liam",
     "greeting_note": "hello lexicon: Spanish. Wagwan is Bear's only; Liam never takes it.",
-    "folderLabel": "@NikBearBrown",
+    "folderLabel": "@Mayank",
     "aspect_ratio": "16:9",
     "target_runtime_s": [
       120,
@@ -32,12 +32,14 @@
     "derived_from": "beat_sheet.json",
     "evidence": "code/run_temperature.py -> code/temperature_results.json (every on-screen number)",
     "build": {
-      "at": "2026-09-27T09:24:45",
+      "at": "2026-09-27T09:52:05",
       "cut": "master",
       "filled": 12,
       "of": 12,
       "slates": [],
-      "skin_warnings": []
+      "skin_warnings": [
+        "BOUT: palette=claude but the outro is 'TcTitleOutro' — OUTRO LAW wants ClaudeTitleOutro"
+      ]
     }
   },
   "beats": [
@@ -45,7 +47,7 @@
       "beat_id": "B00",
       "act": "cold open — the ask",
       "lane": "BOOKEND",
-      "narration_text": "Hola — this is Liam, in for Bear. Turn a model's temperature down and its answers sound more certain. Does that make them more correct? We ran the chapter's own code to find out.",
+      "narration_text": "Hola, this is Liam. Turn a model's temperature down and its answers sound more certain. Does that make them more correct? We ran the chapter's own code to find out.",
       "voice": "am_onyx",
       "engine": "kokoro",
       "shot": {
@@ -76,25 +78,25 @@
               "T = 2.0   top outcome  0.5065",
               "ranking at every T:  2 > 1 > 0"
             ],
-            "folderLabel": "@NikBearBrown",
-            "durationSeconds": 9.62,
+            "folderLabel": "@Mayank",
+            "durationSeconds": 9.02,
             "largeText": true
           },
           "rendered": {
             "out": "media/B00.mp4",
-            "at": "2026-09-23T23:09:11.518636+00:00"
+            "at": "2026-09-27T13:42:14.607412+00:00"
           }
         }
       },
       "audio_file": "mp3/beat-B00.mp3",
-      "actual_duration_s": 9.62,
-      "render_duration_s": 9.625,
+      "render_duration_s": 9.041666666666666,
       "build": {
         "status": "VIDEO",
         "src": "media/B00.mp4",
         "filled_by": "remotion:ClaudeComposerAsk",
-        "at": "2026-09-27T09:24:45"
-      }
+        "at": "2026-09-27T09:52:05"
+      },
+      "actual_duration_s": 9.02
     },
     {
       "beat_id": "B01",
@@ -151,7 +153,7 @@
         "status": "VIDEO",
         "src": "media/B01.mp4",
         "filled_by": "remotion:BrutalistHesitantWriter",
-        "at": "2026-09-27T09:24:45"
+        "at": "2026-09-27T09:52:05"
       },
       "qc": {
         "sparse_by_design": true,
@@ -220,7 +222,7 @@
           },
           "rendered": {
             "out": "media/B01A.mp4",
-            "at": "2026-09-27T09:35:42.361488+00:00"
+            "at": "2026-09-27T13:43:15.787261+00:00"
           }
         }
       },
@@ -231,7 +233,7 @@
         "status": "VIDEO",
         "src": "media/B01A.mp4",
         "filled_by": "remotion:TcNextWord",
-        "at": "2026-09-27T09:24:45"
+        "at": "2026-09-27T09:52:05"
       }
     },
     {
@@ -308,7 +310,7 @@
           },
           "rendered": {
             "out": "media/B02.mp4",
-            "at": "2026-09-27T13:21:42.384389+00:00"
+            "at": "2026-09-27T13:44:25.833721+00:00"
           }
         }
       },
@@ -319,7 +321,7 @@
         "status": "VIDEO",
         "src": "media/B02.mp4",
         "filled_by": "remotion:TcScoresToOdds",
-        "at": "2026-09-27T09:24:45"
+        "at": "2026-09-27T09:52:05"
       }
     },
     {
@@ -385,7 +387,7 @@
           },
           "rendered": {
             "out": "media/B03.mp4",
-            "at": "2026-09-27T13:22:51.884259+00:00"
+            "at": "2026-09-27T13:45:32.972250+00:00"
           }
         }
       },
@@ -396,7 +398,7 @@
         "status": "VIDEO",
         "src": "media/B03.mp4",
         "filled_by": "remotion:TcTemperatureDial",
-        "at": "2026-09-27T09:24:45"
+        "at": "2026-09-27T09:52:05"
       }
     },
     {
@@ -481,7 +483,7 @@
           },
           "rendered": {
             "out": "media/B04.mp4",
-            "at": "2026-09-23T22:56:27.504958+00:00"
+            "at": "2026-09-27T13:46:37.228127+00:00"
           }
         }
       },
@@ -492,7 +494,7 @@
         "status": "VIDEO",
         "src": "media/B04.mp4",
         "filled_by": "remotion:TcRatio",
-        "at": "2026-09-27T09:24:45"
+        "at": "2026-09-27T09:52:05"
       }
     },
     {
@@ -539,7 +541,7 @@
           },
           "rendered": {
             "out": "media/B05.mp4",
-            "at": "2026-09-23T22:58:05.121233+00:00"
+            "at": "2026-09-27T13:47:35.583426+00:00"
           }
         }
       },
@@ -550,7 +552,7 @@
         "status": "VIDEO",
         "src": "media/B05.mp4",
         "filled_by": "remotion:TcCode",
-        "at": "2026-09-27T09:24:45"
+        "at": "2026-09-27T09:52:05"
       }
     },
     {
@@ -619,7 +621,7 @@
           },
           "rendered": {
             "out": "media/B06.mp4",
-            "at": "2026-09-23T22:59:53.138757+00:00"
+            "at": "2026-09-27T13:48:38.411315+00:00"
           }
         }
       },
@@ -630,7 +632,7 @@
         "status": "VIDEO",
         "src": "media/B06.mp4",
         "filled_by": "remotion:TcSampleCounts",
-        "at": "2026-09-27T09:24:45"
+        "at": "2026-09-27T09:52:05"
       }
     },
     {
@@ -681,7 +683,7 @@
           },
           "rendered": {
             "out": "media/B07.mp4",
-            "at": "2026-09-23T23:01:38.600465+00:00"
+            "at": "2026-09-27T13:49:42.905186+00:00"
           }
         }
       },
@@ -692,7 +694,7 @@
         "status": "VIDEO",
         "src": "media/B07.mp4",
         "filled_by": "remotion:TcWrongAnswer",
-        "at": "2026-09-27T09:24:45"
+        "at": "2026-09-27T09:52:05"
       }
     },
     {
@@ -761,7 +763,7 @@
           },
           "rendered": {
             "out": "media/B08.mp4",
-            "at": "2026-09-27T13:23:46.012543+00:00"
+            "at": "2026-09-27T13:50:35.410959+00:00"
           }
         }
       },
@@ -772,7 +774,7 @@
         "status": "VIDEO",
         "src": "media/B08.mp4",
         "filled_by": "remotion:TcBoundary",
-        "at": "2026-09-27T09:24:45"
+        "at": "2026-09-27T09:52:05"
       }
     },
     {
@@ -819,14 +821,14 @@
         "status": "VIDEO",
         "src": "media/BVDT.mp4",
         "filled_by": "remotion:ClaudeVerdictArtifact",
-        "at": "2026-09-27T09:24:45"
+        "at": "2026-09-27T09:52:05"
       }
     },
     {
       "beat_id": "BOUT",
       "act": "outro — title restate",
       "lane": "BOOKEND",
-      "narration_text": "Temperature Is Not a Fact Checker. At Nik Bear Brown. Liam, in for Bear.",
+      "narration_text": "Temperature Is Not a Fact Checker. At Muh-yunk.",
       "voice": "am_onyx",
       "engine": "kokoro",
       "shot": {
@@ -836,31 +838,33 @@
         "show": [
           {
             "at": 0.0,
-            "event": "title card, terracotta period, @NikBearBrown handle"
+            "event": "title card, terracotta period, @Mayank handle"
           }
         ],
         "remotion": {
-          "pattern": "ClaudeTitleOutro",
+          "pattern": "TcTitleOutro",
           "props": {
             "title": "Temperature Is Not a Fact Checker.",
             "slug": "temperature-concentration",
-            "durationSeconds": 4.74
+            "durationSeconds": 3.24,
+            "handle": "@Mayank"
           },
           "rendered": {
             "out": "media/BOUT.mp4",
-            "at": "2026-09-23T23:06:01.920397+00:00"
+            "at": "2026-09-27T13:50:52.300680+00:00"
           }
         }
       },
       "audio_file": "mp3/beat-BOUT.mp3",
-      "actual_duration_s": 4.74,
-      "render_duration_s": 4.75,
+      "render_duration_s": 3.25,
       "build": {
         "status": "VIDEO",
         "src": "media/BOUT.mp4",
-        "filled_by": "remotion:ClaudeTitleOutro",
-        "at": "2026-09-27T09:24:45"
-      }
+        "filled_by": "remotion:TcTitleOutro",
+        "at": "2026-09-27T09:52:05"
+      },
+      "tts_note": "'Mayank' respelled 'Muh-yunk' for Kokoro (read 'Mayank' as 'May-ink'); the screen shows @Mayank.",
+      "actual_duration_s": 3.24
     }
   ]
 }
