@@ -235,6 +235,7 @@ Every push to GitHub is listed at the bottom with its date and commit note.
 
   Claude pushed the Figma repo. The films' sources, paperwork, evidence screenshots and captions went up (153 files, 5.3 MB); render output is git-ignored. The deep explainer is building, using my words, my attested CV facts, the gap analysis and the Figma board scan. My committee and five-courses claims are attributed to me, because the CV facts file doesn't list them.
 - **Then I signed off the Cowork film ("Looks great")** and pasted my publish runbook. Claude published it unlisted: https://youtu.be/JlDHbERabOg. It's at the top of "Claude & Agentic AI", and third in "Figma for Educational AI" (after the intro and the MCP film; Claude moved it there after the upload put it first). Staging refused once because the sheet had no chapter number; chapter 3 was set.
+- **Then I signed off the Claude Code film ("Looks great")** with the same runbook. It's published unlisted at https://youtu.be/FrI54hgrGp4, at the top of "Claude & Agentic AI" and fourth in "Figma for Educational AI" (intro → MCP → Cowork → Claude Code).
 
 ### 2026-09-26 — The assignment went out, and its first worked recipe
 
@@ -338,3 +339,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-26 | docs(fall-2026): log the Figma repo push and the why-I-am-doing-this film request |
 | 2026-09-26 | chore(fall-2026): sync the demand report and EDU_PRODUCT family from the master |
 | 2026-09-26 | docs(fall-2026): log the Cowork film going up unlisted |
+| 2026-09-26 | docs(fall-2026): log the Claude Code film going up unlisted |
