@@ -148,3 +148,31 @@ Process log for the week-01 explainer video (lesson 01, randomness and first pro
 - **What Claude or another person contributed:** Claude Code rendered each round, inspected frames by eye (that's how the false credit, the clipped B07 code line and the B01 wording problem were caught), read the toolkit and kokoro-onnx source to find the phoneme route, and wrote and verified the wrapper. I made each decision: the B01 wording, keeping FormACard under ART_STRICT=0, the phoneme override. A speech-recognition spot check heard "Namaste" and BOUT's "Prasad" correctly but B00's "Prasad" as "preside"; I still need to judge that by ear.
 - **What I understand now / still do not understand:** Three checks (GATE V, GATE T, and Claude Code inspecting the frames by eye) caught different things. GATE V missed the clipped code and the false credit; GATE T's card-clip check gave a false positive. I don't yet know which B03 fix is best.
 - **Evidence and next step:** `TYPECHECK.md` (1 FAIL remaining: B03), `_qc/REPORT.md`, BUILD-LOG.md, `tools/kokoro_phoneme_override.py`. Next: decide B03, re-run `./art final`.
+
+### 2026-09-26 — B03 accessibility fix, the final-path gate bug, and the exported final
+
+- **Date and what I was working on:** Same day, closing out. Clearing the last GATE T failure (B03) and exporting the 1080p final into `final/`.
+- **I tried / expected:** I chose to move B03 from `ReqBars` to `ExecutedData` in probability mode: four rows (top token at 1.0 and 0.5; the other two tokens at 1.0 and 0.5, labeled "(sum of tokens 0 and 1)"), with the narration unchanged. Claude Code then re-ran GATE T and `./art final`. The expectation was that a clean GATE T would let the final export.
+- **What happened:**
+  - **B03 contrast.** `ReqBars` always draws its second-series numbers and legend in terracotta text, 2.74:1 on cream, below GATE T's 4.5:1 WCAG minimum, and the component has no colour prop.
+  - **Why my exact spec didn't fit.** In probability mode, four label-plus-bar rows and the 0–100% scale ran past the bottom of the frame and pushed the source note off screen, even with the title removed. GATE T still passed, because it checks type, not layout against the frame; Claude Code caught it by measuring the frames. Table mode with the long labels wrapped and reached 97.9% of the frame height. What fits: table mode with short row labels and "Other two = sum of tokens 0 and 1 · evidence/temp-\*.json" in the on-screen note. A 16-word note first failed GATE T's 12-word limit, so it was shortened to 11. Content now ends at 91% of the height, the same as B04. GATE T: PASS on all 11 beats.
+  - **Final, second failure.** `./art final` then exited 2 again with `final/` empty, for a different reason. The final compile (`runtime/scripts/compile.py`) runs GATE V through its own hardcoded call to `qc/final_frame_check.py` and ignored `ART_STRICT=0`. So the four B05/BOUT `underfill` MAJORs, which the review path (`run.sh`) already let through under my approved exception, refused the final.
+  - **Final, third failure.** Claude Code's first patch passed `--lenient` under `ART_STRICT=0`, but the final was still refused. With `--lenient` the checker returns exit 1 ("warnings only"); `run.sh` fails only on exit ≥ 2, but `compile.py`'s `sh()` failed on any non-zero exit.
+- **What I did:**
+  - I accepted the table-mode B03, which differs from my spec in two ways: no bars, and the "sum of tokens 0 and 1" wording is in the note, not the row labels.
+  - I approved a local patch to `compile.py` so the final path honors `ART_STRICT` the same way `run.sh` does, with BLOCKERs still enforced either way.
+  - Claude Code wrote the patch in two iterations: first `--lenient` under `ART_STRICT=0`, then treating exit 1 as a pass (failing only on exit ≥ 2).
+  - BUILD-LOG.md records the exact diff and the justification. The review path already honored the approved exception; the final path had a separate hardcoded check that ignored the same flag; the patch fixes that inconsistency and doesn't create a new exception.
+  - BUILD-LOG.md also states the one side effect: in strict mode, a MINOR-only result now passes the final too, as it already did in `run.sh`.
+  - Result: `ART_STRICT=0 ./art final --height 1080 --out final/` exited 0 and wrote `final/less-room-to-wander.mp4` (237.4 s, 1920×1080 H.264 + AAC, sha256 `cf92ac21e352926c681cd5b401b7fd8781d53327f0b51a4b5cf10407ec4557d1`) with its `verified.json` receipt. GATE V on the final candidate: 0 BLOCKER, 4 MAJOR (the B05/BOUT exception).
+  - Claude Code checked the final's frames: no burned-in beat labels, and the new B03 table is present.
+  - I watched the review cut with sound after the pronunciation fix and approved it.
+- **What Claude or another person contributed:**
+  - Claude Code rendered each B03 variant, measured where the content ended against the title-safe line, and read `compile.py`, `run.sh` and `final_frame_check.py` to find both final-path problems.
+  - It wrote and tested both patch iterations, updated BUILD-LOG.md, SOURCES.md, README.md and BUILD-PROMPT.md, and verified the exported file (streams, duration, volume, frames).
+  - I made the decisions: option (a) for B03, accepting the table-mode deviation, the `compile.py` patch and how it's framed, and approving the review cut.
+- **What I understand now / still do not understand:**
+  - A gate's exit-code contract matters as much as its flags. The same checker run in two places gave two verdicts, because one caller treated "warnings only" as failure.
+  - Every accessibility or layout fix here traded something visible (B03's bars, B05/BOUT's fill), and those trades are mine to own.
+  - Still open: the toolkit's local changes (10 removed example files, the regenerated `package-lock.json`, the `compile.py` patch) aren't reported upstream yet. Neither is the list of toolkit bugs from these entries.
+- **Evidence and next step:** `final/less-room-to-wander.mp4` and `final/less-room-to-wander.verified.json` (not committed; the MP4 goes to Canvas), BUILD-LOG.md, `TYPECHECK.md` (PASS). Checkpoint 3 is commit `2eb73eb288510528a096016c8f96664fee7b578c`. Next: submit the final MP4 and commit hash on Canvas, and send the instructor the toolkit bug list.
