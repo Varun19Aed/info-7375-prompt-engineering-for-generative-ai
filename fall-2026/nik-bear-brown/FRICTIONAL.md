@@ -252,6 +252,15 @@ Every push to GitHub is listed at the bottom with its date and commit note.
     - 15: needs a Figma token only I can create.
   - **What's being built overnight:** the other ten, as **experiment reports**. Agents run real tests on my Figma Education account (through the desktop session's Figma connection) and on headless Claude Code, then build each film from the real artifacts. Each film says an agent ran it and that I haven't reviewed it.
   - **Status:** `OVERNIGHT-REPORT.md` in the Figma repo. Nothing gets staged or published.
+- **2026-09-27: what actually happened overnight.**
+  - At about 3 am, six builders stopped on my account's **weekly usage limit**. When I said "Try again" at 12:56 pm, they resumed.
+  - By mid-afternoon all ten masters were done, each 4K with every gate passing, none published.
+  - The verdicts:
+    - **strong:** 3 (the agent built far more faithfully from design data than from a screenshot: 26 vs 4 of 27 values), 7 (a component description steered the agent), 12 (the tutor's uncertainty states), 2 (the Education MCP budget is enough for classwork);
+    - **middle:** 1, 6 and 8;
+    - **weak:** 4 (a clean file made no real difference), 11 (the allow-list built from the permissions table enforced only 6 of 18 needs), 14 (Weave isn't reachable through MCP without a paid Weave account).
+  - **Costs:** 61 Figma MCP calls; the CLI reported $3.27 at list price for the headless builds; no Figma AI credits.
+  - **Waiting on me:** reviews, the student tests, the merge, the credit-meter reading, and a repeated "Merhaba" greeting on four films.
 
 ### 2026-09-26 — The assignment went out, and its first worked recipe
 
@@ -360,3 +369,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-27 | docs(fall-2026): log the last two Figma films going up unlisted |
 | 2026-09-27 | docs(fall-2026): log the plan for the next 15 Figma films |
 | 2026-09-27 | docs(fall-2026): log the overnight run of the next Figma films |
+| 2026-09-27 | docs(fall-2026): log the overnight Figma films and their verdicts |
