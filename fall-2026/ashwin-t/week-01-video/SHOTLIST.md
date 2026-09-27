@@ -2,7 +2,7 @@
 
 All beats: `shot.type REMOTION`, `source own`, pattern `SoftmaxOffset`
 (`brutalist.art/runtime/remotion/src/scenes/SoftmaxOffset.tsx`; a copy is in
-`remotion/` in this folder). No Manim, no LaTeX, no stills, no gen-AI, no pantry.
+`remotion/SoftmaxOffset.tsx.txt` in this folder). No Manim, no LaTeX, no stills, no gen-AI, no pantry.
 Each beat's clip is exactly as long as its measured narration.
 
 | Beat | Mode | What moves | Label on screen |
@@ -26,5 +26,5 @@ Each beat's clip is exactly as long as its measured narration.
 | B05 | card (cream) | lines reveal: WHAT THIS DOES NOT SHOW → shown / not shown / 66.52% / nothing here says the model is right | — |
 | B06 | card (cream) | recap: keeps the gaps / throws away the shared size / a big score alone is not confidence | — |
 
-Palette: one palette throughout — cream ground, warm ink, terracotta accent (B05 was dark in drafts 1–3; made cream in draft 4 for consistency).
+Palette: one palette throughout — cream ground, warm ink, terracotta accent (B05 was dark in drafts 1–3; made cream in draft 4 for consistency). Accent for text and lines is #A84A28 (5.42:1 on cream, WCAG AA) after Gate T rejected the lighter #D97757.
 Text cards (B00, B05, B06) carry `qc.sparse_by_design` in `beat_sheet.json`: they reveal one line per spoken sentence, so Gate V's mid-beat fill check is waived for them with a written reason; the fully revealed cards fill the frame.

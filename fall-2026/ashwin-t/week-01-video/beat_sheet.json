@@ -17,8 +17,8 @@
       "w1-evidence/intermediates-output.txt"
     ],
     "build": {
-      "at": "2026-09-26T11:49:02",
-      "cut": "review",
+      "at": "2026-09-27T13:38:36",
+      "cut": "master",
       "filled": 18,
       "of": 18,
       "slates": [],
@@ -52,7 +52,7 @@
                 "strong": true
               },
               {
-                "text": "What softmax keeps — and what it throws away.",
+                "text": "What softmax keeps, and what it throws away.",
                 "atS": 4.59
               }
             ],
@@ -60,6 +60,10 @@
           },
           "cues": {
             "lines.2.atS": "p2"
+          },
+          "rendered": {
+            "out": "media/B00.mp4",
+            "at": "2026-09-27T17:28:29.441822+00:00"
           }
         }
       },
@@ -73,8 +77,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B00.mp4",
-        "filled_by": "media",
-        "at": "2026-09-26T11:49:02"
+        "filled_by": "remotion:SoftmaxOffset",
+        "at": "2026-09-27T13:38:36"
       }
     },
     {
@@ -98,6 +102,10 @@
           },
           "cues": {
             "stepAtS": "p2"
+          },
+          "rendered": {
+            "out": "media/B01A.mp4",
+            "at": "2026-09-27T17:28:48.454349+00:00"
           }
         }
       },
@@ -107,8 +115,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B01A.mp4",
-        "filled_by": "media",
-        "at": "2026-09-26T11:49:02"
+        "filled_by": "remotion:SoftmaxOffset",
+        "at": "2026-09-27T13:38:36"
       }
     },
     {
@@ -128,6 +136,10 @@
             "title": "How the next token is chosen",
             "label": "diagram",
             "durationS": 10.56
+          },
+          "rendered": {
+            "out": "media/B01B.mp4",
+            "at": "2026-09-27T17:29:12.517556+00:00"
           }
         }
       },
@@ -137,8 +149,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B01B.mp4",
-        "filled_by": "media",
-        "at": "2026-09-26T11:49:02"
+        "filled_by": "remotion:SoftmaxOffset",
+        "at": "2026-09-27T13:38:36"
       }
     },
     {
@@ -162,6 +174,10 @@
           },
           "cues": {
             "captionAtS": "p1"
+          },
+          "rendered": {
+            "out": "media/B01C.mp4",
+            "at": "2026-09-27T17:29:23.573100+00:00"
           }
         }
       },
@@ -171,14 +187,14 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B01C.mp4",
-        "filled_by": "media",
-        "at": "2026-09-26T11:49:02"
+        "filled_by": "remotion:SoftmaxOffset",
+        "at": "2026-09-27T13:38:36"
       }
     },
     {
       "beat_id": "B01D",
       "act": "1 engine",
-      "narration_text": "Today I want to show you one thing about the conversion step — what it keeps, and what it silently throws away.",
+      "narration_text": "Today I want to show you one thing about the conversion step: what it keeps, and what it silently throws away.",
       "estimated_duration_s": 7,
       "shot": {
         "type": "REMOTION",
@@ -191,22 +207,26 @@
             "step": 4,
             "title": "How the next token is chosen",
             "label": "diagram",
-            "durationS": 6.23,
-            "captionAtS": 3.37
+            "durationS": 6.25,
+            "captionAtS": 3.44
           },
           "cues": {
             "captionAtS": "p1"
+          },
+          "rendered": {
+            "out": "media/B01D.mp4",
+            "at": "2026-09-27T17:29:39.180395+00:00"
           }
         }
       },
       "audio_file": "mp3/beat-B01D.mp3",
-      "actual_duration_s": 6.23,
+      "actual_duration_s": 6.25,
       "render_duration_s": 6.25,
       "build": {
         "status": "VIDEO",
         "src": "media/B01D.mp4",
-        "filled_by": "media",
-        "at": "2026-09-26T11:49:02"
+        "filled_by": "remotion:SoftmaxOffset",
+        "at": "2026-09-27T13:38:36"
       }
     },
     {
@@ -239,9 +259,13 @@
             ],
             "title": "Real output from the course lesson",
             "label": "recorded output",
-            "source": "source: lessons/01-randomness-and-first-prompts/code/main.py → reference-output.txt · inputs [1, 2, 3] from demo()",
+            "source": "source: lesson code/main.py → reference-output.txt · inputs [1, 2, 3] from demo()",
             "probsAtS": -1,
             "durationS": 6.87
+          },
+          "rendered": {
+            "out": "media/B02A.mp4",
+            "at": "2026-09-27T17:29:55.089802+00:00"
           }
         }
       },
@@ -251,8 +275,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B02A.mp4",
-        "filled_by": "media",
-        "at": "2026-09-26T11:49:02"
+        "filled_by": "remotion:SoftmaxOffset",
+        "at": "2026-09-27T13:38:36"
       }
     },
     {
@@ -285,12 +309,16 @@
             ],
             "title": "Real output from the course lesson",
             "label": "recorded output",
-            "source": "source: lessons/01-randomness-and-first-prompts/code/main.py → reference-output.txt · inputs [1, 2, 3] from demo()",
+            "source": "source: lesson code/main.py → reference-output.txt · inputs [1, 2, 3] from demo()",
             "probsAtS": 0.59,
             "durationS": 9.71
           },
           "cues": {
             "probsAtS": "p1"
+          },
+          "rendered": {
+            "out": "media/B02B.mp4",
+            "at": "2026-09-27T17:30:17.337011+00:00"
           }
         }
       },
@@ -300,8 +328,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B02B.mp4",
-        "filled_by": "media",
-        "at": "2026-09-26T11:49:02"
+        "filled_by": "remotion:SoftmaxOffset",
+        "at": "2026-09-27T13:38:36"
       }
     },
     {
@@ -334,10 +362,14 @@
             ],
             "title": "Real output from the course lesson",
             "label": "recorded output",
-            "source": "source: lessons/01-randomness-and-first-prompts/code/main.py → reference-output.txt · inputs [1, 2, 3] from demo()",
+            "source": "source: lesson code/main.py → reference-output.txt · inputs [1, 2, 3] from demo()",
             "probsAtS": 0,
             "sourceAtS": 0.4,
             "durationS": 3.16
+          },
+          "rendered": {
+            "out": "media/B02C.mp4",
+            "at": "2026-09-27T17:30:26.484755+00:00"
           }
         }
       },
@@ -347,8 +379,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B02C.mp4",
-        "filled_by": "media",
-        "at": "2026-09-26T11:49:02"
+        "filled_by": "remotion:SoftmaxOffset",
+        "at": "2026-09-27T13:38:36"
       }
     },
     {
@@ -392,6 +424,10 @@
           "cues": {
             "countStartS": "p1",
             "sweepAtS": "p4"
+          },
+          "rendered": {
+            "out": "media/B03A.mp4",
+            "at": "2026-09-27T17:30:50.605614+00:00"
           }
         }
       },
@@ -401,14 +437,14 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B03A.mp4",
-        "filled_by": "media",
-        "at": "2026-09-26T11:49:02"
+        "filled_by": "remotion:SoftmaxOffset",
+        "at": "2026-09-27T13:38:36"
       }
     },
     {
       "beat_id": "B03B",
       "act": "3 the test",
-      "narration_text": "Watch the percentages. They don't move. Not approximately — bitwise identical, every digit the same. The thousand vanished.",
+      "narration_text": "Watch the percentages. They don't move. Not approximately. Bitwise identical, every digit the same. The thousand vanished.",
       "estimated_duration_s": 8,
       "shot": {
         "type": "REMOTION",
@@ -439,23 +475,27 @@
               }
             ],
             "verdict": "bitwise identical?  True",
-            "verdictAtS": 3.59,
+            "verdictAtS": 3.86,
             "source": "source: w1-evidence/offset_evidence.py → offset-output.txt",
-            "durationS": 7.94
+            "durationS": 7.87
           },
           "cues": {
-            "verdictAtS": "p2+0.9"
+            "verdictAtS": "p3"
+          },
+          "rendered": {
+            "out": "media/B03B.mp4",
+            "at": "2026-09-27T17:31:10.243491+00:00"
           }
         }
       },
       "audio_file": "mp3/beat-B03B.mp3",
-      "actual_duration_s": 7.94,
-      "render_duration_s": 7.958333333333333,
+      "actual_duration_s": 7.87,
+      "render_duration_s": 7.875,
       "build": {
         "status": "VIDEO",
         "src": "media/B03B.mp4",
-        "filled_by": "media",
-        "at": "2026-09-26T11:49:02"
+        "filled_by": "remotion:SoftmaxOffset",
+        "at": "2026-09-27T13:38:36"
       }
     },
     {
@@ -480,6 +520,10 @@
           "cues": {
             "probsAtS": "p2",
             "verdictAtS": "p4"
+          },
+          "rendered": {
+            "out": "media/B03C.mp4",
+            "at": "2026-09-27T17:31:39.480341+00:00"
           }
         }
       },
@@ -489,14 +533,14 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B03C.mp4",
-        "filled_by": "media",
-        "at": "2026-09-26T11:49:02"
+        "filled_by": "remotion:SoftmaxOffset",
+        "at": "2026-09-27T13:38:36"
       }
     },
     {
       "beat_id": "B03D",
       "act": "3 the test",
-      "narration_text": "And because this code subtracts the largest score first, both runs compute the exact same intermediate numbers — which is why every digit matches.",
+      "narration_text": "And because this code subtracts the largest score first, both runs compute the exact same intermediate numbers. That's why every digit matches.",
       "estimated_duration_s": 8,
       "shot": {
         "type": "REMOTION",
@@ -523,24 +567,28 @@
               }
             ],
             "probsAtS": 1.6,
-            "verdictAtS": 7.19,
+            "verdictAtS": 7.3,
             "footer": "Identical numbers go into exp(), so identical digits come out.",
             "source": "source: w1-evidence/intermediates_evidence.py → intermediates-output.txt",
-            "durationS": 9.11
+            "durationS": 9.07
           },
           "cues": {
             "verdictAtS": "p2"
+          },
+          "rendered": {
+            "out": "media/B03D.mp4",
+            "at": "2026-09-27T17:36:40.027424+00:00"
           }
         }
       },
       "audio_file": "mp3/beat-B03D.mp3",
-      "actual_duration_s": 9.11,
-      "render_duration_s": 9.125,
+      "actual_duration_s": 9.07,
+      "render_duration_s": 9.083333333333334,
       "build": {
         "status": "VIDEO",
         "src": "media/B03D.mp4",
-        "filled_by": "media",
-        "at": "2026-09-26T11:49:02"
+        "filled_by": "remotion:SoftmaxOffset",
+        "at": "2026-09-27T13:38:36"
       }
     },
     {
@@ -571,6 +619,10 @@
           },
           "cues": {
             "rows.0.outAtS": "p1"
+          },
+          "rendered": {
+            "out": "media/B04A.mp4",
+            "at": "2026-09-27T17:32:14.381245+00:00"
           }
         }
       },
@@ -580,8 +632,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B04A.mp4",
-        "filled_by": "media",
-        "at": "2026-09-26T11:49:02"
+        "filled_by": "remotion:SoftmaxOffset",
+        "at": "2026-09-27T13:38:36"
       }
     },
     {
@@ -625,6 +677,10 @@
             "rows.1.outAtS": "p1",
             "rows.2.appearAtS": "p2",
             "rows.2.outAtS": "p3"
+          },
+          "rendered": {
+            "out": "media/B04B.mp4",
+            "at": "2026-09-27T17:32:28.663015+00:00"
           }
         }
       },
@@ -634,14 +690,14 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B04B.mp4",
-        "filled_by": "media",
-        "at": "2026-09-26T11:49:02"
+        "filled_by": "remotion:SoftmaxOffset",
+        "at": "2026-09-27T13:38:36"
       }
     },
     {
       "beat_id": "B04C",
       "act": "4 punchline",
-      "narration_text": "The size carried nothing. Only the gap survives. One and two gives twenty-six point eight nine and seventy-three point one one — and one thousand and one, one thousand and two gives exactly the same.",
+      "narration_text": "The size carried nothing. Only the gap survives. One and two gives twenty-six point eight nine and seventy-three point one one. And one thousand and one, one thousand and two gives exactly the same.",
       "estimated_duration_s": 11,
       "shot": {
         "type": "REMOTION",
@@ -676,36 +732,40 @@
               {
                 "input": "[1, 2]",
                 "output": "0.268941, 0.731059",
-                "appearAtS": 3.72,
-                "outAtS": 4.62,
+                "appearAtS": 3.69,
+                "outAtS": 4.59,
                 "highlight": true
               },
               {
                 "input": "[1001, 1002]",
                 "output": "0.268941, 0.731059",
-                "appearAtS": 8.29,
-                "outAtS": 9.91,
+                "appearAtS": 8.5,
+                "outAtS": 10.09,
                 "highlight": true
               }
             ],
-            "durationS": 12.46
+            "durationS": 12.59
           },
           "cues": {
             "rows.3.appearAtS": "p2",
             "rows.3.outAtS": "p2+0.9",
             "rows.4.appearAtS": "p3",
             "rows.4.outAtS": "p4"
+          },
+          "rendered": {
+            "out": "media/B04C.mp4",
+            "at": "2026-09-27T17:32:57.190041+00:00"
           }
         }
       },
       "audio_file": "mp3/beat-B04C.mp3",
-      "actual_duration_s": 12.46,
-      "render_duration_s": 12.5,
+      "actual_duration_s": 12.59,
+      "render_duration_s": 12.625,
       "build": {
         "status": "VIDEO",
         "src": "media/B04C.mp4",
-        "filled_by": "media",
-        "at": "2026-09-26T11:49:02"
+        "filled_by": "remotion:SoftmaxOffset",
+        "at": "2026-09-27T13:38:36"
       }
     },
     {
@@ -741,6 +801,10 @@
           },
           "cues": {
             "errorAtS": "p3"
+          },
+          "rendered": {
+            "out": "media/B04D.mp4",
+            "at": "2026-09-27T17:33:26.461714+00:00"
           }
         }
       },
@@ -750,8 +814,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B04D.mp4",
-        "filled_by": "media",
-        "at": "2026-09-26T11:49:02"
+        "filled_by": "remotion:SoftmaxOffset",
+        "at": "2026-09-27T13:38:36"
       }
     },
     {
@@ -799,10 +863,6 @@
             "lines.2.atS": "p2",
             "lines.3.atS": "p3",
             "lines.4.atS": "p6"
-          },
-          "rendered": {
-            "out": "media/B05.mp4",
-            "at": "2026-09-26T15:48:48.611453+00:00"
           }
         }
       },
@@ -816,8 +876,8 @@
       "build": {
         "status": "VIDEO",
         "src": "media/B05.mp4",
-        "filled_by": "remotion:SoftmaxOffset",
-        "at": "2026-09-26T11:49:02"
+        "filled_by": "media",
+        "at": "2026-09-27T13:38:36"
       }
     },
     {
@@ -874,7 +934,7 @@
         "status": "VIDEO",
         "src": "media/B06.mp4",
         "filled_by": "media",
-        "at": "2026-09-26T11:49:02"
+        "at": "2026-09-27T13:38:36"
       }
     }
   ]

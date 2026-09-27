@@ -15,13 +15,15 @@ no fabricated Claude output, one concept). The decisions made in that session:
    *"Here's why. Softmax divides each score's exponential by the total. Adding a
    thousand multiplies every exponential by the same factor, on top and on the bottom,
    so it cancels. And because this code subtracts the largest score first, both runs
-   compute the exact same intermediate numbers — which is why every digit matches."*
+   compute the exact same intermediate numbers. That's why every digit matches."*
 4. Voice: Kokoro `af_bella`.
 5. Build location: `~/Desktop/CSYE7375/`.
 6. After watching draft 1 (my notes: no clue what softmax is; start and end abrupt):
    add B00 question, define softmax in B01B, add B06 recap. Fix Gate V underfill.
 7. Palette: one consistent cream palette (B05 no longer dark). Skipped an extra
    "softmax arithmetic" beat to stay on one concept.
+8. Final: accessible accent #A84A28 (Gate T contrast); no em dashes in narration or on
+   screen (B01D, B03B, B03D, B04C re-voiced).
 
 ## 2. Layout expected by the commands
 
@@ -50,7 +52,8 @@ curl -LO https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-fil
 cd ../../../..
 
 # 1. install the custom component into the toolkit
-cp w1-video/remotion/SoftmaxOffset.tsx brutalist.art/runtime/remotion/src/scenes/
+# stored as .tsx.txt (the course validator rejects .tsx here); rename back on copy
+cp w1-video/remotion/SoftmaxOffset.tsx.txt brutalist.art/runtime/remotion/src/scenes/SoftmaxOffset.tsx
 git -C brutalist.art apply ../w1-video/remotion/Root.tsx.patch
 
 # 2. evidence

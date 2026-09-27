@@ -70,7 +70,7 @@ timestamps) and my answers in chat. Understanding and decisions are mine, in my 
   beats) but Gate V failed: 3 MAJOR "underfill", B01A 49% and B05 26%/35% of the safe area (min 55%).
 - **Claude:** wrote the `SoftmaxOffset` component and build/sync/verify tools (110/110 on-screen
   numbers traced); fixed a 15 s cutoff that hid Beat 5's last line.
-- **Evidence:** `_qc/REPORT.md`; commit `7d8b432`.
+- **Evidence:** draft-1 Gate V report (build folder, not kept here; the final one is `QC-GATE-V.md`); commit `7d8b432`.
 
 ## 2026-09-24 — Watching draft 1 (revision)
 
@@ -81,7 +81,7 @@ timestamps) and my answers in chat. Understanding and decisions are mine, in my 
   divide, with a slider demo where adding 1000 didn't move the bars. Asked for three changes:
   name and define softmax in Beat 1, add an intro that asks the question, and add a closing recap.
   These make the video longer, but for a reason a viewer gave, not padding.
-- **Evidence:** next commit (revision). Folder decided: `fall-2026/ashwin-t/week-01-video/`.
+- **Evidence:** commit "week-01-video: revise after draft-1 review". Folder decided: `fall-2026/ashwin-t/week-01-video/`.
   Still open: fork vs. direct push.
 
 ## 2026-09-24 — Drafts 2 and 3 (Gate V again)
@@ -111,4 +111,42 @@ timestamps) and my answers in chat. Understanding and decisions are mine, in my 
 - **Did:** asked for one consistent palette. B05 was the only dark card; now it's cream like
   every other beat. Skipped an extra "softmax arithmetic" beat on Claude's recommendation, to stay
   on one concept. Gate V clean again (0 defects).
-- **Evidence:** commit 3 (this revision).
+- **Evidence:** commit "week-01-video: revise after draft-1 review".
+
+## 2026-09-26 — Final render blocked by Gate T
+
+- **Expected:** `./art final` to pass, since every draft had passed Gate V.
+- **Happened:** Gate T (the typography check, which runs only on the final) failed 9 beats:
+  the terracotta accent `#D97757` on cream measured 2.74:1 contrast (WCAG needs 4.5:1), labels
+  were below the 41px minimum, and text crossed the title-safe edge. After the first fix, 5 were
+  left: a 3-pixel title overhang in B03C/B03D, and the short grey `→` arrows in B04 read as tiny
+  text. Moving the top label also dropped the B01 pipeline beats to 54% fill (Gate V needs 55%).
+- **Did:** deepened the accent to `#A84A28` (5.42:1), same palette, raised labels to 32px, moved
+  text inside the safe area, enlarged the arrows, made the pipeline boxes taller. Gate V 0
+  defects, Gate T PASS 18/18, final master 158.5 s.
+- **Understand now:** the gates check different things, and fixing one can break another, so
+  all of them re-run every time.
+- **Evidence:** `QC-GATE-V.md`, `QC-GATE-T.md`; commit "week-01-video: add final video and QC reports".
+
+## 2026-09-27 — Checking the final frames myself
+
+- **Did:** paused the final at B02C and B03B (1:11) and checked them. The numbers match the
+  evidence files and `bitwise identical?  True` matches the printout. Asked for every em dash
+  to be removed from on-screen text and narration.
+- **Claude:** found 4 em dashes in the narration (B01D, B03B, B03D, B04C) and 6 on screen, and
+  replaced them with a colon, full stops or commas, same meaning. Also spotted in my frames that
+  the titles sat 12px right of the label above (left over from the Gate T margin fix) and
+  aligned them. Regenerated the audio for those 4 beats; in B03B "Not approximately." became
+  its own sentence, so the `bitwise identical?  True` box moved to the next pause (3.86 s).
+- **Evidence:** commit "week-01-video: add final video and QC reports".
+
+## 2026-09-27 — The video was invisible to git
+
+- **Happened:** after copying the final into this folder, `git status` didn't list
+  `w1-softmax-offset.mp4`. `git check-ignore -v` showed the root `.gitignore` line 33,
+  `*.[mM][pP]4`, a blanket rule keeping audio and video out of the repo.
+- **Did:** saw that classmates' week-01 videos are on `main`, added with `git add -f`, and planned
+  to do the same. Before committing, TA Aravind Balaji answered in the class chat (2026-09-27,
+  2:33 PM): the mp4 goes to Canvas only, all other files to GitHub. So I left it out of git. The
+  video is in the Canvas zip; the GitHub folder has everything else.
+- **Evidence:** commit "week-01-video: add final video and QC reports" (no mp4 in it).

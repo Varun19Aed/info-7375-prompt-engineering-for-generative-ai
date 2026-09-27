@@ -22,7 +22,7 @@ Claude contributed to the build; it does not appear in the video. No Claude resp
 - Proposed three narration edits, which I approved: Beat 1 "percentages" → "probabilities"; Beat 3 "here's why" rewritten so the cancellation is attributed to the common factor, and max-subtraction only to bitwise identity; and the beats split into sub-beats with unchanged wording.
 - Wrote the Remotion component `SoftmaxOffset.tsx`, `tools/build_beat_sheet.py`, `tools/sync_cues.py`, `tools/verify_numbers.py`, `FACTCHECK.md`, `SHOTLIST.md`, `PROMPTS.md`, and drafts of this file, `README.md` and `BUILD-PROMPT.md`.
 - Drafted the revision wording (B00 question, B01B softmax sentence, B06 recap) from my notes, which I approved; fixed the Gate V underfill defects (drafts 1–2).
-- Ran the audio and render commands and did the visual QC passes.
+- Ran the audio and render commands and did the visual QC passes; fixed the Gate T typography failures (accent contrast, label size, title-safe margins) before the final render.
 
 ## Evidence (all on-screen numbers)
 

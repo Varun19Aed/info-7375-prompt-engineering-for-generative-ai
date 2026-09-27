@@ -57,7 +57,7 @@ sweep_n = find(inter_lines, "bitwise identical to [1, 2, 3]:").split(":")[1].str
 sweep_all = find(inter_lines, "all identical?")
 assert sweep_all.endswith("True")
 
-SRC_MAIN = "source: lessons/01-randomness-and-first-prompts/code/main.py → reference-output.txt · inputs [1, 2, 3] from demo()"
+SRC_MAIN = "source: lesson code/main.py → reference-output.txt · inputs [1, 2, 3] from demo()"
 SRC_OFFSET = "source: w1-evidence/offset_evidence.py → offset-output.txt"
 SRC_INTER = "source: w1-evidence/intermediates_evidence.py → intermediates-output.txt"
 
@@ -102,7 +102,7 @@ beats = [
          {"mode": "card", "light": True, "bodyScale": 1.45, "lines": [
              {"text": "INFO 7375 · WEEK 1 · SOFTMAX", "atS": 0.3},
              {"text": "Does a huge score mean a confident model?", "atS": 0.6, "strong": True},
-             {"text": "What softmax keeps — and what it throws away.", "atS": 3.0},
+             {"text": "What softmax keeps, and what it throws away.", "atS": 3.0},
          ]}, 6, {"lines.2.atS": "p2"}),
     # ── 1 · the engine ──────────────────────────────────────────────────────
     beat("B01A", "1 engine",
@@ -120,7 +120,7 @@ beats = [
          {"mode": "pipeline", "step": 3, "title": "How the next token is chosen",
           "label": "diagram"}, 5, {"captionAtS": "p1"}),
     beat("B01D", "1 engine",
-         "Today I want to show you one thing about the conversion step — what it keeps, "
+         "Today I want to show you one thing about the conversion step: what it keeps, "
          "and what it silently throws away.",
          {"mode": "pipeline", "step": 4, "title": "How the next token is chosen",
           "label": "diagram"}, 7, {"captionAtS": "p1"}),
@@ -148,14 +148,14 @@ beats = [
           "source": SRC_OFFSET}, 10,
          {"countStartS": "p1", "sweepAtS": "p4"}),
     beat("B03B", "3 the test",
-         "Watch the percentages. They don't move. Not approximately — bitwise identical, "
+         "Watch the percentages. They don't move. Not approximately. Bitwise identical, "
          "every digit the same. The thousand vanished.",
          {"mode": "compare", "title": "Every printed digit, both runs",
           "label": "recorded output",
           "runs": [{"label": "[1, 2, 3]", "values": [repr(x) for x in base]},
                    {"label": "[1001, 1002, 1003]", "values": [repr(x) for x in shifted]}],
           "verdict": identical_line, "verdictAtS": 3.4, "source": SRC_OFFSET}, 8,
-         {"verdictAtS": "p2+0.9"}),
+         {"verdictAtS": "p3"}),
     beat("B03C", "3 the test",
          "Here's why. Softmax divides each score's exponential by the total. Adding a "
          "thousand multiplies every exponential by the same factor, on top and on the "
@@ -165,7 +165,7 @@ beats = [
          {"probsAtS": "p2", "verdictAtS": "p4"}),
     beat("B03D", "3 the test",
          "And because this code subtracts the largest score first, both runs compute the "
-         "exact same intermediate numbers — which is why every digit matches.",
+         "exact same intermediate numbers. That's why every digit matches.",
          {"mode": "intermediates", "title": "Why the digits match exactly",
           "label": "recorded output",
           "runs": [{"label": "[1, 2, 3]", "values": [minus_max[0]]},
@@ -185,7 +185,7 @@ beats = [
          {"rows.1.outAtS": "p1", "rows.2.appearAtS": "p2", "rows.2.outAtS": "p3"}),
     beat("B04C", "4 punchline",
          "The size carried nothing. Only the gap survives. One and two gives twenty-six "
-         "point eight nine and seventy-three point one one — and one thousand and one, "
+         "point eight nine and seventy-three point one one. And one thousand and one, "
          "one thousand and two gives exactly the same.",
          rows([r(r1000, dim=True), r(r00, dim=True), r(r55, dim=True),
                r(r12, at=3.7, outAtS=4.6, highlight=True),
