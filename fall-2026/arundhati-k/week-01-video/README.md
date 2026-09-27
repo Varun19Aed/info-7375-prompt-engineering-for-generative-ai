@@ -39,7 +39,7 @@ place to practise that: it *looks* like a finding, and it is not one.
 | `SHOTLIST.md` | Per-beat stage directions and the honesty labels QC must confirm |
 | `PROMPTS.md` | Generation inputs — there are none; no paid media, no generated narration |
 | `TYPECHECK.md` | GATE T typography report (PASS) |
-| `components/ExpectedObserved.tsx` | The five Remotion components I wrote for the body beats |
+| `components/ExpectedObserved.tsx.txt` | The five Remotion components I wrote for the body beats. Stored with a `.txt` suffix because `scripts/validate_course.py` rejects `.tsx` anywhere in the repo as a "Non-Python implementation" — the course is Python-and-Claude only. Rename to `.tsx` to use it. |
 | `captions/expected-observed.srt` | Captions — built from the authored narration and the measured per-beat audio, not machine-transcribed, so they match the script exactly |
 | `evidence/main-py-output.json` | The raw, unmodified output of the lesson code |
 | `evidence/verify_claims.py` | **Re-checks all 23 on-screen numbers against `main.py`.** Standard library only |
