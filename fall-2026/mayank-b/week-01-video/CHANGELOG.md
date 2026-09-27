@@ -178,3 +178,12 @@ the video should sign as @Mayank, and the intro should say "Hola, this is Liam".
   (`_qc/sheet-v7.png`): @Mayank on the B00 chip, all 8 body-beat corners and the outro; no @NikBearBrown left.
 - SOURCES (logo row, outro credit), CHECKS-REPORT (IN-FOR-BEAR / OUTRO-LOCK deviations), FRICTIONAL updated.
   **← current version**
+- Pushed as commit `10a1a6d` (v7). CI red only from the instructor's `nik-bear-brown/SYNC.md` broken link, as before; no error from this folder. `_name-test/` confirmed not in the repo.
+
+## 2026-09-27 — toolkit changes published (no video change)
+- Added `mayank-b/brutalist-changes/` to the course repo: `toolkit-changes.patch` (every change made to
+  the brutalist.art toolkit: the two smoke-test fixes, `TemperatureConcentration.tsx` with nine scenes,
+  and their `Root.tsx` registrations), a README explaining each change, and a `.gitignore`.
+- Patch checked with `git apply --check` against upstream brutalist.art `cd4bf20`: applies cleanly.
+- Deleted the now-unused `public/temperature-concentration/nbb-logo.svg` from the local toolkit (unused since v7).
+- The video is unchanged; the current version is still v7.
