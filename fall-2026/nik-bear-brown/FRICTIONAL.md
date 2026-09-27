@@ -228,6 +228,12 @@ Every push to GitHub is listed at the bottom with its date and commit note.
     - "Plugin or Connector? Connecting Figma to Claude Cowork" (3:38).
     - "Claude Code + Figma: Connect It, Then Draw the Project" (7:41, built from my real session).
     - "Hand In the History, Not Just the Design" (2:34). It says out loud that git commit dates can be set by the author and that the date to trust is the server's.
+- **Then: "push to the repo, Figma for Educational AI"**, and a deep-explainer film "in the Liam persona explaining what I'm doing":
+  - What I'm doing: "I'm looking for consulting roles, either for me or my company, Bear Brown.co", while also "doing the assignments in three of the classes so that people can see my working on a real problem, which means I encounter real issues".
+  - The market gap: "most companies do not understand the politics of universities ... the needs of universities, particularly with AI. But they have products they want to sell." I want to be "that maven, that connector". I teach five AI courses; I've run and I'm still on advisory committees for the university's AI direction; I know and use the tools.
+  - My gap: "I don't have concrete examples of tutorials, workshops and educational materials made."
+
+  Claude pushed the Figma repo. The films' sources, paperwork, evidence screenshots and captions went up (153 files, 5.3 MB); render output is git-ignored. The deep explainer is building, using my words, my attested CV facts, the gap analysis and the Figma board scan. My committee and five-courses claims are attributed to me, because the CV facts file doesn't list them.
 
 ### 2026-09-26 — The assignment went out, and its first worked recipe
 
@@ -328,3 +334,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-26 | docs(fall-2026): log the three finished Figma films |
 | 2026-09-26 | chore(fall-2026): sync the title auditor from the master |
 | 2026-09-26 | chore(fall-2026): sync keywords v0.4.0 and the title families from the master |
+| 2026-09-26 | docs(fall-2026): log the Figma repo push and the why-I-am-doing-this film request |
