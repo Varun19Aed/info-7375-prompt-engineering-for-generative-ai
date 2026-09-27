@@ -26,8 +26,7 @@ No stock footage, no images, no music, no paid services.
 - **Constructed, and labelled on screen:** the scores [1, 2, 3] ("CONSTRUCTED TOY SCORES"), and the
   B07 answer key ("CONSTRUCTED HYPOTHETICAL · NOT AN OBSERVED CLAUDE ERROR").
 - **No Claude responses are shown.** B00's output lines are the program's stdout. The recap page (BVDT)
-  is labelled "Recap written by the author, not a Claude response". BHTF shows a *suggested* prompt
-  for the viewer, not an answer.
+  is labelled "Recap written by the author, not a Claude response". (The earlier "Your turn" suggested-prompt beat was removed in v6.)
 
 ## What Claude contributed
 Claude Code (Opus 5.5), working in my terminal and VS Code, 2026-09-21 → 2026-09-25:

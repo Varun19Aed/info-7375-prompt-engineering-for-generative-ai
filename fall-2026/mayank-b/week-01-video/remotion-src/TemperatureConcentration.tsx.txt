@@ -162,52 +162,102 @@ const Bars: React.FC<{
 const base = { durationSeconds: z.number().positive().default(12), sparkLine: z.string().default('') };
 
 // =============================================================================
-// B02 TcScoresToOdds — score chips → typeset softmax → bars grow at T = 1.
+// Shared step table for B02/B03: option | score | (z÷T) | weight | chance.
+// =============================================================================
+const fmt = (x: number, d = 2) => { const v = x.toFixed(d); return v.includes('.') ? v.replace(/\.?0+$/, '') : v; };
+const TH: React.FC<{ x: number; y: number; w: number; o: number; children: React.ReactNode; hi?: boolean }> = ({ x, y, w, o, children, hi }) => (
+  <div style={{ position: 'absolute', left: x, top: y, width: w, opacity: o, fontFamily: SANS, fontSize: 28, letterSpacing: 1.5,
+    color: hi ? INK : SOFT, fontWeight: hi ? 700 : 500, display: 'flex', alignItems: 'center', gap: 10, height: 56 }}>{children}</div>
+);
+const TD: React.FC<{ x: number; y: number; w: number; o: number; children: React.ReactNode; bold?: boolean; color?: string; size?: number }> =
+  ({ x, y, w, o, children, bold, color = INK, size = 56 }) => (
+  <div style={{ position: 'absolute', left: x, top: y, width: w, opacity: o, fontFamily: SANS, fontSize: size, fontWeight: bold ? 700 : 500,
+    color, whiteSpace: 'nowrap' }}>{children}</div>
+);
+
+// =============================================================================
+// B02 TcScoresToOdds — softmax as three moves: e^z → total → weight ÷ total.
 // =============================================================================
 export const tcScoresToOddsSchema = z.object({
   ...base,
   scores: z.array(z.number()).default([1, 2, 3]),
+  weights: z.array(z.number()).default([2.7183, 7.3891, 20.0855]),
+  total: z.number().default(30.1929),
   probsT1: z.array(z.number()).default([0.0900305732, 0.2447284711, 0.6652409558]),
   formula: mathRow.default({ src: 'temperature-concentration/softmax.svg', aspect: 3, expression: 'softmax' }),
+  weightHead: mathRow.default({ src: 'temperature-concentration/ez.svg', aspect: 1, expression: 'e^z' }),
   stampText: z.string().default('CONSTRUCTED TOY SCORES · CHAPTER 1'),
-  cues: z.object({ chips: z.number(), stamp: z.number(), formula: z.number(), bars: z.number() })
-    .default({ chips: 0.5, stamp: 3, formula: 6, bars: 10 }),
+  cues: z.object({ table: z.number(), move1: z.number(), move2: z.number(), move3: z.number(), labels: z.number() })
+    .default({ table: 1, move1: 5, move2: 10, move3: 13, labels: 16 }),
 });
-export const TcScoresToOdds: React.FC<z.infer<typeof tcScoresToOddsSchema>> = ({ sparkLine, scores, probsT1, formula, stampText, cues }) => {
+export const TcScoresToOdds: React.FC<z.infer<typeof tcScoresToOddsSchema>> =
+({ sparkLine, scores, weights, total, probsT1, formula, weightHead, stampText, cues }) => {
   const t = useT();
-  const grow = ramp(t, cues.bars, 1.4);
+  const X = { opt: SX, score: SX + 300, weight: SX + 610, chance: SX + 1010 };
+  const rowY = (i: number) => 470 + i * 104;
+  const m1 = ramp(t, cues.move1, 1.2), m2 = ramp(t, cues.move2, 0.6), m3 = ramp(t, cues.move3, 1.2);
   return (
     <Stage>
       <SparkLine line={sparkLine} o={ramp(t, 0, 0.5)} />
-      <Stamp text={stampText} o={ramp(t, cues.stamp, 0.4)} />
-      <div style={{ position: 'absolute', left: SX, width: SR - SX, top: 170, display: 'flex', justifyContent: 'center' }}>
-        <MathImg row={formula} height={150} o={ramp(t, cues.formula, 0.7)} />
+      <Stamp text={stampText} o={ramp(t, cues.table, 0.4)} />
+      {/* the formula, with plain-language labels at the end */}
+      <div style={{ position: 'absolute', left: SX, width: SR - SX, top: 150, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 60 }}>
+        <MathImg row={formula} height={130} o={ramp(t, cues.table, 0.6)} />
+        <div style={{ fontFamily: SERIF, fontSize: 44, lineHeight: 1.35, opacity: ramp(t, cues.labels, 0.6) }}>
+          <div>top = <b>your weight</b></div>
+          <div>bottom = <b>everyone's total</b></div>
+        </div>
       </div>
-      <Bars probs={probsT1} grow={grow} x={SX + 150} y={380} w={SR - SX - 300} h={430} accent={2}
-        labels={scores.map((_, i) => `outcome ${i}`)} sub={scores.map((s) => `score z = ${s}`)} />
-      {/* score chips sit on the baseline until the bars take over */}
-      {scores.map((s, i) => {
-        const slot = (SR - SX - 300) / scores.length;
-        const o = ramp(t, cues.chips + i * 0.35, 0.4) * (1 - grow);
-        return <div key={i} style={{ position: 'absolute', left: SX + 150 + slot * i + slot / 2 - 80, top: 640 - 30 * (1 - ramp(t, cues.chips + i * 0.35, 0.4)),
-          width: 160, height: 120, border: `3px solid ${INK}`, background: CARD, opacity: o, display: 'flex', alignItems: 'center',
-          justifyContent: 'center', fontFamily: SANS, fontWeight: 700, fontSize: 64 }}>{s}</div>;
+      {/* header */}
+      <TH x={X.opt} y={370} w={280} o={ramp(t, cues.table, 0.4)}>OPTION</TH>
+      <TH x={X.score} y={370} w={300} o={ramp(t, cues.table, 0.4)}>SCORE z</TH>
+      <TH x={X.weight} y={370} w={400} o={ramp(t, cues.move1, 0.4)} hi={m1 > 0 && m2 === 0}>
+        MOVE 1 · WEIGHT = <MathImg row={weightHead} height={44} />
+      </TH>
+      <TH x={X.chance} y={370} w={SR - X.chance} o={ramp(t, cues.move3, 0.4)} hi={m3 > 0}>MOVE 3 · CHANCE = WEIGHT ÷ TOTAL</TH>
+      <div style={{ position: 'absolute', left: SX, width: SR - SX, top: 432, height: 3, background: INK, opacity: ramp(t, cues.table, 0.4) }} />
+      {scores.map((zv, i) => {
+        const inO = ramp(t, cues.table + i * 0.25, 0.4);
+        const isTop = i === 2;
+        return (
+          <React.Fragment key={i}>
+            <TD x={X.opt} y={rowY(i)} w={280} o={inO}>{i}</TD>
+            <TD x={X.score} y={rowY(i)} w={300} o={inO} bold>{zv}</TD>
+            <TD x={X.weight} y={rowY(i)} w={400} o={ramp(t, cues.move1 + i * 0.35, 0.4)}>{(weights[i] * m1).toFixed(2)}</TD>
+            <TD x={X.chance} y={rowY(i) + 6} w={300} o={ramp(t, cues.move3 + i * 0.3, 0.4)} size={40} color={SOFT}>
+              {weights[i].toFixed(2)} ÷ {total.toFixed(2)} =
+            </TD>
+            <TD x={X.chance + 350} y={rowY(i)} w={200} o={ramp(t, cues.move3 + i * 0.3, 0.4)} bold color={isTop ? ACC_TEXT : INK}>
+              {pct(probsT1[i])}
+            </TD>
+            <div style={{ position: 'absolute', left: X.chance + 350, top: rowY(i) + 72, height: 12,
+              width: 360 * probsT1[i] * ramp(t, cues.move3 + i * 0.3, 1), background: isTop ? ACC : INK, opacity: isTop ? 1 : 0.7 }} />
+          </React.Fragment>
+        );
       })}
-      <div style={{ position: 'absolute', left: SX, bottom: 1080 - SB + 8, fontFamily: SANS, fontSize: 30, color: SOFT, opacity: grow }}>
-        T = 1 · values printed by the chapter's probabilities() function
+      {/* MOVE 2: the total */}
+      <div style={{ position: 'absolute', left: SX, width: SR - SX, top: rowY(3) + 6, height: 2, background: BORDER, opacity: m2 }} />
+      <TH x={X.opt} y={rowY(3) + 22} w={280} o={m2} hi={m2 > 0 && m3 === 0}>MOVE 2 · TOTAL</TH>
+      <TD x={X.score} y={rowY(3) + 18} w={1000} o={m2} size={50}>
+        {weights.map((w) => w.toFixed(2)).join(' + ')} = <b>{total.toFixed(2)}</b>
+      </TD>
+      <div style={{ position: 'absolute', left: SX, bottom: 1080 - SB + 8, fontFamily: SANS, fontSize: 28, color: SOFT, maxWidth: 1600, whiteSpace: 'nowrap', opacity: m1 }}>
+        e ≈ 2.718 · direct exponentials shown for clarity; the chapter’s code subtracts the max first (same chances)
       </div>
     </Stage>
   );
 };
 
 // =============================================================================
-// B03 TcTemperatureDial — T sweeps 1 → 0.5 → 2; bars recompute live; ranks hold.
+// B03 TcTemperatureDial — divide by T first; every cell recomputed live.
 // =============================================================================
 export const tcTemperatureDialSchema = z.object({
   ...base,
   scores: z.array(z.number()).default([1, 2, 3]),
   probsT1: z.array(z.number()).default([0.0900305732, 0.2447284711, 0.6652409558]),
-  cues: z.object({ down: z.number(), up: z.number(), rank: z.number() }).default({ down: 1, up: 5, rank: 9 }),
+  weightHead: mathRow.default({ src: 'temperature-concentration/ezT.svg', aspect: 1, expression: 'e^(z/T)' }),
+  cues: z.object({ divide: z.number(), down: z.number(), up: z.number(), zoom: z.number(), rank: z.number() })
+    .default({ divide: 1, down: 4, up: 9, zoom: 13, rank: 16 }),
 });
 const Dial: React.FC<{ T: number; x: number; y: number; w: number }> = ({ T, x, y, w }) => {
   const lo = Math.log(0.25), hi = Math.log(2.5);
@@ -219,26 +269,59 @@ const Dial: React.FC<{ T: number; x: number; y: number; w: number }> = ({ T, x, 
         fontFamily: SANS, fontSize: 30, color: SOFT }}>{v.toFixed(1)}</div>)}
       {[0.5, 1, 2].map((v) => <div key={`t${v}`} style={{ position: 'absolute', left: pos(v) - 2, top: 48, width: 4, height: 26, background: GHOST }} />)}
       <div style={{ position: 'absolute', left: pos(T) - 22, top: 39, width: 44, height: 44, borderRadius: 22, background: INK }} />
-      <div style={{ position: 'absolute', left: -270, top: 20, fontFamily: SANS, fontWeight: 700, fontSize: 64, color: INK }}>
+      <div style={{ position: 'absolute', left: -300, top: 20, fontFamily: SANS, fontWeight: 700, fontSize: 64, color: INK }}>
         T = {T.toFixed(2)}
       </div>
     </div>
   );
 };
-export const TcTemperatureDial: React.FC<z.infer<typeof tcTemperatureDialSchema>> = ({ sparkLine, scores, probsT1, cues }) => {
+export const TcTemperatureDial: React.FC<z.infer<typeof tcTemperatureDialSchema>> = ({ sparkLine, scores, probsT1, weightHead, cues }) => {
   const t = useT();
   const T = tempAt(t, [{ t: cues.down, T: 1 }, { t: cues.down + 1.4, T: 0.5 }, { t: cues.up, T: 0.5 }, { t: cues.up + 1.6, T: 2 }]);
+  const zt = scores.map((zv) => zv / T);
+  const w = zt.map((x) => Math.exp(x));
   const probs = softmax(scores, T);
+  const X = { opt: SX, score: SX + 230, zt: SX + 480, weight: SX + 760, chance: SX + 1100 };
+  const rowY = (i: number) => 470 + i * 118;
+  const colO = ramp(t, cues.divide, 0.5);
   const rankO = ramp(t, cues.rank, 0.3);
+  const pulse = interpolate(t, [cues.rank, cues.rank + 0.8], [0, 1], clamp);
+  const barMax = 420;
   return (
     <Stage>
       <SparkLine line={sparkLine} o={ramp(t, 0, 0.5)} />
-      <Dial T={T} x={SX + 560} y={150} w={1000} />
-      <Bars probs={probs} x={SX + 150} y={400} w={SR - SX - 300} h={430} accent={2} ghost={probsT1} ghostLabel="T = 1 for comparison"
-        labels={scores.map((_, i) => `outcome ${i}`)} sub={scores.map((s) => `score z = ${s}`)}
-        badges={rankO > 0 ? ['3rd', '2nd', '1st'] : undefined} badgePulse={interpolate(t, [cues.rank, cues.rank + 0.8], [0, 1], clamp)} />
-      <div style={{ position: 'absolute', left: SX, bottom: 1080 - SB + 8, fontFamily: SANS, fontSize: 30, color: SOFT }}>
-        bars recomputed from p = softmax(z / T) at every frame · same three constructed scores
+      <Dial T={T} x={SX + 700} y={140} w={900} />
+      <TH x={X.opt} y={370} w={220} o={1}>OPTION</TH>
+      <TH x={X.score} y={370} w={240} o={1}>SCORE z</TH>
+      <TH x={X.zt} y={370} w={260} o={colO} hi={colO > 0 && t < cues.down + 1.4}>STEP 0 · z ÷ T</TH>
+      <TH x={X.weight} y={370} w={330} o={1}>WEIGHT <MathImg row={weightHead} height={44} /></TH>
+      <TH x={X.chance} y={370} w={SR - X.chance} o={1}>CHANCE</TH>
+      <div style={{ position: 'absolute', left: SX, width: SR - SX, top: 432, height: 3, background: INK }} />
+      {scores.map((zv, i) => {
+        const isTop = i === 2;
+        return (
+          <React.Fragment key={i}>
+            <TD x={X.opt} y={rowY(i)} w={220} o={1}>{i}</TD>
+            <TD x={X.score} y={rowY(i)} w={240} o={1}>{zv}</TD>
+            <TD x={X.zt} y={rowY(i)} w={260} o={colO} bold>{fmt(zt[i])}</TD>
+            <TD x={X.weight} y={rowY(i)} w={330} o={1}>{w[i].toFixed(2)}</TD>
+            <TD x={X.chance} y={rowY(i)} w={220} o={1} bold color={isTop ? ACC_TEXT : INK}>{pct(probs[i])}</TD>
+            {/* ghost: the T = 1 share, for comparison */}
+            <div style={{ position: 'absolute', left: X.chance + 230, top: rowY(i) + 14, height: 44, width: barMax * probsT1[i],
+              border: `3px dashed ${GHOST}`, boxSizing: 'border-box' }} />
+            <div style={{ position: 'absolute', left: X.chance + 230, top: rowY(i) + 14, height: 44, width: barMax * probs[i],
+              background: isTop ? ACC : INK, opacity: isTop ? 0.95 : 0.75 }} />
+            {rankO > 0 && <div style={{ position: 'absolute', left: X.chance + 230 + barMax * Math.max(probs[i], probsT1[i]) + 14, top: rowY(i) + 12,
+              fontFamily: SANS, fontWeight: 700, fontSize: 30, padding: '2px 10px', border: `2px solid ${INK}`, background: CARD, opacity: rankO,
+              transform: `scale(${1 + 0.18 * Math.sin(Math.PI * pulse)})`, transformOrigin: 'left center' }}>{['3rd', '2nd', '1st'][i]}</div>}
+          </React.Fragment>
+        );
+      })}
+      <div style={{ position: 'absolute', left: SX, top: rowY(3) + 10, fontFamily: SERIF, fontSize: 46, color: INK, opacity: ramp(t, cues.zoom, 0.6) }}>
+        low T <b>zooms in</b> on the gaps (favourite dominates) · high T <b>zooms out</b> (choices spread)
+      </div>
+      <div style={{ position: 'absolute', left: SX, bottom: 1080 - SB + 8, fontFamily: SANS, fontSize: 28, color: SOFT, maxWidth: 1500 }}>
+        every cell recomputed live · dashed bar = T = 1 · same three constructed scores
       </div>
     </Stage>
   );

@@ -24,10 +24,6 @@ CODE = '''def probabilities(logits, temperature=1.0):
     total = sum(weights)
     return [weight / total for weight in weights]'''
 
-HANDOFF_PROMPT = ("Pick three possible answers to a question I care about and give each one a score. "
-                  "Compute softmax at temperatures 0.5, 1 and 2. Then tell me what evidence, "
-                  "not temperature, could change which answer is on top.")
-
 beats = [
   beat("B00", "cold open — the ask",
        "Hola — this is Liam, in for Bear. Turn a model's temperature down and its answers sound more certain. "
@@ -71,22 +67,27 @@ beats = [
         {"at": "Scores aren't", "event": "a 'chance?' column appears beside the bars with a question mark"},
         {"at": "softmax", "event": "label 'softmax: scores → chances that add up to 100%' draws in under the bars"},
         {"at": "draws", "event": "'Paris' lifts out of the list into the blank (terracotta)"}]),
-  beat("B02", "framework — scores become odds",
-       "Three outcomes, three scores: one, two, three. These are constructed toy scores from the chapter, not a real model. "
-       "Softmax divides each score by temperature, exponentiates, and normalizes. "
-       "At temperature one, the top outcome gets sixty-six point five percent.",
-       "TcScoresToOdds", {"sparkLine": "Scores become odds."},
-       [{"at": "one, two, three", "event": "three score chips z = 1, 2, 3 drop in under outcome 0/1/2"},
-        {"at": "constructed", "event": "stamp: CONSTRUCTED TOY SCORES · Chapter 1"},
-        {"at": "Softmax", "event": "typeset softmax equation reveals"},
-        {"at": "temperature one", "event": "three bars grow to 9.0% / 24.5% / 66.5%; the top bar is the one terracotta"}]),
-  beat("B03", "worked example — the dial",
-       "Turn the dial down to point five, and the top outcome climbs to eighty-six point seven. "
-       "Turn it up to two, and it falls to fifty point six. The bars reshape. "
-       "But the ranking never moves — outcome two wins every time.",
-       "TcTemperatureDial", {"sparkLine": "Same order. New spread."},
-       [{"at": "point five", "event": "T readout slides 1.0 → 0.5; bars recompute live from softmax; top bar 86.7%"},
-        {"at": "up to two", "event": "T slides 0.5 → 2.0; top bar 50.6%, bottom bar rises to 18.6%"},
+  beat("B02", "framework — softmax in three moves",
+       "Three options, with constructed toy scores: one, two, three. Softmax turns scores into chances in three moves. "
+       "One: raise e to each score. Two point seven, seven point four, twenty point one. Bigger scores get much bigger. "
+       "Two: add them up. Thirty point two. Three: divide each weight by the total. "
+       "Nine, twenty-four point five, and sixty-six point five percent.",
+       "TcScoresToOdds", {"sparkLine": "Softmax in three moves."},
+       [{"at": "one, two, three", "event": "table: option 0/1/2 with score z = 1, 2, 3; CONSTRUCTED TOY SCORES stamp"},
+        {"at": "raise e", "event": "MOVE 1: weight column fills, e^z counters run to 2.72 / 7.39 / 20.09"},
+        {"at": "add them up", "event": "MOVE 2: total row 2.72 + 7.39 + 20.09 = 30.19"},
+        {"at": "divide each", "event": "MOVE 3: chance column 'weight ÷ 30.19' fills; bars grow to 9.0% / 24.5% / 66.5% (top bar terracotta)"},
+        {"at": "Nine", "event": "formula row labels numerator 'your weight' and denominator 'everyone's total'"}]),
+  beat("B03", "worked example — temperature divides first",
+       "Temperature adds one step first: divide every score by T. At T point five, the scores double to two, four, six. "
+       "The gaps grow, and the top option takes eighty-six point seven percent. At T two, they halve. "
+       "The gaps shrink, and it falls to fifty point six. Temperature zooms in or out on the gaps. "
+       "But the ranking never moves.",
+       "TcTemperatureDial", {"sparkLine": "Temperature zooms the gaps."},
+       [{"at": "divide every score", "event": "a 'z ÷ T' column appears between score and weight; T readout 1.00"},
+        {"at": "point five", "event": "T slides 1 → 0.5: z÷T 2, 4, 6; weights 7.39 / 54.60 / 403.43; chances 1.6 / 11.7 / 86.7% (live softmax)"},
+        {"at": "At T two", "event": "T slides 0.5 → 2: z÷T 0.5, 1, 1.5; weights 1.65 / 2.72 / 4.48; chances 18.6 / 30.7 / 50.6%"},
+        {"at": "zooms", "event": "dashed T = 1 ghost bars stay for comparison"},
         {"at": "ranking", "event": "rank badges 1st/2nd/3rd pulse — unchanged at every T"}]),
   beat("B04", "mechanism — the ratio",
        "Here's why. Divide one probability by another and the denominator cancels, leaving e to the score gap over T. "
@@ -144,17 +145,6 @@ beats = [
                           "The ranking never changes for any T > 0",
                           "No step in the formula checks what is true"]},
        [{"at": "The recap", "event": "artifact page; four findings reveal in narration order"}],
-       lane="BOOKEND"),
-  beat("BHTF", "handoff — your turn",
-       "Your turn. Paste this into Claude: pick three possible answers to a question I care about and give each one a score. "
-       "Compute softmax at temperatures point five, one and two. Then tell me what evidence, not temperature, "
-       "could change which answer is on top. Check its numbers against the ratio rule. "
-       "And notice: only a change in the scores can reorder the list.",
-       "ClaudeComposerAsk",
-       {"greeting": "Your turn.", "topic": "YOUR TURN · TEMPERATURE", "segment": TITLE.rstrip('.'),
-        "command": HANDOFF_PROMPT, "runningText": "paste this into Claude…", "output": [],
-        "folderLabel": "@NikBearBrown"},
-       [{"at": "Paste this", "event": "suggested prompt types into the composer"}],
        lane="BOOKEND"),
   beat("BOUT", "outro — title restate",
        "Temperature Is Not a Fact Checker. At Nik Bear Brown. Liam, in for Bear.",

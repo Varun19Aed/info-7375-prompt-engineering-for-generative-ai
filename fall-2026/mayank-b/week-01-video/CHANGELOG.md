@@ -111,4 +111,44 @@ Paused 2026-09-26 by the iCloud problem (FRICTIONAL). Resumed 2026-09-27 once th
   creative → concentrated correction still plays (`_qc/sheet-v5-B01*.png`).
 - Recompiled review cut + clean master: **174.8 s**, 13/13 beats filled, Gate V 0 BLOCKER / 0 MAJOR.
 - README (runtime, B01A row, 13 beats) and `remotion-src/TemperatureConcentration.tsx.txt` updated.
-- Narration of every other beat unchanged. **← current version**
+- Narration of every other beat unchanged.
+- Pushed as commit `3875cad` (v5). Course CI shows red, **but not because of this folder**: the only
+  error is a broken link in the instructor's `fall-2026/nik-bear-brown/SYNC.md` (added in `d1d0743`,
+  2026-09-26 22:29), which has failed every commit since. `code/check_repo_rules.py` passes on this folder.
+
+## 2026-09-27 — v6: step-by-step softmax (B02) and temperature (B03); BHTF removed; B08 colour
+
+Why (Mayank's review): B02 and B03 should explain the mechanism the way the plain-language
+walkthrough did (softmax as three moves; temperature as "divide the scores first"), so a viewer
+can follow the arithmetic, not just watch bars move.
+
+- **B02 rewritten: "Softmax in three moves"** (narration 38 → 60 words; 14.95 s → 19.20 s).
+  - New narration: "Three options, with constructed toy scores: one, two, three. Softmax turns scores into
+    chances in three moves. One: raise e to each score. Two point seven, seven point four, twenty point
+    one. Bigger scores get much bigger. Two: add them up. Thirty point two. Three: divide each weight by
+    the total. Nine, twenty-four point five, and sixty-six point five percent."
+  - New visual: a table that fills move by move. MOVE 1 weight = e^z (2.72 / 7.39 / 20.09),
+    MOVE 2 total 2.72 + 7.39 + 20.09 = 30.19, MOVE 3 weight ÷ 30.19 = 9.0% / 24.5% / 66.5% with share
+    bars; formula labelled "top = your weight, bottom = everyone's total".
+  - Footer: direct exponentials shown for clarity; the chapter's code subtracts the max first (same chances).
+- **B03 rewritten: "Temperature zooms the gaps"** (40 → 61 words; 12.52 s → 17.92 s).
+  - New narration: "Temperature adds one step first: divide every score by T. At T point five, the scores
+    double to two, four, six. The gaps grow, and the top option takes eighty-six point seven percent. At
+    T two, they halve. The gaps shrink, and it falls to fifty point six. Temperature zooms in or out on
+    the gaps. But the ranking never moves."
+  - New visual: same table plus a "STEP 0 · z ÷ T" column; T slides 1 → 0.5 → 2 and every cell
+    recomputes live (2, 4, 6 → 7.39 / 54.60 / 403.43 → 1.6 / 11.7 / 86.7%; 0.5, 1, 1.5 → 1.65 / 2.72 /
+    4.48 → 18.6 / 30.7 / 50.6%); dashed T = 1 bars; "low T zooms in · high T zooms out" caption; rank badges.
+- **Correction to my earlier explanation:** the T = 1 total is **30.19**, not 30.20 (I had added rounded
+  values). The screen shows 30.19; narration says "thirty point two" (30.19 to 1 d.p.).
+- **B08:** the second NOT SHOWN item ("Whether the scores themselves were any good") is now red like the
+  first (`accent: true`).
+- **BHTF ("Your turn") removed** as unnecessary: beat, audio and render deleted; recap → outro directly.
+  The prompt constant was removed from `code/author_sheet.py`. Logged as a HANDOFF LAW deviation in
+  CHECKS-REPORT.
+- Components rewritten in `TemperatureConcentration.tsx` (shared step-table helpers; TcScoresToOdds,
+  TcTemperatureDial); new typeset headers `ez.svg`, `ezT.svg`; `build_props.py` asserts the direct
+  weights reproduce `probabilities()` to 1e-12.
+- Test stills → two fixes before the render (footers wrapped; raw "e^z" in a footer).
+- Re-rendered B02, B03, B08. Review cut + clean master: **166.5 s (2:47)**, 12 beats, Gate V 0 BLOCKER / 0 MAJOR.
+- README, SOURCES, SHOTLIST, CHECKS-REPORT, FACTCHECK, MANUAL-QC updated. **← current version**

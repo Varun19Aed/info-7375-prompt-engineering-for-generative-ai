@@ -21,3 +21,11 @@ Frames sampled at 15/50/85% of every beat (`sheet1-3.png`), plus B01 at 2.5/4.5/
 | 10 | B01A | MAJOR | flying word crossed the bar and label mid-flight | fade-and-rise instead of a flight | fixed, re-checked (`sheet-v5-B01A.png`) |
 | 11 | B01A | MINOR | two terracotta elements | "softmax" in bold ink | fixed |
 | 12 | B01 | MAJOR | last line still typing at the cut ("…answer is tr") | charMs 32 → 26 | fixed, re-checked (`sheet-v5-B01.png`) |
+
+## v6 (2026-09-27)
+Frames: `sheet-v6.png` (B02 and B03 at 15/50/85%, B08 at 85%, BVDT → BOUT join).
+| # | Beat | Severity | Defect | Fix | Status |
+|---|---|---|---|---|---|
+| 13 | B02, B03 | MINOR | footers wrapped to two lines (test stills) | shorter text, nowrap | fixed |
+| 14 | B02 | MINOR | "e^z" as raw caret text in the footer (math rule) | "direct exponentials" | fixed |
+All numbers on screen checked against `code/build_props.py` output. BVDT → BOUT join clean.

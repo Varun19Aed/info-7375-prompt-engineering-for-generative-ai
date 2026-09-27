@@ -49,14 +49,19 @@ p.update(cues={"sentence": cue("B01A", "writes"), "scores": cue("B01A", "scores 
                "draw": cue("B01A", "Then the model draws")})
 
 p = props("B02")
-p.update(scores=S, probsT1=P[1.0],
+W1 = [math.exp(z) for z in S]
+assert all(abs(w / sum(W1) - q) < 1e-12 for w, q in zip(W1, P[1.0]))
+p.update(scores=S, probsT1=P[1.0], weights=[round(w, 4) for w in W1], total=round(sum(W1), 4),
          formula=svg("softmax", r"p_i = \frac{\exp(z_i/T)}{\sum_j \exp(z_j/T)}"),
-         cues={"chips": cue("B02", "one, two, three"), "stamp": cue("B02", "constructed"),
-               "formula": cue("B02", "Softmax"), "bars": cue("B02", "temperature one")})
+         weightHead=svg("ez", r"e^{z}"),
+         cues={"table": cue("B02", "one, two, three"), "move1": cue("B02", "One: raise e"),
+               "move2": cue("B02", "Two: add them up"), "move3": cue("B02", "Three: divide"),
+               "labels": cue("B02", "Nine")})
 
 p = props("B03")
-p.update(scores=S, probsT1=P[1.0], cues={"down": cue("B03", "point five"), "up": cue("B03", "up to two"),
-                                           "rank": cue("B03", "ranking")})
+p.update(scores=S, probsT1=P[1.0], weightHead=svg("ezT", r"e^{z/T}"),
+         cues={"divide": cue("B03", "divide every score"), "down": cue("B03", "At T point five"),
+               "up": cue("B03", "At T two"), "zoom": cue("B03", "zooms"), "rank": cue("B03", "ranking")})
 
 rows = []
 for T in (0.5, 1.0, 2.0):
@@ -97,7 +102,7 @@ p.update(items=[
     {"text": "How softmax reshapes three constructed scores", "shown": True, "at": cue("B08", "three-outcome toy")},
     {"text": "The ranking holds for every T > 0", "shown": True, "at": cue("B08", "three-outcome toy") + 0.6},
     {"text": "Seed-7 counts, run offline", "shown": True, "at": cue("B08", "run offline")},
-    {"text": "Whether the scores themselves were any good", "shown": False, "at": cue("B08", "scores themselves")},
+    {"text": "Whether the scores themselves were any good", "shown": False, "at": cue("B08", "scores themselves"), "accent": True},
 ])
 (REEL / "beat_sheet.json").write_text(json.dumps(sheet, indent=2, ensure_ascii=False))
 print("props built;", {k: props(k).get("cues") for k in ("B02", "B03", "B04", "B06", "B07")})

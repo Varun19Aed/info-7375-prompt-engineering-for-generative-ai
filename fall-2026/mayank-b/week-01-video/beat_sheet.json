@@ -32,10 +32,10 @@
     "derived_from": "beat_sheet.json",
     "evidence": "code/run_temperature.py -> code/temperature_results.json (every on-screen number)",
     "build": {
-      "at": "2026-09-27T05:38:38",
+      "at": "2026-09-27T09:24:45",
       "cut": "master",
-      "filled": 13,
-      "of": 13,
+      "filled": 12,
+      "of": 12,
       "slates": [],
       "skin_warnings": []
     }
@@ -93,7 +93,7 @@
         "status": "VIDEO",
         "src": "media/B00.mp4",
         "filled_by": "remotion:ClaudeComposerAsk",
-        "at": "2026-09-27T05:38:38"
+        "at": "2026-09-27T09:24:45"
       }
     },
     {
@@ -151,7 +151,7 @@
         "status": "VIDEO",
         "src": "media/B01.mp4",
         "filled_by": "remotion:BrutalistHesitantWriter",
-        "at": "2026-09-27T05:38:38"
+        "at": "2026-09-27T09:24:45"
       },
       "qc": {
         "sparse_by_design": true,
@@ -231,14 +231,14 @@
         "status": "VIDEO",
         "src": "media/B01A.mp4",
         "filled_by": "remotion:TcNextWord",
-        "at": "2026-09-27T05:38:38"
+        "at": "2026-09-27T09:24:45"
       }
     },
     {
       "beat_id": "B02",
-      "act": "framework — scores become odds",
+      "act": "framework — softmax in three moves",
       "lane": "BODY",
-      "narration_text": "Three outcomes, three scores: one, two, three. These are constructed toy scores from the chapter, not a real model. Softmax divides each score by temperature, exponentiates, and normalizes. At temperature one, the top outcome gets sixty-six point five percent.",
+      "narration_text": "Three options, with constructed toy scores: one, two, three. Softmax turns scores into chances in three moves. One: raise e to each score. Two point seven, seven point four, twenty point one. Bigger scores get much bigger. Two: add them up. Thirty point two. Three: divide each weight by the total. Nine, twenty-four point five, and sixty-six point five percent.",
       "voice": "am_onyx",
       "engine": "kokoro",
       "shot": {
@@ -248,26 +248,30 @@
         "show": [
           {
             "at": "one, two, three",
-            "event": "three score chips z = 1, 2, 3 drop in under outcome 0/1/2"
+            "event": "table: option 0/1/2 with score z = 1, 2, 3; CONSTRUCTED TOY SCORES stamp"
           },
           {
-            "at": "constructed",
-            "event": "stamp: CONSTRUCTED TOY SCORES · Chapter 1"
+            "at": "raise e",
+            "event": "MOVE 1: weight column fills, e^z counters run to 2.72 / 7.39 / 20.09"
           },
           {
-            "at": "Softmax",
-            "event": "typeset softmax equation reveals"
+            "at": "add them up",
+            "event": "MOVE 2: total row 2.72 + 7.39 + 20.09 = 30.19"
           },
           {
-            "at": "temperature one",
-            "event": "three bars grow to 9.0% / 24.5% / 66.5%; the top bar is the one terracotta"
+            "at": "divide each",
+            "event": "MOVE 3: chance column 'weight ÷ 30.19' fills; bars grow to 9.0% / 24.5% / 66.5% (top bar terracotta)"
+          },
+          {
+            "at": "Nine",
+            "event": "formula row labels numerator 'your weight' and denominator 'everyone's total'"
           }
         ],
         "remotion": {
           "pattern": "TcScoresToOdds",
           "props": {
-            "sparkLine": "Scores become odds.",
-            "durationSeconds": 14.95,
+            "sparkLine": "Softmax in three moves.",
+            "durationSeconds": 19.2,
             "scores": [
               1,
               2,
@@ -278,39 +282,51 @@
               0.24472847105479764,
               0.6652409557748218
             ],
+            "weights": [
+              2.7183,
+              7.3891,
+              20.0855
+            ],
+            "total": 30.1929,
             "formula": {
               "src": "temperature-concentration/softmax.svg",
               "aspect": 2.3861,
               "expression": "p_i = \\frac{\\exp(z_i/T)}{\\sum_j \\exp(z_j/T)}"
             },
+            "weightHead": {
+              "src": "temperature-concentration/ez.svg",
+              "aspect": 1.1111,
+              "expression": "e^{z}"
+            },
             "cues": {
-              "chips": 1.54,
-              "stamp": 3.0,
-              "formula": 6.42,
-              "bars": 10.67
+              "table": 2.25,
+              "move1": 5.88,
+              "move2": 11.5,
+              "move3": 13.42,
+              "labels": 15.29
             }
           },
           "rendered": {
             "out": "media/B02.mp4",
-            "at": "2026-09-23T22:54:15.564115+00:00"
+            "at": "2026-09-27T13:21:42.384389+00:00"
           }
         }
       },
       "audio_file": "mp3/beat-B02.mp3",
-      "actual_duration_s": 14.95,
-      "render_duration_s": 14.958333333333334,
+      "render_duration_s": 19.208333333333332,
+      "actual_duration_s": 19.2,
       "build": {
         "status": "VIDEO",
         "src": "media/B02.mp4",
         "filled_by": "remotion:TcScoresToOdds",
-        "at": "2026-09-27T05:38:38"
+        "at": "2026-09-27T09:24:45"
       }
     },
     {
       "beat_id": "B03",
-      "act": "worked example — the dial",
+      "act": "worked example — temperature divides first",
       "lane": "BODY",
-      "narration_text": "Turn the dial down to point five, and the top outcome climbs to eighty-six point seven. Turn it up to two, and it falls to fifty point six. The bars reshape. But the ranking never moves — outcome two wins every time.",
+      "narration_text": "Temperature adds one step first: divide every score by T. At T point five, the scores double to two, four, six. The gaps grow, and the top option takes eighty-six point seven percent. At T two, they halve. The gaps shrink, and it falls to fifty point six. Temperature zooms in or out on the gaps. But the ranking never moves.",
       "voice": "am_onyx",
       "engine": "kokoro",
       "shot": {
@@ -319,12 +335,20 @@
         "motion": "illustrate",
         "show": [
           {
-            "at": "point five",
-            "event": "T readout slides 1.0 → 0.5; bars recompute live from softmax; top bar 86.7%"
+            "at": "divide every score",
+            "event": "a 'z ÷ T' column appears between score and weight; T readout 1.00"
           },
           {
-            "at": "up to two",
-            "event": "T slides 0.5 → 2.0; top bar 50.6%, bottom bar rises to 18.6%"
+            "at": "point five",
+            "event": "T slides 1 → 0.5: z÷T 2, 4, 6; weights 7.39 / 54.60 / 403.43; chances 1.6 / 11.7 / 86.7% (live softmax)"
+          },
+          {
+            "at": "At T two",
+            "event": "T slides 0.5 → 2: z÷T 0.5, 1, 1.5; weights 1.65 / 2.72 / 4.48; chances 18.6 / 30.7 / 50.6%"
+          },
+          {
+            "at": "zooms",
+            "event": "dashed T = 1 ghost bars stay for comparison"
           },
           {
             "at": "ranking",
@@ -334,8 +358,8 @@
         "remotion": {
           "pattern": "TcTemperatureDial",
           "props": {
-            "sparkLine": "Same order. New spread.",
-            "durationSeconds": 12.52,
+            "sparkLine": "Temperature zooms the gaps.",
+            "durationSeconds": 17.92,
             "scores": [
               1,
               2,
@@ -346,26 +370,33 @@
               0.24472847105479764,
               0.6652409557748218
             ],
+            "weightHead": {
+              "src": "temperature-concentration/ezT.svg",
+              "aspect": 1.5455,
+              "expression": "e^{z/T}"
+            },
             "cues": {
-              "down": 1.08,
-              "up": 5.12,
-              "rank": 9.08
+              "divide": 1.71,
+              "down": 3.42,
+              "up": 10.08,
+              "zoom": 14.38,
+              "rank": 16.17
             }
           },
           "rendered": {
             "out": "media/B03.mp4",
-            "at": "2026-09-23T22:55:14.120813+00:00"
+            "at": "2026-09-27T13:22:51.884259+00:00"
           }
         }
       },
       "audio_file": "mp3/beat-B03.mp3",
-      "actual_duration_s": 12.52,
-      "render_duration_s": 12.541666666666666,
+      "render_duration_s": 17.958333333333332,
+      "actual_duration_s": 17.92,
       "build": {
         "status": "VIDEO",
         "src": "media/B03.mp4",
         "filled_by": "remotion:TcTemperatureDial",
-        "at": "2026-09-27T05:38:38"
+        "at": "2026-09-27T09:24:45"
       }
     },
     {
@@ -461,7 +492,7 @@
         "status": "VIDEO",
         "src": "media/B04.mp4",
         "filled_by": "remotion:TcRatio",
-        "at": "2026-09-27T05:38:38"
+        "at": "2026-09-27T09:24:45"
       }
     },
     {
@@ -519,7 +550,7 @@
         "status": "VIDEO",
         "src": "media/B05.mp4",
         "filled_by": "remotion:TcCode",
-        "at": "2026-09-27T05:38:38"
+        "at": "2026-09-27T09:24:45"
       }
     },
     {
@@ -599,7 +630,7 @@
         "status": "VIDEO",
         "src": "media/B06.mp4",
         "filled_by": "remotion:TcSampleCounts",
-        "at": "2026-09-27T05:38:38"
+        "at": "2026-09-27T09:24:45"
       }
     },
     {
@@ -661,7 +692,7 @@
         "status": "VIDEO",
         "src": "media/B07.mp4",
         "filled_by": "remotion:TcWrongAnswer",
-        "at": "2026-09-27T05:38:38"
+        "at": "2026-09-27T09:24:45"
       }
     },
     {
@@ -723,13 +754,14 @@
               {
                 "text": "Whether the scores themselves were any good",
                 "shown": false,
-                "at": 8.17
+                "at": 8.17,
+                "accent": true
               }
             ]
           },
           "rendered": {
             "out": "media/B08.mp4",
-            "at": "2026-09-23T23:02:56.032106+00:00"
+            "at": "2026-09-27T13:23:46.012543+00:00"
           }
         }
       },
@@ -740,7 +772,7 @@
         "status": "VIDEO",
         "src": "media/B08.mp4",
         "filled_by": "remotion:TcBoundary",
-        "at": "2026-09-27T05:38:38"
+        "at": "2026-09-27T09:24:45"
       }
     },
     {
@@ -787,53 +819,7 @@
         "status": "VIDEO",
         "src": "media/BVDT.mp4",
         "filled_by": "remotion:ClaudeVerdictArtifact",
-        "at": "2026-09-27T05:38:38"
-      }
-    },
-    {
-      "beat_id": "BHTF",
-      "act": "handoff — your turn",
-      "lane": "BOOKEND",
-      "narration_text": "Your turn. Paste this into Claude: pick three possible answers to a question I care about and give each one a score. Compute softmax at temperatures point five, one and two. Then tell me what evidence, not temperature, could change which answer is on top. Check its numbers against the ratio rule. And notice: only a change in the scores can reorder the list.",
-      "voice": "am_onyx",
-      "engine": "kokoro",
-      "shot": {
-        "type": "REMOTION",
-        "source": "own",
-        "motion": "illustrate",
-        "show": [
-          {
-            "at": "Paste this",
-            "event": "suggested prompt types into the composer"
-          }
-        ],
-        "remotion": {
-          "pattern": "ClaudeComposerAsk",
-          "props": {
-            "greeting": "Your turn.",
-            "topic": "YOUR TURN · TEMPERATURE",
-            "segment": "Temperature Is Not a Fact Checker",
-            "command": "Pick three possible answers to a question I care about and give each one a score. Compute softmax at temperatures 0.5, 1 and 2. Then tell me what evidence, not temperature, could change which answer is on top.",
-            "runningText": "paste this into Claude…",
-            "output": [],
-            "folderLabel": "@NikBearBrown",
-            "durationSeconds": 17.98,
-            "largeText": true
-          },
-          "rendered": {
-            "out": "media/BHTF.mp4",
-            "at": "2026-09-23T23:12:09.716749+00:00"
-          }
-        }
-      },
-      "audio_file": "mp3/beat-BHTF.mp3",
-      "actual_duration_s": 17.98,
-      "render_duration_s": 18.0,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/BHTF.mp4",
-        "filled_by": "remotion:ClaudeComposerAsk",
-        "at": "2026-09-27T05:38:38"
+        "at": "2026-09-27T09:24:45"
       }
     },
     {
@@ -873,7 +859,7 @@
         "status": "VIDEO",
         "src": "media/BOUT.mp4",
         "filled_by": "remotion:ClaudeTitleOutro",
-        "at": "2026-09-27T05:38:38"
+        "at": "2026-09-27T09:24:45"
       }
     }
   ]
