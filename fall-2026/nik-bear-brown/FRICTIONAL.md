@@ -211,6 +211,14 @@ Every push to GitHub is listed at the bottom with its date and commit note.
   - **Then, in my words:** "vercel I can do that with, not Figma." And: "This is my Bear Brown Max account ... I control ... I have an NEU account and that should be noted in the film, as many don't have two, only the uni account." The terminal had run on my NEU Claude Enterprise account; the desktop app and Cowork are on my personal Max account. The real cause: the bare `figma` server from my first `claude mcp add` was still in my user config, at the same address as the plugin's server. I ran `claude mcp remove figma -s user` and restarted the app. The session's `/mcp` panel then showed "figma · Provided by the Figma plugin · Connect", and after Connect, a ✓. Claude confirmed it from the desktop session: `whoami` worked, and it read the Lectern board back. The board has every section, gate and connector, but the drawing tool shortened all the labels.
   - **I said:** "yes this is very confusing and def worth its own film", then asked "what exactly is the difference between a plugin and a connector?" Claude's answer: a connector is the link to a service (an MCP server plus your sign-in); a plugin is a package that can bundle skills, agents, hooks and connectors. A plugin's connector "connects in sessions" through `/mcp`, and a leftover `claude mcp add` server can shadow it. That film is now being built (Liam, ai-explainer, stopping at the 4K master).
   - **Then I approved the board capture through my Chrome.** The Chrome extension wasn't connected, so Claude used Figma's own export instead: `get_screenshot` on the board returned a 6824 × 1553 render, with every section, gate and connector, and one truncated label ("GATE E - write FRICTION…"). The cc-explainer build started from my real session and that render. The film says it's Figma's export, not a screen recording.
+- **Then, on Frictional:** I asked "does Figma keep track of changes?", pasted my *Measuring the Struggle* preprint, and said: "the idea is, if somebody really works on something, they're making a lot of changes ... not only turns in the final artifact, but turns in the whole version history ... every change ... and dates when it gets made ... and the student would put in reasons why they made them." Claude checked Figma's docs:
+  - Checkpoints are saved every 30 minutes.
+  - Named versions take a title and a description (the "why").
+  - The REST API returns every version's date, label, description and user.
+  - Education teams keep the whole history; Drafts and Starter keep only 30 days.
+  - The limits: the MCP server has no version-history tool, and edits an agent makes through MCP are attributed to the student, so session transcripts have to travel with the log.
+
+  Claude wrote `research/frictional-figma-version-history.md` and a small script (`examples/frictional-version-log/figma_version_log.py`) that turns a file's history into a `VERSIONS.md` table, in the private Figma repo. I haven't tried it yet.
 
 ### 2026-09-26 — The assignment went out, and its first worked recipe
 
@@ -304,3 +312,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-26 | docs(fall-2026): log the Cowork connection attempt and the two film requests |
 | 2026-09-26 | docs(fall-2026): log the Figma plugin-versus-connector fix and the film it became |
 | 2026-09-26 | docs(fall-2026): log the board render and the start of the cc-explainer build |
+| 2026-09-26 | docs(fall-2026): log the Figma version-history idea for Frictional |
