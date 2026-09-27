@@ -219,6 +219,11 @@ Every push to GitHub is listed at the bottom with its date and commit note.
   - The limits: the MCP server has no version-history tool, and edits an agent makes through MCP are attributed to the student, so session transcripts have to travel with the log.
 
   Claude wrote `research/frictional-figma-version-history.md` and a small script (`examples/frictional-version-log/figma_version_log.py`) that turns a file's history into a `VERSIONS.md` table, in the private Figma repo. I haven't tried it yet.
+- **Then:** "the frictional logs, the best you can. For everything that I do, we also need a video on frictional and Figma. Why is this important? Why not just the final artifact ... but the entire version history of how it was made, the reasonings, and if possible, dates ... the student can't make up the dates ... it's like GitHub. GitHub is putting in a date. You can't change the GitHub date. Hopefully with Figma, I can't tell it to make a date."
+  - **Claude corrected two things:**
+    - Git **commit** dates *can* be set by the author (`git commit --date`, `GIT_AUTHOR_DATE`); the date GitHub records on its own servers is the **push** time.
+    - The MCP server doesn't write dates. Figma's servers stamp each version's `created_at`. Saving a version takes a title and a description but no date, and the REST API can only read versions, so there's no documented way to backdate one.
+  - **The principle:** trust the server's clock, not the author's. A show-tell film for the Figma playlist is building with that correction built in.
 
 ### 2026-09-26 — The assignment went out, and its first worked recipe
 
@@ -313,3 +318,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-26 | docs(fall-2026): log the Figma plugin-versus-connector fix and the film it became |
 | 2026-09-26 | docs(fall-2026): log the board render and the start of the cc-explainer build |
 | 2026-09-26 | docs(fall-2026): log the Figma version-history idea for Frictional |
+| 2026-09-26 | docs(fall-2026): log the Frictional and Figma film request and the date correction |
