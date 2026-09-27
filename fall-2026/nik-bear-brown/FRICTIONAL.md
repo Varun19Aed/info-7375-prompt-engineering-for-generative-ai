@@ -237,6 +237,11 @@ Every push to GitHub is listed at the bottom with its date and commit note.
 - **Then I signed off the Cowork film ("Looks great")** and pasted my publish runbook. Claude published it unlisted: https://youtu.be/JlDHbERabOg. It's at the top of "Claude & Agentic AI", and third in "Figma for Educational AI" (after the intro and the MCP film; Claude moved it there after the upload put it first). Staging refused once because the sheet had no chapter number; chapter 3 was set.
 - **Then I signed off the Claude Code film ("Looks great")** with the same runbook. It's published unlisted at https://youtu.be/FrI54hgrGp4, at the top of "Claude & Agentic AI" and fourth in "Figma for Educational AI" (intro → MCP → Cowork → Claude Code).
 - **The context film is finished:** "Job-Hunting in Public, Without Needing a Job" (deep explainer, 6:24, 4K, every gate passing, not published). The builder changed my suggested title from first person, because Liam speaks about me. My own claims are spoken as mine, and the film says out loud that the committee work isn't in my CV facts file. Its gap check found 0 hits for Figma, design systems, certification or conference talks in that file. I haven't watched it yet.
+- **2026-09-27: I signed off both remaining films ("Looks great")** and pasted my publish runbook for each. Both are published unlisted at the top of "Claude & Agentic AI":
+  - "Hand In the History, Not Just the Design": https://youtu.be/saJieSuje84
+  - "Job-Hunting in Public, Without Needing a Job": https://youtu.be/U6UdCOMBuUI
+
+  The "Figma for Educational AI" playlist now runs: context film → intro → MCP server → Cowork → Claude Code → Hand In the History.
 
 ### 2026-09-26 — The assignment went out, and its first worked recipe
 
@@ -342,3 +347,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-26 | docs(fall-2026): log the Cowork film going up unlisted |
 | 2026-09-26 | docs(fall-2026): log the Claude Code film going up unlisted |
 | 2026-09-26 | docs(fall-2026): log the finished context film |
+| 2026-09-27 | docs(fall-2026): log the last two Figma films going up unlisted |
