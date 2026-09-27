@@ -1,0 +1,640 @@
+{
+  "metadata": {
+    "title": "Softmax, Shifted.",
+    "slug": "softmax-shifted",
+    "topic": "SOFTMAX · NUMERICAL STABILITY",
+    "register": "Teardown",
+    "audience": "INFO 7375 students (Northeastern)",
+    "brand": "claude-liam",
+    "persona": "Liam (in for Bear)",
+    "voice": "am_onyx",
+    "engine": "kokoro",
+    "voice_kokoro": "am_onyx",
+    "palette": "claude",
+    "style_preset": "claude",
+    "ground": "#FAF9F5",
+    "greeting": "Hola.",
+    "greeting_note": "hello lexicon: Spanish. Wagwan check: charsum('softmax-shifted') % 10 == 8, not 0.",
+    "folderLabel": "@NikBearBrown",
+    "in_for_bear": true,
+    "assignment": "INFO 7375 · Northeastern University · Varun Tadimeti · Week 1",
+    "note": "Student assignment reel. ILLUSTRATE LAW: UI at B00 / calc-ASK beats (B03, B05, B08) / verdict (B10) / handoff (B12) / outro (B13). Body illustrations (B02, B06, B07, B09) render as SLATES on the first compile per fill-in-first doctrine; each names its intended custom scene under shot.visual_intent. CREDIT beat (B11) uses FormACard, the sanctioned form-A text card — this is the only student-attribution surface (OUTRO handle is locked to @NikBearBrown per OUTRO-LOCK.md). All calculation beats carry a CONSTRUCTED EXAMPLE label; numerical values verified against Chapter 1 reference (math.exp on [1,2,3] and shift-by-3). DEVIATION — IN-FOR-BEAR LAW (SKILL.md §Liam): the spoken 'this is Liam, in for Bear' (B00) and outro sign-off 'Liam, in for Bear' (B13) are OMITTED, and composer greetings drop the ',Liam' persona slot. Reason: this reel is a Northeastern INFO 7375 student assignment by Varun Tadimeti; using the IN-FOR-BEAR pattern would falsely attribute presentation to Liam (who is the student's professor). B13 remains fully OUTRO-LOCK.md compliant ('Softmax, Shifted. At Nik Bear Brown.' — the strict lock does not require the Liam sign-off). Visual chrome (brand=claude-liam, folderLabel/handle=@NikBearBrown, voice=am_onyx) is unchanged — those are template locks, not personal attribution.",
+    "tags": [
+      "softmax",
+      "numerical stability",
+      "temperature",
+      "INFO 7375",
+      "Northeastern",
+      "Week 1",
+      "math",
+      "explainer"
+    ],
+    "build": {
+      "at": "2026-09-27T13:48:29",
+      "cut": "master",
+      "filled": 14,
+      "of": 14,
+      "slates": [],
+      "skin_warnings": []
+    }
+  },
+  "beats": [
+    {
+      "beat_id": "B00",
+      "act": "cold open",
+      "narration": "Hola. Softmax turns scores into probabilities — and a common numerical-stability technique is to subtract the maximum first. Today: why that shift doesn't change the answer.",
+      "narration_text": "Hola. Softmax turns scores into probabilities — and a common numerical-stability technique is to subtract the maximum first. Today: why that shift doesn't change the answer.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 11,
+      "shot": {
+        "type": "REMOTION",
+        "source": "remotion",
+        "motion": "type-on",
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Hola.",
+            "topic": "SOFTMAX · NUMERICAL STABILITY",
+            "segment": "Softmax, Shifted.",
+            "command": "Explain why softmax subtracts the maximum.",
+            "runningText": "reading softmax notes…",
+            "folderLabel": "@NikBearBrown",
+            "output": [
+              "scores [1, 2, 3]  →  probs [0.0900, 0.2447, 0.6652]",
+              "shifted [-2, -1, 0]  →  same probs",
+              "the shift changes the arithmetic, not the answer"
+            ]
+          },
+          "rendered": {
+            "out": "media/B00.mp4",
+            "at": "2026-09-26T16:01:26.340774+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 10.33,
+      "audio_file": "mp3/beat-B00.mp3",
+      "render_duration_s": 10.333333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B00.mp4",
+        "filled_by": "remotion:ClaudeComposerAsk",
+        "at": "2026-09-27T13:48:29"
+      }
+    },
+    {
+      "beat_id": "B01",
+      "act": "BLUF (hesitant writer)",
+      "narration": "Subtracting the maximum changes the intermediate values, but not the mathematical softmax distribution. It's a numerical safety move. Same math, safer arithmetic. Let me show you why that's guaranteed by the algebra.",
+      "narration_text": "Subtracting the maximum changes the intermediate values, but not the mathematical softmax distribution. It's a numerical safety move. Same math, safer arithmetic. Let me show you why that's guaranteed by the algebra.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "lead_silence_s": 0.8,
+      "estimated_duration_s": 12,
+      "shot": {
+        "type": "REMOTION",
+        "source": "remotion",
+        "motion": "type-on",
+        "remotion": {
+          "pattern": "BrutalistHesitantWriter",
+          "props": {
+            "text": "Subtracting the maximum changes the mathematical softmax distribution.",
+            "triggerWords": "changes the mathematical softmax distribution",
+            "replacementWords": "changes the intermediate values, but not the mathematical softmax distribution",
+            "face": "serif",
+            "fontSize": 56,
+            "align": "center",
+            "seed": "softmax-shifted-b01"
+          },
+          "rendered": {
+            "out": "media/B01.mp4",
+            "at": "2026-09-27T03:16:03.952034+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 12.74,
+      "audio_file": "mp3/beat-B01.mp3",
+      "render_duration_s": 12.75,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B01.mp4",
+        "filled_by": "remotion:BrutalistHesitantWriter",
+        "at": "2026-09-27T13:48:29"
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "Intentional sparse BLUF composition: a single hesitant-writer statement is centered with negative space for emphasis. Manually reviewed for readability."
+      }
+    },
+    {
+      "beat_id": "B02",
+      "act": "frame: what softmax does",
+      "narration": "Softmax takes a list of scores and turns them into a probability distribution. Higher scores get more mass, lower scores less, and everything sums to one. The rule: exponentiate each score, then divide by the sum of the exponentials. That's the whole recipe.",
+      "narration_text": "Softmax takes a list of scores and turns them into a probability distribution. Higher scores get more mass, lower scores less, and everything sums to one. The rule: exponentiate each score, then divide by the sum of the exponentials. That's the whole recipe.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 15,
+      "shot": {
+        "type": "REMOTION",
+        "source": "remotion",
+        "motion": "illustrate",
+        "visual_intent": "C3 concept illustration on cream stage. Left column: three vertical score chips '1', '2', '3' (ink on cream). Middle: a labelled 'softmax' gate (arrow in from scores, arrow out to probs). Right column: three probability bars sized to 0.09, 0.24, 0.67 with numeric labels underneath. Terracotta accent = the gate label only. Spark line top: 'The recipe.' Draw-on order matches narration: scores in → gate lights → bars grow → sum meter reads 1.00. No pantry, no photos — pure Remotion.",
+        "punt_reason": "Resolved with a custom Remotion scene.",
+        "remotion": {
+          "pattern": "SoftmaxRecipe",
+          "props": {},
+          "rendered": {
+            "out": "media/B02.mp4",
+            "at": "2026-09-26T16:39:25.512461+00:00"
+          }
+        }
+      },
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B02.mp4",
+        "filled_by": "remotion:SoftmaxRecipe",
+        "at": "2026-09-27T13:48:29"
+      },
+      "actual_duration_s": 14.61,
+      "audio_file": "mp3/beat-B02.mp3",
+      "render_duration_s": 14.625
+    },
+    {
+      "beat_id": "B03",
+      "act": "ASK — naive on [1,2,3]",
+      "narration": "Here it is on a constructed example — three scores, one, two, three. Exponentiate: about two point seven, seven point four, twenty. Divide by their sum, thirty point two. You get nine percent, twenty-four percent, sixty-six percent.",
+      "narration_text": "Here it is on a constructed example — three scores, one, two, three. Exponentiate: about two point seven, seven point four, twenty. Divide by their sum, thirty point two. You get nine percent, twenty-four percent, sixty-six percent.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 14,
+      "shot": {
+        "type": "REMOTION",
+        "source": "remotion",
+        "motion": "type-on",
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Hola.",
+            "topic": "SOFTMAX · NUMERICAL STABILITY",
+            "segment": "Softmax, Shifted.",
+            "command": "softmax([1, 2, 3])",
+            "runningText": "constructed example — computing…",
+            "folderLabel": "@NikBearBrown",
+            "output": [
+              "CONSTRUCTED EXAMPLE",
+              "e^1 ≈ 2.7183",
+              "e^2 ≈ 7.3891",
+              "e^3 ≈ 20.0855",
+              "sum  ≈ 30.1929",
+              "→ [0.0900, 0.2447, 0.6652]"
+            ]
+          },
+          "rendered": {
+            "out": "media/B03.mp4",
+            "at": "2026-09-26T16:04:41.106775+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 13.18,
+      "audio_file": "mp3/beat-B03.mp3",
+      "render_duration_s": 13.208333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B03.mp4",
+        "filled_by": "remotion:ClaudeComposerAsk",
+        "at": "2026-09-27T13:48:29"
+      }
+    },
+    {
+      "beat_id": "B04",
+      "act": "naive result as bars",
+      "narration": "The same numbers, drawn as bars. Small, medium, big. That's our target: whatever we do next, the bars have to land in exactly these three places.",
+      "narration_text": "The same numbers, drawn as bars. Small, medium, big. That's our target: whatever we do next, the bars have to land in exactly these three places.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 11,
+      "shot": {
+        "type": "REMOTION",
+        "source": "remotion",
+        "motion": "illustrate",
+        "remotion": {
+          "pattern": "SoftmaxProbabilityBars",
+          "props": {
+            "title": "softmax([1, 2, 3]) — CONSTRUCTED EXAMPLE",
+            "data": [
+              {
+                "label": "x=1",
+                "value": 0.09
+              },
+              {
+                "label": "x=2",
+                "value": 0.2447
+              },
+              {
+                "label": "x=3",
+                "value": 0.6652
+              }
+            ],
+            "accentIndex": 2,
+            "unit": "probability"
+          }
+        }
+      },
+      "actual_duration_s": 8.68,
+      "audio_file": "mp3/beat-B04.mp3",
+      "render_duration_s": 8.708333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B04.mp4",
+        "filled_by": "media",
+        "at": "2026-09-27T13:48:29"
+      }
+    },
+    {
+      "beat_id": "B05",
+      "act": "ASK — shifted on [1,2,3]",
+      "narration": "Now the same reel with the shift. Subtract the max — three — from every score. Scores become minus two, minus one, zero. Exponentiate: point one three, point three seven, one. Divide by their sum. Same three probabilities. Nothing moved.",
+      "narration_text": "Now the same reel with the shift. Subtract the max — three — from every score. Scores become minus two, minus one, zero. Exponentiate: point one three, point three seven, one. Divide by their sum. Same three probabilities. Nothing moved.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 15,
+      "shot": {
+        "type": "REMOTION",
+        "source": "remotion",
+        "motion": "type-on",
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Hola.",
+            "topic": "SOFTMAX · NUMERICAL STABILITY",
+            "segment": "Softmax, Shifted.",
+            "command": "softmax([1, 2, 3] - max([1, 2, 3]))",
+            "runningText": "constructed example — subtract max; computing…",
+            "folderLabel": "@NikBearBrown",
+            "output": [
+              "CONSTRUCTED EXAMPLE",
+              "max = 3   →   shifted = [-2, -1, 0]",
+              "e^-2 ≈ 0.1353",
+              "e^-1 ≈ 0.3679",
+              "e^0  = 1.0000",
+              "sum  ≈ 1.5032",
+              "→ [0.0900, 0.2447, 0.6652]"
+            ]
+          },
+          "rendered": {
+            "out": "media/B05.mp4",
+            "at": "2026-09-26T16:06:46.167872+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 13.7,
+      "audio_file": "mp3/beat-B05.mp3",
+      "render_duration_s": 13.708333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B05.mp4",
+        "filled_by": "remotion:ClaudeComposerAsk",
+        "at": "2026-09-27T13:48:29"
+      }
+    },
+    {
+      "beat_id": "B06",
+      "act": "side-by-side — the answers match",
+      "narration": "Watch the two answers meet. Wildly different intermediate numbers — same final distribution. Which raises the actual question: why is this guaranteed to happen, not just a coincidence?",
+      "narration_text": "Watch the two answers meet. Wildly different intermediate numbers — same final distribution. Which raises the actual question: why is this guaranteed to happen, not just a coincidence?",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 12,
+      "shot": {
+        "type": "REMOTION",
+        "source": "remotion",
+        "motion": "compare",
+        "visual_intent": "Two BarChart panels side by side on cream stage. LEFT panel: 'naive softmax([1,2,3])'. RIGHT panel: 'shifted softmax([1,2,3]-3)'. Both animate bars up to the identical heights [0.0900, 0.2447, 0.6652]. On the spoken word 'meet', terracotta tick marks appear at each pair of bar tops indicating equality. Hold both charts ≥2s per legibility contract. Spark line top: 'Same answer, different arithmetic.' CONSTRUCTED EXAMPLE chip lower-right.",
+        "punt_reason": "Resolved with a custom Remotion scene.",
+        "remotion": {
+          "pattern": "SoftmaxComparison",
+          "props": {},
+          "rendered": {
+            "out": "media/B06.mp4",
+            "at": "2026-09-26T16:41:34.994369+00:00"
+          }
+        }
+      },
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B06.mp4",
+        "filled_by": "remotion:SoftmaxComparison",
+        "at": "2026-09-27T13:48:29"
+      },
+      "actual_duration_s": 10.54,
+      "audio_file": "mp3/beat-B06.mp3",
+      "render_duration_s": 10.541666666666666
+    },
+    {
+      "beat_id": "B07",
+      "act": "why: the algebra",
+      "narration": "Here's why. Subtracting c from every score is the same as multiplying every exponential by e-to-the-minus-c. That common factor sits in the top and in the bottom of the fraction — so it cancels. What's left is the original softmax. Algebraically, it's the same expression. The distribution can't change.",
+      "narration_text": "Here's why. Subtracting c from every score is the same as multiplying every exponential by e-to-the-minus-c. That common factor sits in the top and in the bottom of the fraction — so it cancels. What's left is the original softmax. Algebraically, it's the same expression. The distribution can't change.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 20,
+      "shot": {
+        "type": "REMOTION",
+        "source": "remotion",
+        "motion": "derive",
+        "visual_intent": "SLATE on first previz. FILL step: Manim structured math (MATH-TYPESETTING.md; MathTex, NOT text cards). Four aligned lines, revealed one at a time on cued words, each staying on screen:  (1) p_i = e^{x_i} / Σ_j e^{x_j}   (2) With x_i → x_i − c, c = max_j x_j:  p_i = e^{x_i − c} / Σ_j e^{x_j − c}   (3) = e^{x_i} · e^{-c} / (e^{-c} · Σ_j e^{x_j})   (4) = e^{x_i} / Σ_j e^{x_j}. On the spoken word 'cancels', the two e^{-c} factors in line (3) turn terracotta and cross out simultaneously in numerator and denominator. Ink on cream ground (#FAF9F5). Spark line top: 'The common factor cancels.'",
+        "punt_reason": "RESOLVED — bespoke SoftmaxDerivation scene added; typeset via typeset_math.py (matplotlib mathtext SVG).",
+        "remotion": {
+          "pattern": "SoftmaxDerivation",
+          "props": {
+            "rows": [
+              {
+                "src": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgd2lkdGg9IjE2OXB0IiBoZWlnaHQ9Ijk5cHQiIHZpZXdCb3g9IjAgMCAxNjkgOTkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIj4KIDxtZXRhZGF0YT4KICA8cmRmOlJERiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgIDxjYzpXb3JrPgogICAgPGRjOnR5cGUgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIvPgogICAgPGRjOmRhdGU+MjAyNi0wOS0yNlQxMzo1MDo1NS41NTQzMDE8L2RjOmRhdGU+CiAgICA8ZGM6Zm9ybWF0PmltYWdlL3N2Zyt4bWw8L2RjOmZvcm1hdD4KICAgIDxkYzpjcmVhdG9yPgogICAgIDxjYzpBZ2VudD4KICAgICAgPGRjOnRpdGxlPk1hdHBsb3RsaWIgdjMuMTAuMCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy88L2RjOnRpdGxlPgogICAgIDwvY2M6QWdlbnQ+CiAgICA8L2RjOmNyZWF0b3I+CiAgIDwvY2M6V29yaz4KICA8L3JkZjpSREY+CiA8L21ldGFkYXRhPgogPGRlZnM+CiAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4qe3N0cm9rZS1saW5lam9pbjogcm91bmQ7IHN0cm9rZS1saW5lY2FwOiBidXR0fTwvc3R5bGU+CiA8L2RlZnM+CiA8ZyBpZD0iZmlndXJlXzEiPgogIDxnIGlkPSJwYXRjaF8xIj4KICAgPHBhdGggZD0iTSAwIDk5IApMIDE2OSA5OSAKTCAxNjkgMCAKTCAwIDAgCkwgMCA5OSAKegoiIHN0eWxlPSJmaWxsOiBub25lIi8+CiAgPC9nPgogIDxnIGlkPSJ0ZXh0XzEiPgogICA8IS0tICRwX2kgXDs9XDsgXGZyYWN7ZV57eF9pfX17XHN1bV97an0gZV57eF9qfX0kIC0tPgogICA8ZyBzdHlsZT0iZmlsbDogIzNkMzkyOSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCA0MSkgc2NhbGUoMC40OCAtMC40OCkiPgogICAgPGRlZnM+CiAgICAgPHBhdGggaWQ9IlNUSVhHZW5lcmFsLUl0YWxpYy03MCIgZD0iTSAxMzc2IDI3MzkgCkwgMTE5MCAyMDk5IApRIDE2NzAgMjgyMiAyMjg1IDI4MjIgClEgMjYzNyAyODIyIDI4MjkgMjYxMSAKUSAzMDIxIDI0MDAgMzAyMSAyMDIyIApRIDMwMjEgMTIzNSAyNDIyIDU4MiAKUSAxODI0IC03MCAxMTIwIC03MCAKUSA4OTAgLTcwIDY3OCAzOCAKUSA0MjIgLTEwMTggNDIyIC0xMDI0IApRIDQyMiAtMTEyNiA1MDggLTExNjggClEgNTk1IC0xMjEwIDgxOSAtMTIxMCAKTCA4MTkgLTEzMTIgCkwgLTQ4MCAtMTMxMiAKTCAtNDgwIC0xMjEwIApRIC0yNzUgLTEyMDMgLTE4OCAtMTEyMCAKUSAtMTAyIC0xMDM3IC00NSAtODA2IApMIDY5MSAxOTU4IApRIDc5NCAyMzMwIDc5NCAyNDEzIApRIDc5NCAyNTg2IDUxMiAyNTg2IApMIDM3MSAyNTg2IApMIDM1OCAyNjgyIApMIDEzNTcgMjgyMiAKUSAxMzg5IDI4MjIgMTM4OSAyNzk3IApRIDEzODIgMjc2NSAxMzc2IDI3MzkgCnoKTSAyNDQ1IDIwMDMgClEgMjQ0NSAyMjg1IDIzNTIgMjQxNiAKUSAyMjU5IDI1NDcgMjA0OCAyNTQ3IApRIDE3OTggMjU0NyAxNTQ4IDIzMjkgClEgMTI5OSAyMTEyIDExODQgMTgxOCAKUSAxMDQzIDE0NTMgOTA1IDk1MyAKUSA3NjggNDU0IDc2OCAyOTQgClEgNzY4IDE4NiA4NTQgMTE4IApRIDk0MSA1MSAxMDc1IDUxIApRIDE1NzQgNTEgMjAwMyA2NTkgClEgMjQ0NSAxMjc0IDI0NDUgMjAwMyAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPHBhdGggaWQ9IlNUSVhHZW5lcmFsLUl0YWxpYy02OSIgZD0iTSAxNjkwIDM4MzQgClEgMTY5MCAzNjk5IDE1OTcgMzYwMyAKUSAxNTA0IDM1MDcgMTM3NiAzNTA3IApRIDEyMzUgMzUwNyAxMTUyIDM2MDAgClEgMTA2OSAzNjkzIDEwNjkgMzg0NiAKUSAxMDY5IDM5OTQgMTE1NSA0MDkwIApRIDEyNDIgNDE4NiAxMzcwIDQxODYgClEgMTQ5OCA0MTg2IDE1OTQgNDA4MCAKUSAxNjkwIDM5NzQgMTY5MCAzODM0IAp6Ck0gMTQyMSA3MzAgCkwgMTUwNCA2NTkgClEgMTIzNSAyNDMgMTA0OSA4NiAKUSA4NjQgLTcwIDYyNyAtNzAgClEgMzE0IC03MCAzMTQgMjgyIApRIDMxNCA0NjcgNDU0IDk5MiAKTCA3NjIgMjEyNSAKUSA4MTkgMjMzMCA4MTkgMjQwNiAKUSA4MTkgMjUwMiA3NDUgMjUyOCAKUSA2NzIgMjU1NCA0MTAgMjU2MCAKTCA0MTAgMjY2MiAKUSA3MDQgMjY4OCAxNDM0IDI4MjIgCkwgMTQ1OSAyODAzIApMIDg1OCA2MDggClEgNzk0IDM5MCA3OTQgMzI2IApRIDc5NCAyMzAgODgzIDIzMCAKUSAxMDQzIDIzMCAxNDIxIDczMCAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPHBhdGggaWQ9IlNUSVhHZW5lcmFsLVJlZ3VsYXItM2QiIGQ9Ik0gNDA3NyAyMDQ4IApMIDMwNyAyMDQ4IApMIDMwNyAyNDcwIApMIDQwNzcgMjQ3MCAKTCA0MDc3IDIwNDggCnoKTSA0MDc3IDc2OCAKTCAzMDcgNzY4IApMIDMwNyAxMTkwIApMIDQwNzcgMTE5MCAKTCA0MDc3IDc2OCAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPHBhdGggaWQ9IlNUSVhHZW5lcmFsLUl0YWxpYy02NSIgZD0iTSAyMjkxIDY5OCAKTCAyMzY4IDYyMSAKUSAxODA1IC03MCAxMDYyIC03MCAKUSA2NzIgLTcwIDQzNSAxNzAgClEgMTk4IDQxMCAxOTggODA2IApRIDE5OCAxNTU1IDc5NiAyMTg4IApRIDEzOTUgMjgyMiAyMTEyIDI4MjIgClEgMjM2MiAyODIyIDI0OTkgMjcwNyAKUSAyNjM3IDI1OTIgMjYzNyAyMzg3IApRIDI2MzcgMTk2NSAyMTQ3IDE2MzIgClEgMTY1OCAxMjk5IDgxOSAxMTkwIApRIDc1NSAxMDYyIDc1NSA4MDAgClEgNzU1IDUzOCA5MTggMzc4IApRIDEwODIgMjE4IDEzNTAgMjE4IApRIDE1NjIgMjE4IDE3NTQgMzE3IApRIDE5NDYgNDE2IDIyOTEgNjk4IAp6Ck0gOTczIDE2MTMgCkwgODY0IDEzMzEgClEgMTU4MSAxNTA0IDE4OTQgMTgwNSAKUSAyMjE0IDIxMTIgMjIxNCAyNDI2IApRIDIyMTQgMjY3NSAxOTkwIDI2NzUgClEgMTcyMiAyNjc1IDE0MzAgMjM2NCAKUSAxMTM5IDIwNTQgOTczIDE2MTMgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDxwYXRoIGlkPSJTVElYR2VuZXJhbC1JdGFsaWMtNzgiIGQ9Ik0gMTU1NSAyMjcyIApMIDE2MzIgMTkwNyAKUSAxOTcxIDI0MjYgMjE3OSAyNjI0IApRIDIzODcgMjgyMiAyNTk4IDI4MjIgClEgMjcxNCAyODIyIDI3ODcgMjc1NSAKUSAyODYxIDI2ODggMjg2MSAyNTg1IApRIDI4NjEgMjQ4MyAyODAwIDI0MTkgClEgMjczOSAyMzU1IDI2NDMgMjM1NSAKUSAyNTg2IDIzNTUgMjQ5MCAyNDA5IApRIDIzOTQgMjQ2NCAyMzEwIDI0NjQgClEgMjEyNSAyNDY0IDE2ODMgMTY5MCAKUSAxNjgzIDE2MDYgMTczNCAxNDAyIApMIDE5MzkgNTQ0IApRIDIwMDMgMjgyIDIxMzEgMjgyIApRIDIyMzQgMjgyIDI0MzIgNTM4IApRIDI0NTEgNTYzIDI0NzYgNTk4IApRIDI1MDIgNjM0IDI1MjEgNjYyIApRIDI1NDEgNjkxIDI1NjYgNzE3IApMIDI2NjIgNjU5IApRIDIzODcgMjMwIDIyMjcgODAgClEgMjA2NyAtNzAgMTg4MiAtNzAgClEgMTcyOCAtNzAgMTY0NSAyNiAKUSAxNTYyIDEyMiAxNTA0IDM2NSAKTCAxMzE4IDExMjYgCkwgNzU1IDM2NSAKUSA1NTcgOTYgNDMyIDEzIApRIDMwNyAtNzAgMTQ3IC03MCAKUSAwIC03MCAtODYgMCAKUSAtMTczIDcwIC0xNzMgMTk4IApRIC0xNzMgMjk0IC0xMTIgMzYxIApRIC01MSA0MjkgNDUgNDI5IApRIDEyMiA0MjkgMjUwIDM1OCAKUSAzNDYgMzAxIDQxNiAzMDEgClEgNTI1IDMwMSA3NDIgNjE0IApMIDEyNjcgMTM1NyAKTCAxMDg4IDIxNTAgClEgMTAyNCAyNDMyIDk2OSAyNTA5IApRIDkxNSAyNTg2IDc5NCAyNTg2IApRIDcxNyAyNTg2IDU0NCAyNTQxIApMIDQyOSAyNTA5IApMIDQxMCAyNjExIApMIDQ4MCAyNjM3IApRIDk5MiAyODIyIDEyMjkgMjgyMiAKUSAxMzUwIDI4MjIgMTQyMCAyNzA3IApRIDE0OTEgMjU5MiAxNTU1IDIyNzIgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDxwYXRoIGlkPSJTVElYR2VuZXJhbC1SZWd1bGFyLTIyMTEiIGQ9Ik0gNTQ3OCAyNTYgCkwgNTEzOSAtMTY1OCAKTCAzNzEgLTE2NTggCkwgMjg4MCAxNjA2IApMIDUzMSA0ODgzIApMIDUzMTIgNDg4MyAKTCA1MzEyIDMyNzcgCkwgNTEyMCAzMjc3IApRIDUwMTggMzk0OSA0NzY1IDQyMDUgClEgNDUxMiA0NDYxIDM4OTEgNDQ2MSAKTCAxODQzIDQ0NjEgCkwgMzY5OSAxOTU4IApMIDE1NDkgLTgxOSAKTCA0MTk4IC04MTkgClEgNDY5OCAtODE5IDQ5MzQgLTU1MCAKUSA1MTcxIC0yODIgNTI4NiAyNTYgCkwgNTQ3OCAyNTYgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDxwYXRoIGlkPSJTVElYR2VuZXJhbC1JdGFsaWMtNmEiIGQ9Ik0gMTc4NiAzODI3IApRIDE3ODYgMzY5OSAxNjkwIDM2MDMgClEgMTU5NCAzNTA3IDE0NjYgMzUwNyAKUSAxMzE4IDM1MDcgMTIxOSAzNjAwIApRIDExMjAgMzY5MyAxMTIwIDM4NDAgClEgMTEyMCAzOTgxIDEyMjIgNDA3NyAKUSAxMzI1IDQxNzMgMTQ1OSA0MTczIApRIDE1ODcgNDE3MyAxNjg2IDQwNjcgClEgMTc4NiAzOTYyIDE3ODYgMzgyNyAKegpNIDE1NzQgMjgwMyAKTCA5MDkgMTc5IApRIDcxMCAtNTk1IDQxOSAtOTYwIApRIDEyOCAtMTMyNSAtMjg4IC0xMzI1IApRIC01MTIgLTEzMjUgLTY1MyAtMTIxNiAKUSAtNzk0IC0xMTA3IC03OTQgLTkzNCAKUSAtNzk0IC04MTkgLTcxNyAtNzM2IApRIC02NDAgLTY1MyAtNTMxIC02NTMgClEgLTI4MiAtNjUzIC0yODIgLTg5MCAKUSAtMjgyIC05NjYgLTMyMCAtMTAxNCAKUSAtMzU4IC0xMDYyIC0zNTggLTExMDcgClEgLTM1OCAtMTE4NCAtMjQzIC0xMTg0IApRIC01MSAtMTE4NCA4MCAtOTM0IApRIDIxMSAtNjg1IDM3OCAtMTkgCkwgODM4IDE4NTAgClEgOTQxIDIyNjYgOTQxIDIzNjIgClEgOTQxIDI0NzAgODczIDI1MTUgClEgODA2IDI1NjAgNjM0IDI1NjAgCkwgNDY3IDI1NjAgCkwgNDY3IDI2NjIgClEgNzU1IDI2ODIgMTU0OSAyODIyIApMIDE1NzQgMjgwMyAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICA8L2RlZnM+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVElYR2VuZXJhbC1JdGFsaWMtNzAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMC4xMzkwNjIpIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVElYR2VuZXJhbC1JdGFsaWMtNjkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUwLjM5OTk5NCAtMTMuMDg5MDYzKSBzY2FsZSgwLjcpIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVElYR2VuZXJhbC1SZWd1bGFyLTNkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDguNzY1MDY4IDAuMTM5MDYyKSIvPgogICAgPHVzZSB4bGluazpocmVmPSIjU1RJWEdlbmVyYWwtSXRhbGljLTY1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMzkuNzYwNzYgMzguNzAxNTYzKSBzY2FsZSgwLjcpIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVElYR2VuZXJhbC1JdGFsaWMtNzgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI3NS4xNjE5NDMgNjMuMzk0MDYzKSBzY2FsZSgwLjQ5KSIvPgogICAgPHVzZSB4bGluazpocmVmPSIjU1RJWEdlbmVyYWwtSXRhbGljLTY5IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyOTYuOTE3OTQgNTYuOTEyMjgxKSBzY2FsZSgwLjM0MykiLz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLVJlZ3VsYXItMjIxMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjExLjc2MDc2IC00Ni43MjE4NzUpIHNjYWxlKDAuNykiLz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLUl0YWxpYy02YSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjMyLjc2MDc2IC0xMDkuOTMwNzgxKSBzY2FsZSgwLjQ5KSIvPgogICAgPHVzZSB4bGluazpocmVmPSIjU1RJWEdlbmVyYWwtSXRhbGljLTY1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNjcuNjE4NTcyIC00Ni43MjE4NzUpIHNjYWxlKDAuNykiLz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLUl0YWxpYy03OCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzAzLjAxOTc1NSAtMjIuMDI5Mzc1KSBzY2FsZSgwLjQ5KSIvPgogICAgPHVzZSB4bGluazpocmVmPSIjU1RJWEdlbmVyYWwtSXRhbGljLTZhIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMjQuNzc1NzUyIC0yOC41MTExNTYpIHNjYWxlKDAuMzQzKSIvPgogICAgPHBhdGggZD0iTSAyMTEuNzYwNzYgMTIuOTM1OTM3IApMIDIxMS43NjA3NiAxOS4xODU5MzcgCkwgMzM5LjU1ODMwNCAxOS4xODU5MzcgCkwgMzM5LjU1ODMwNCAxMi45MzU5MzcgCkwgMjExLjc2MDc2IDEyLjkzNTkzNyAKegoiLz4KICAgPC9nPgogIDwvZz4KIDwvZz4KPC9zdmc+Cg==",
+                "aspect": 1.707070707070707,
+                "expression": "p_i \\;=\\; \\frac{e^{x_i}}{\\sum_{j} e^{x_j}}"
+              },
+              {
+                "src": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgd2lkdGg9IjIwNnB0IiBoZWlnaHQ9Ijk5cHQiIHZpZXdCb3g9IjAgMCAyMDYgOTkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIj4KIDxtZXRhZGF0YT4KICA8cmRmOlJERiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgIDxjYzpXb3JrPgogICAgPGRjOnR5cGUgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIvPgogICAgPGRjOmRhdGU+MjAyNi0wOS0yNlQxMzo1MDo1NS41NjQ2ODU8L2RjOmRhdGU+CiAgICA8ZGM6Zm9ybWF0PmltYWdlL3N2Zyt4bWw8L2RjOmZvcm1hdD4KICAgIDxkYzpjcmVhdG9yPgogICAgIDxjYzpBZ2VudD4KICAgICAgPGRjOnRpdGxlPk1hdHBsb3RsaWIgdjMuMTAuMCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy88L2RjOnRpdGxlPgogICAgIDwvY2M6QWdlbnQ+CiAgICA8L2RjOmNyZWF0b3I+CiAgIDwvY2M6V29yaz4KICA8L3JkZjpSREY+CiA8L21ldGFkYXRhPgogPGRlZnM+CiAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4qe3N0cm9rZS1saW5lam9pbjogcm91bmQ7IHN0cm9rZS1saW5lY2FwOiBidXR0fTwvc3R5bGU+CiA8L2RlZnM+CiA8ZyBpZD0iZmlndXJlXzEiPgogIDxnIGlkPSJwYXRjaF8xIj4KICAgPHBhdGggZD0iTSAwIDk5IApMIDIwNiA5OSAKTCAyMDYgMCAKTCAwIDAgCkwgMCA5OSAKegoiIHN0eWxlPSJmaWxsOiBub25lIi8+CiAgPC9nPgogIDxnIGlkPSJ0ZXh0XzEiPgogICA8IS0tICRwX2knIFw7PVw7IFxmcmFje2Vee3hfaSAtIGN9fXtcc3VtX3tqfSBlXnt4X2ogLSBjfX0kIC0tPgogICA8ZyBzdHlsZT0iZmlsbDogIzNkMzkyOSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCA0MSkgc2NhbGUoMC40OCAtMC40OCkiPgogICAgPGRlZnM+CiAgICAgPHBhdGggaWQ9IlNUSVhHZW5lcmFsLUl0YWxpYy03MCIgZD0iTSAxMzc2IDI3MzkgCkwgMTE5MCAyMDk5IApRIDE2NzAgMjgyMiAyMjg1IDI4MjIgClEgMjYzNyAyODIyIDI4MjkgMjYxMSAKUSAzMDIxIDI0MDAgMzAyMSAyMDIyIApRIDMwMjEgMTIzNSAyNDIyIDU4MiAKUSAxODI0IC03MCAxMTIwIC03MCAKUSA4OTAgLTcwIDY3OCAzOCAKUSA0MjIgLTEwMTggNDIyIC0xMDI0IApRIDQyMiAtMTEyNiA1MDggLTExNjggClEgNTk1IC0xMjEwIDgxOSAtMTIxMCAKTCA4MTkgLTEzMTIgCkwgLTQ4MCAtMTMxMiAKTCAtNDgwIC0xMjEwIApRIC0yNzUgLTEyMDMgLTE4OCAtMTEyMCAKUSAtMTAyIC0xMDM3IC00NSAtODA2IApMIDY5MSAxOTU4IApRIDc5NCAyMzMwIDc5NCAyNDEzIApRIDc5NCAyNTg2IDUxMiAyNTg2IApMIDM3MSAyNTg2IApMIDM1OCAyNjgyIApMIDEzNTcgMjgyMiAKUSAxMzg5IDI4MjIgMTM4OSAyNzk3IApRIDEzODIgMjc2NSAxMzc2IDI3MzkgCnoKTSAyNDQ1IDIwMDMgClEgMjQ0NSAyMjg1IDIzNTIgMjQxNiAKUSAyMjU5IDI1NDcgMjA0OCAyNTQ3IApRIDE3OTggMjU0NyAxNTQ4IDIzMjkgClEgMTI5OSAyMTEyIDExODQgMTgxOCAKUSAxMDQzIDE0NTMgOTA1IDk1MyAKUSA3NjggNDU0IDc2OCAyOTQgClEgNzY4IDE4NiA4NTQgMTE4IApRIDk0MSA1MSAxMDc1IDUxIApRIDE1NzQgNTEgMjAwMyA2NTkgClEgMjQ0NSAxMjc0IDI0NDUgMjAwMyAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPHBhdGggaWQ9IlNUSVhHZW5lcmFsLVJlZ3VsYXItMjAzMiIgZD0iTSA0ODAgMjYzMCAKTCA5MDkgNDA0NSAKUSA5MzQgNDE0MSA5NjAgNDE5NSAKUSA5ODYgNDI1MCAxMDQzIDQyOTQgClEgMTEwMSA0MzM5IDExOTAgNDMzOSAKUSAxMjc0IDQzMzkgMTMyMiA0Mjc4IApRIDEzNzAgNDIxOCAxMzcwIDQxMjggClEgMTM3MCA0MDU4IDEyODAgMzg3OCAKTCA2MDIgMjU3MyAKTCA0ODAgMjYzMCAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPHBhdGggaWQ9IlNUSVhHZW5lcmFsLUl0YWxpYy02OSIgZD0iTSAxNjkwIDM4MzQgClEgMTY5MCAzNjk5IDE1OTcgMzYwMyAKUSAxNTA0IDM1MDcgMTM3NiAzNTA3IApRIDEyMzUgMzUwNyAxMTUyIDM2MDAgClEgMTA2OSAzNjkzIDEwNjkgMzg0NiAKUSAxMDY5IDM5OTQgMTE1NSA0MDkwIApRIDEyNDIgNDE4NiAxMzcwIDQxODYgClEgMTQ5OCA0MTg2IDE1OTQgNDA4MCAKUSAxNjkwIDM5NzQgMTY5MCAzODM0IAp6Ck0gMTQyMSA3MzAgCkwgMTUwNCA2NTkgClEgMTIzNSAyNDMgMTA0OSA4NiAKUSA4NjQgLTcwIDYyNyAtNzAgClEgMzE0IC03MCAzMTQgMjgyIApRIDMxNCA0NjcgNDU0IDk5MiAKTCA3NjIgMjEyNSAKUSA4MTkgMjMzMCA4MTkgMjQwNiAKUSA4MTkgMjUwMiA3NDUgMjUyOCAKUSA2NzIgMjU1NCA0MTAgMjU2MCAKTCA0MTAgMjY2MiAKUSA3MDQgMjY4OCAxNDM0IDI4MjIgCkwgMTQ1OSAyODAzIApMIDg1OCA2MDggClEgNzk0IDM5MCA3OTQgMzI2IApRIDc5NCAyMzAgODgzIDIzMCAKUSAxMDQzIDIzMCAxNDIxIDczMCAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPHBhdGggaWQ9IlNUSVhHZW5lcmFsLVJlZ3VsYXItM2QiIGQ9Ik0gNDA3NyAyMDQ4IApMIDMwNyAyMDQ4IApMIDMwNyAyNDcwIApMIDQwNzcgMjQ3MCAKTCA0MDc3IDIwNDggCnoKTSA0MDc3IDc2OCAKTCAzMDcgNzY4IApMIDMwNyAxMTkwIApMIDQwNzcgMTE5MCAKTCA0MDc3IDc2OCAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPHBhdGggaWQ9IlNUSVhHZW5lcmFsLUl0YWxpYy02NSIgZD0iTSAyMjkxIDY5OCAKTCAyMzY4IDYyMSAKUSAxODA1IC03MCAxMDYyIC03MCAKUSA2NzIgLTcwIDQzNSAxNzAgClEgMTk4IDQxMCAxOTggODA2IApRIDE5OCAxNTU1IDc5NiAyMTg4IApRIDEzOTUgMjgyMiAyMTEyIDI4MjIgClEgMjM2MiAyODIyIDI0OTkgMjcwNyAKUSAyNjM3IDI1OTIgMjYzNyAyMzg3IApRIDI2MzcgMTk2NSAyMTQ3IDE2MzIgClEgMTY1OCAxMjk5IDgxOSAxMTkwIApRIDc1NSAxMDYyIDc1NSA4MDAgClEgNzU1IDUzOCA5MTggMzc4IApRIDEwODIgMjE4IDEzNTAgMjE4IApRIDE1NjIgMjE4IDE3NTQgMzE3IApRIDE5NDYgNDE2IDIyOTEgNjk4IAp6Ck0gOTczIDE2MTMgCkwgODY0IDEzMzEgClEgMTU4MSAxNTA0IDE4OTQgMTgwNSAKUSAyMjE0IDIxMTIgMjIxNCAyNDI2IApRIDIyMTQgMjY3NSAxOTkwIDI2NzUgClEgMTcyMiAyNjc1IDE0MzAgMjM2NCAKUSAxMTM5IDIwNTQgOTczIDE2MTMgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDxwYXRoIGlkPSJTVElYR2VuZXJhbC1JdGFsaWMtNzgiIGQ9Ik0gMTU1NSAyMjcyIApMIDE2MzIgMTkwNyAKUSAxOTcxIDI0MjYgMjE3OSAyNjI0IApRIDIzODcgMjgyMiAyNTk4IDI4MjIgClEgMjcxNCAyODIyIDI3ODcgMjc1NSAKUSAyODYxIDI2ODggMjg2MSAyNTg1IApRIDI4NjEgMjQ4MyAyODAwIDI0MTkgClEgMjczOSAyMzU1IDI2NDMgMjM1NSAKUSAyNTg2IDIzNTUgMjQ5MCAyNDA5IApRIDIzOTQgMjQ2NCAyMzEwIDI0NjQgClEgMjEyNSAyNDY0IDE2ODMgMTY5MCAKUSAxNjgzIDE2MDYgMTczNCAxNDAyIApMIDE5MzkgNTQ0IApRIDIwMDMgMjgyIDIxMzEgMjgyIApRIDIyMzQgMjgyIDI0MzIgNTM4IApRIDI0NTEgNTYzIDI0NzYgNTk4IApRIDI1MDIgNjM0IDI1MjEgNjYyIApRIDI1NDEgNjkxIDI1NjYgNzE3IApMIDI2NjIgNjU5IApRIDIzODcgMjMwIDIyMjcgODAgClEgMjA2NyAtNzAgMTg4MiAtNzAgClEgMTcyOCAtNzAgMTY0NSAyNiAKUSAxNTYyIDEyMiAxNTA0IDM2NSAKTCAxMzE4IDExMjYgCkwgNzU1IDM2NSAKUSA1NTcgOTYgNDMyIDEzIApRIDMwNyAtNzAgMTQ3IC03MCAKUSAwIC03MCAtODYgMCAKUSAtMTczIDcwIC0xNzMgMTk4IApRIC0xNzMgMjk0IC0xMTIgMzYxIApRIC01MSA0MjkgNDUgNDI5IApRIDEyMiA0MjkgMjUwIDM1OCAKUSAzNDYgMzAxIDQxNiAzMDEgClEgNTI1IDMwMSA3NDIgNjE0IApMIDEyNjcgMTM1NyAKTCAxMDg4IDIxNTAgClEgMTAyNCAyNDMyIDk2OSAyNTA5IApRIDkxNSAyNTg2IDc5NCAyNTg2IApRIDcxNyAyNTg2IDU0NCAyNTQxIApMIDQyOSAyNTA5IApMIDQxMCAyNjExIApMIDQ4MCAyNjM3IApRIDk5MiAyODIyIDEyMjkgMjgyMiAKUSAxMzUwIDI4MjIgMTQyMCAyNzA3IApRIDE0OTEgMjU5MiAxNTU1IDIyNzIgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDxwYXRoIGlkPSJTVElYR2VuZXJhbC1SZWd1bGFyLTIyMTIiIGQ9Ik0gMzk3NCAxNDA4IApMIDQxMCAxNDA4IApMIDQxMCAxODMwIApMIDM5NzQgMTgzMCAKTCAzOTc0IDE0MDggCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDxwYXRoIGlkPSJTVElYR2VuZXJhbC1JdGFsaWMtNjMiIGQ9Ik0gMjI0MCA2ODUgCkwgMjM0MiA2MjEgClEgMjA0OCAyNTAgMTc2OSA5MCAKUSAxNDkxIC03MCAxMTMzIC03MCAKUSA2NzggLTcwIDQzNSAxNzkgClEgMTkyIDQyOSAxOTIgOTE1IApRIDE5MiAxMzQ0IDQwOSAxNzQ0IApRIDYyNyAyMTQ0IDk3OSAyNDMyIApRIDE0NzIgMjgyMiAyMDQ4IDI4MjIgClEgMjM0MiAyODIyIDI1MzEgMjY3NSAKUSAyNzIwIDI1MjggMjcyMCAyMzA0IApRIDI3MjAgMjE3NiAyNjMwIDIwODYgClEgMjU0MSAxOTk3IDI0MTMgMTk5NyAKUSAyMjg1IDE5OTcgMjIyNCAyMDcwIApRIDIxNjMgMjE0NCAyMTYzIDIyNTMgClEgMjE2MyAyMzEwIDIyMTEgMjQwMyAKUSAyMjU5IDI0OTYgMjI1OSAyNTYwIApRIDIyNTkgMjY4OCAyMDIyIDI2ODggClEgMTYxOSAyNjg4IDEzMjUgMjM4MSAKUSA3NDIgMTc2NiA3NDIgODkwIApRIDc0MiA1NDQgODg5IDM1MiAKUSAxMDM3IDE2MCAxMzEyIDE2MCAKUSAxNTYyIDE2MCAxNzY2IDI4MSAKUSAxOTcxIDQwMyAyMjQwIDY4NSAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPHBhdGggaWQ9IlNUSVhHZW5lcmFsLVJlZ3VsYXItMjIxMSIgZD0iTSA1NDc4IDI1NiAKTCA1MTM5IC0xNjU4IApMIDM3MSAtMTY1OCAKTCAyODgwIDE2MDYgCkwgNTMxIDQ4ODMgCkwgNTMxMiA0ODgzIApMIDUzMTIgMzI3NyAKTCA1MTIwIDMyNzcgClEgNTAxOCAzOTQ5IDQ3NjUgNDIwNSAKUSA0NTEyIDQ0NjEgMzg5MSA0NDYxIApMIDE4NDMgNDQ2MSAKTCAzNjk5IDE5NTggCkwgMTU0OSAtODE5IApMIDQxOTggLTgxOSAKUSA0Njk4IC04MTkgNDkzNCAtNTUwIApRIDUxNzEgLTI4MiA1Mjg2IDI1NiAKTCA1NDc4IDI1NiAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPHBhdGggaWQ9IlNUSVhHZW5lcmFsLUl0YWxpYy02YSIgZD0iTSAxNzg2IDM4MjcgClEgMTc4NiAzNjk5IDE2OTAgMzYwMyAKUSAxNTk0IDM1MDcgMTQ2NiAzNTA3IApRIDEzMTggMzUwNyAxMjE5IDM2MDAgClEgMTEyMCAzNjkzIDExMjAgMzg0MCAKUSAxMTIwIDM5ODEgMTIyMiA0MDc3IApRIDEzMjUgNDE3MyAxNDU5IDQxNzMgClEgMTU4NyA0MTczIDE2ODYgNDA2NyAKUSAxNzg2IDM5NjIgMTc4NiAzODI3IAp6Ck0gMTU3NCAyODAzIApMIDkwOSAxNzkgClEgNzEwIC01OTUgNDE5IC05NjAgClEgMTI4IC0xMzI1IC0yODggLTEzMjUgClEgLTUxMiAtMTMyNSAtNjUzIC0xMjE2IApRIC03OTQgLTExMDcgLTc5NCAtOTM0IApRIC03OTQgLTgxOSAtNzE3IC03MzYgClEgLTY0MCAtNjUzIC01MzEgLTY1MyAKUSAtMjgyIC02NTMgLTI4MiAtODkwIApRIC0yODIgLTk2NiAtMzIwIC0xMDE0IApRIC0zNTggLTEwNjIgLTM1OCAtMTEwNyAKUSAtMzU4IC0xMTg0IC0yNDMgLTExODQgClEgLTUxIC0xMTg0IDgwIC05MzQgClEgMjExIC02ODUgMzc4IC0xOSAKTCA4MzggMTg1MCAKUSA5NDEgMjI2NiA5NDEgMjM2MiAKUSA5NDEgMjQ3MCA4NzMgMjUxNSAKUSA4MDYgMjU2MCA2MzQgMjU2MCAKTCA0NjcgMjU2MCAKTCA0NjcgMjY2MiAKUSA3NTUgMjY4MiAxNTQ5IDI4MjIgCkwgMTU3NCAyODAzIAp6CiIgdHJhbnNmb3JtPSJzY2FsZSgwLjAxNTYyNSkiLz4KICAgIDwvZGVmcz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLUl0YWxpYy03MCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAwLjEzOTA2MikiLz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLVJlZ3VsYXItMjAzMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTYuNTczMTE5IDM1LjQxNDA2Mikgc2NhbGUoMC43KSIvPgogICAgPHVzZSB4bGluazpocmVmPSIjU1RJWEdlbmVyYWwtSXRhbGljLTY5IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1MC4zOTk5OTQgLTI2LjMxNzE4OCkgc2NhbGUoMC43KSIvPgogICAgPHVzZSB4bGluazpocmVmPSIjU1RJWEdlbmVyYWwtUmVndWxhci0zZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTE1LjcwODE5NyAwLjEzOTA2MikiLz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLUl0YWxpYy02NSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjQ2LjcwMzg4OSAzOC43MDE1NjMpIHNjYWxlKDAuNykiLz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLUl0YWxpYy03OCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjgyLjEwNTA3MiA2My4zOTQwNjMpIHNjYWxlKDAuNDkpIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVElYR2VuZXJhbC1JdGFsaWMtNjkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMwMy44NjEwNjkgNTYuOTEyMjgxKSBzY2FsZSgwLjM0MykiLz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLVJlZ3VsYXItMjIxMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzIyLjYzMjY1NyA2My4zOTQwNjMpIHNjYWxlKDAuNDkpIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVElYR2VuZXJhbC1JdGFsaWMtNjMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDM2My4yNzMyNDggNjMuMzk0MDYzKSBzY2FsZSgwLjQ5KSIvPgogICAgPHVzZSB4bGluazpocmVmPSIjU1RJWEdlbmVyYWwtUmVndWxhci0yMjExIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMTguNzAzODg5IC00Ni43MjE4NzUpIHNjYWxlKDAuNykiLz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLUl0YWxpYy02YSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjM5LjcwMzg4OSAtMTA5LjkzMDc4MSkgc2NhbGUoMC40OSkiLz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLUl0YWxpYy02NSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjc0LjU2MTcwMSAtNDYuNzIxODc1KSBzY2FsZSgwLjcpIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVElYR2VuZXJhbC1JdGFsaWMtNzgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMwOS45NjI4ODUgLTIyLjAyOTM3NSkgc2NhbGUoMC40OSkiLz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLUl0YWxpYy02YSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzMxLjcxODg4MiAtMjguNTExMTU2KSBzY2FsZSgwLjM0MykiLz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLVJlZ3VsYXItMjIxMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzUwLjQ5MDQ2OSAtMjIuMDI5Mzc1KSBzY2FsZSgwLjQ5KSIvPgogICAgPHVzZSB4bGluazpocmVmPSIjU1RJWEdlbmVyYWwtSXRhbGljLTYzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzOTEuMTMxMDYgLTIyLjAyOTM3NSkgc2NhbGUoMC40OSkiLz4KICAgIDxwYXRoIGQ9Ik0gMjE4LjcwMzg4OSAxMi45MzU5MzcgCkwgMjE4LjcwMzg4OSAxOS4xODU5MzcgCkwgNDE1Ljk3MzYyIDE5LjE4NTkzNyAKTCA0MTUuOTczNjIgMTIuOTM1OTM3IApMIDIxOC43MDM4ODkgMTIuOTM1OTM3IAp6CiIvPgogICA8L2c+CiAgPC9nPgogPC9nPgo8L3N2Zz4K",
+                "aspect": 2.080808080808081,
+                "expression": "p_i' \\;=\\; \\frac{e^{x_i - c}}{\\sum_{j} e^{x_j - c}}"
+              },
+              {
+                "src": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgd2lkdGg9IjIyMnB0IiBoZWlnaHQ9Ijk5cHQiIHZpZXdCb3g9IjAgMCAyMjIgOTkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIj4KIDxtZXRhZGF0YT4KICA8cmRmOlJERiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgIDxjYzpXb3JrPgogICAgPGRjOnR5cGUgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIvPgogICAgPGRjOmRhdGU+MjAyNi0wOS0yNlQxMzo1MDo1NS41NzM1ODQ8L2RjOmRhdGU+CiAgICA8ZGM6Zm9ybWF0PmltYWdlL3N2Zyt4bWw8L2RjOmZvcm1hdD4KICAgIDxkYzpjcmVhdG9yPgogICAgIDxjYzpBZ2VudD4KICAgICAgPGRjOnRpdGxlPk1hdHBsb3RsaWIgdjMuMTAuMCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy88L2RjOnRpdGxlPgogICAgIDwvY2M6QWdlbnQ+CiAgICA8L2RjOmNyZWF0b3I+CiAgIDwvY2M6V29yaz4KICA8L3JkZjpSREY+CiA8L21ldGFkYXRhPgogPGRlZnM+CiAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4qe3N0cm9rZS1saW5lam9pbjogcm91bmQ7IHN0cm9rZS1saW5lY2FwOiBidXR0fTwvc3R5bGU+CiA8L2RlZnM+CiA8ZyBpZD0iZmlndXJlXzEiPgogIDxnIGlkPSJwYXRjaF8xIj4KICAgPHBhdGggZD0iTSAwIDk5IApMIDIyMiA5OSAKTCAyMjIgMCAKTCAwIDAgCkwgMCA5OSAKegoiIHN0eWxlPSJmaWxsOiBub25lIi8+CiAgPC9nPgogIDxnIGlkPSJ0ZXh0XzEiPgogICA8IS0tICRwX2knIFw7PVw7IFxmcmFje2Vee3hfaX1cLCBlXnstY319e2Veey1jfVwsIFxzdW1fe2p9IGVee3hfan19JCAtLT4KICAgPGcgc3R5bGU9ImZpbGw6ICMzZDM5MjkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgNDEpIHNjYWxlKDAuNDggLTAuNDgpIj4KICAgIDxkZWZzPgogICAgIDxwYXRoIGlkPSJTVElYR2VuZXJhbC1JdGFsaWMtNzAiIGQ9Ik0gMTM3NiAyNzM5IApMIDExOTAgMjA5OSAKUSAxNjcwIDI4MjIgMjI4NSAyODIyIApRIDI2MzcgMjgyMiAyODI5IDI2MTEgClEgMzAyMSAyNDAwIDMwMjEgMjAyMiAKUSAzMDIxIDEyMzUgMjQyMiA1ODIgClEgMTgyNCAtNzAgMTEyMCAtNzAgClEgODkwIC03MCA2NzggMzggClEgNDIyIC0xMDE4IDQyMiAtMTAyNCAKUSA0MjIgLTExMjYgNTA4IC0xMTY4IApRIDU5NSAtMTIxMCA4MTkgLTEyMTAgCkwgODE5IC0xMzEyIApMIC00ODAgLTEzMTIgCkwgLTQ4MCAtMTIxMCAKUSAtMjc1IC0xMjAzIC0xODggLTExMjAgClEgLTEwMiAtMTAzNyAtNDUgLTgwNiAKTCA2OTEgMTk1OCAKUSA3OTQgMjMzMCA3OTQgMjQxMyAKUSA3OTQgMjU4NiA1MTIgMjU4NiAKTCAzNzEgMjU4NiAKTCAzNTggMjY4MiAKTCAxMzU3IDI4MjIgClEgMTM4OSAyODIyIDEzODkgMjc5NyAKUSAxMzgyIDI3NjUgMTM3NiAyNzM5IAp6Ck0gMjQ0NSAyMDAzIApRIDI0NDUgMjI4NSAyMzUyIDI0MTYgClEgMjI1OSAyNTQ3IDIwNDggMjU0NyAKUSAxNzk4IDI1NDcgMTU0OCAyMzI5IApRIDEyOTkgMjExMiAxMTg0IDE4MTggClEgMTA0MyAxNDUzIDkwNSA5NTMgClEgNzY4IDQ1NCA3NjggMjk0IApRIDc2OCAxODYgODU0IDExOCAKUSA5NDEgNTEgMTA3NSA1MSAKUSAxNTc0IDUxIDIwMDMgNjU5IApRIDI0NDUgMTI3NCAyNDQ1IDIwMDMgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDxwYXRoIGlkPSJTVElYR2VuZXJhbC1SZWd1bGFyLTIwMzIiIGQ9Ik0gNDgwIDI2MzAgCkwgOTA5IDQwNDUgClEgOTM0IDQxNDEgOTYwIDQxOTUgClEgOTg2IDQyNTAgMTA0MyA0Mjk0IApRIDExMDEgNDMzOSAxMTkwIDQzMzkgClEgMTI3NCA0MzM5IDEzMjIgNDI3OCAKUSAxMzcwIDQyMTggMTM3MCA0MTI4IApRIDEzNzAgNDA1OCAxMjgwIDM4NzggCkwgNjAyIDI1NzMgCkwgNDgwIDI2MzAgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDxwYXRoIGlkPSJTVElYR2VuZXJhbC1JdGFsaWMtNjkiIGQ9Ik0gMTY5MCAzODM0IApRIDE2OTAgMzY5OSAxNTk3IDM2MDMgClEgMTUwNCAzNTA3IDEzNzYgMzUwNyAKUSAxMjM1IDM1MDcgMTE1MiAzNjAwIApRIDEwNjkgMzY5MyAxMDY5IDM4NDYgClEgMTA2OSAzOTk0IDExNTUgNDA5MCAKUSAxMjQyIDQxODYgMTM3MCA0MTg2IApRIDE0OTggNDE4NiAxNTk0IDQwODAgClEgMTY5MCAzOTc0IDE2OTAgMzgzNCAKegpNIDE0MjEgNzMwIApMIDE1MDQgNjU5IApRIDEyMzUgMjQzIDEwNDkgODYgClEgODY0IC03MCA2MjcgLTcwIApRIDMxNCAtNzAgMzE0IDI4MiAKUSAzMTQgNDY3IDQ1NCA5OTIgCkwgNzYyIDIxMjUgClEgODE5IDIzMzAgODE5IDI0MDYgClEgODE5IDI1MDIgNzQ1IDI1MjggClEgNjcyIDI1NTQgNDEwIDI1NjAgCkwgNDEwIDI2NjIgClEgNzA0IDI2ODggMTQzNCAyODIyIApMIDE0NTkgMjgwMyAKTCA4NTggNjA4IApRIDc5NCAzOTAgNzk0IDMyNiAKUSA3OTQgMjMwIDg4MyAyMzAgClEgMTA0MyAyMzAgMTQyMSA3MzAgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDxwYXRoIGlkPSJTVElYR2VuZXJhbC1SZWd1bGFyLTNkIiBkPSJNIDQwNzcgMjA0OCAKTCAzMDcgMjA0OCAKTCAzMDcgMjQ3MCAKTCA0MDc3IDI0NzAgCkwgNDA3NyAyMDQ4IAp6Ck0gNDA3NyA3NjggCkwgMzA3IDc2OCAKTCAzMDcgMTE5MCAKTCA0MDc3IDExOTAgCkwgNDA3NyA3NjggCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDxwYXRoIGlkPSJTVElYR2VuZXJhbC1JdGFsaWMtNjUiIGQ9Ik0gMjI5MSA2OTggCkwgMjM2OCA2MjEgClEgMTgwNSAtNzAgMTA2MiAtNzAgClEgNjcyIC03MCA0MzUgMTcwIApRIDE5OCA0MTAgMTk4IDgwNiAKUSAxOTggMTU1NSA3OTYgMjE4OCAKUSAxMzk1IDI4MjIgMjExMiAyODIyIApRIDIzNjIgMjgyMiAyNDk5IDI3MDcgClEgMjYzNyAyNTkyIDI2MzcgMjM4NyAKUSAyNjM3IDE5NjUgMjE0NyAxNjMyIApRIDE2NTggMTI5OSA4MTkgMTE5MCAKUSA3NTUgMTA2MiA3NTUgODAwIApRIDc1NSA1MzggOTE4IDM3OCAKUSAxMDgyIDIxOCAxMzUwIDIxOCAKUSAxNTYyIDIxOCAxNzU0IDMxNyAKUSAxOTQ2IDQxNiAyMjkxIDY5OCAKegpNIDk3MyAxNjEzIApMIDg2NCAxMzMxIApRIDE1ODEgMTUwNCAxODk0IDE4MDUgClEgMjIxNCAyMTEyIDIyMTQgMjQyNiAKUSAyMjE0IDI2NzUgMTk5MCAyNjc1IApRIDE3MjIgMjY3NSAxNDMwIDIzNjQgClEgMTEzOSAyMDU0IDk3MyAxNjEzIAp6CiIgdHJhbnNmb3JtPSJzY2FsZSgwLjAxNTYyNSkiLz4KICAgICA8cGF0aCBpZD0iU1RJWEdlbmVyYWwtSXRhbGljLTc4IiBkPSJNIDE1NTUgMjI3MiAKTCAxNjMyIDE5MDcgClEgMTk3MSAyNDI2IDIxNzkgMjYyNCAKUSAyMzg3IDI4MjIgMjU5OCAyODIyIApRIDI3MTQgMjgyMiAyNzg3IDI3NTUgClEgMjg2MSAyNjg4IDI4NjEgMjU4NSAKUSAyODYxIDI0ODMgMjgwMCAyNDE5IApRIDI3MzkgMjM1NSAyNjQzIDIzNTUgClEgMjU4NiAyMzU1IDI0OTAgMjQwOSAKUSAyMzk0IDI0NjQgMjMxMCAyNDY0IApRIDIxMjUgMjQ2NCAxNjgzIDE2OTAgClEgMTY4MyAxNjA2IDE3MzQgMTQwMiAKTCAxOTM5IDU0NCAKUSAyMDAzIDI4MiAyMTMxIDI4MiAKUSAyMjM0IDI4MiAyNDMyIDUzOCAKUSAyNDUxIDU2MyAyNDc2IDU5OCAKUSAyNTAyIDYzNCAyNTIxIDY2MiAKUSAyNTQxIDY5MSAyNTY2IDcxNyAKTCAyNjYyIDY1OSAKUSAyMzg3IDIzMCAyMjI3IDgwIApRIDIwNjcgLTcwIDE4ODIgLTcwIApRIDE3MjggLTcwIDE2NDUgMjYgClEgMTU2MiAxMjIgMTUwNCAzNjUgCkwgMTMxOCAxMTI2IApMIDc1NSAzNjUgClEgNTU3IDk2IDQzMiAxMyAKUSAzMDcgLTcwIDE0NyAtNzAgClEgMCAtNzAgLTg2IDAgClEgLTE3MyA3MCAtMTczIDE5OCAKUSAtMTczIDI5NCAtMTEyIDM2MSAKUSAtNTEgNDI5IDQ1IDQyOSAKUSAxMjIgNDI5IDI1MCAzNTggClEgMzQ2IDMwMSA0MTYgMzAxIApRIDUyNSAzMDEgNzQyIDYxNCAKTCAxMjY3IDEzNTcgCkwgMTA4OCAyMTUwIApRIDEwMjQgMjQzMiA5NjkgMjUwOSAKUSA5MTUgMjU4NiA3OTQgMjU4NiAKUSA3MTcgMjU4NiA1NDQgMjU0MSAKTCA0MjkgMjUwOSAKTCA0MTAgMjYxMSAKTCA0ODAgMjYzNyAKUSA5OTIgMjgyMiAxMjI5IDI4MjIgClEgMTM1MCAyODIyIDE0MjAgMjcwNyAKUSAxNDkxIDI1OTIgMTU1NSAyMjcyIAp6CiIgdHJhbnNmb3JtPSJzY2FsZSgwLjAxNTYyNSkiLz4KICAgICA8cGF0aCBpZD0iU1RJWEdlbmVyYWwtUmVndWxhci0yMjEyIiBkPSJNIDM5NzQgMTQwOCAKTCA0MTAgMTQwOCAKTCA0MTAgMTgzMCAKTCAzOTc0IDE4MzAgCkwgMzk3NCAxNDA4IAp6CiIgdHJhbnNmb3JtPSJzY2FsZSgwLjAxNTYyNSkiLz4KICAgICA8cGF0aCBpZD0iU1RJWEdlbmVyYWwtSXRhbGljLTYzIiBkPSJNIDIyNDAgNjg1IApMIDIzNDIgNjIxIApRIDIwNDggMjUwIDE3NjkgOTAgClEgMTQ5MSAtNzAgMTEzMyAtNzAgClEgNjc4IC03MCA0MzUgMTc5IApRIDE5MiA0MjkgMTkyIDkxNSAKUSAxOTIgMTM0NCA0MDkgMTc0NCAKUSA2MjcgMjE0NCA5NzkgMjQzMiAKUSAxNDcyIDI4MjIgMjA0OCAyODIyIApRIDIzNDIgMjgyMiAyNTMxIDI2NzUgClEgMjcyMCAyNTI4IDI3MjAgMjMwNCAKUSAyNzIwIDIxNzYgMjYzMCAyMDg2IApRIDI1NDEgMTk5NyAyNDEzIDE5OTcgClEgMjI4NSAxOTk3IDIyMjQgMjA3MCAKUSAyMTYzIDIxNDQgMjE2MyAyMjUzIApRIDIxNjMgMjMxMCAyMjExIDI0MDMgClEgMjI1OSAyNDk2IDIyNTkgMjU2MCAKUSAyMjU5IDI2ODggMjAyMiAyNjg4IApRIDE2MTkgMjY4OCAxMzI1IDIzODEgClEgNzQyIDE3NjYgNzQyIDg5MCAKUSA3NDIgNTQ0IDg4OSAzNTIgClEgMTAzNyAxNjAgMTMxMiAxNjAgClEgMTU2MiAxNjAgMTc2NiAyODEgClEgMTk3MSA0MDMgMjI0MCA2ODUgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDxwYXRoIGlkPSJTVElYR2VuZXJhbC1SZWd1bGFyLTIyMTEiIGQ9Ik0gNTQ3OCAyNTYgCkwgNTEzOSAtMTY1OCAKTCAzNzEgLTE2NTggCkwgMjg4MCAxNjA2IApMIDUzMSA0ODgzIApMIDUzMTIgNDg4MyAKTCA1MzEyIDMyNzcgCkwgNTEyMCAzMjc3IApRIDUwMTggMzk0OSA0NzY1IDQyMDUgClEgNDUxMiA0NDYxIDM4OTEgNDQ2MSAKTCAxODQzIDQ0NjEgCkwgMzY5OSAxOTU4IApMIDE1NDkgLTgxOSAKTCA0MTk4IC04MTkgClEgNDY5OCAtODE5IDQ5MzQgLTU1MCAKUSA1MTcxIC0yODIgNTI4NiAyNTYgCkwgNTQ3OCAyNTYgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDxwYXRoIGlkPSJTVElYR2VuZXJhbC1JdGFsaWMtNmEiIGQ9Ik0gMTc4NiAzODI3IApRIDE3ODYgMzY5OSAxNjkwIDM2MDMgClEgMTU5NCAzNTA3IDE0NjYgMzUwNyAKUSAxMzE4IDM1MDcgMTIxOSAzNjAwIApRIDExMjAgMzY5MyAxMTIwIDM4NDAgClEgMTEyMCAzOTgxIDEyMjIgNDA3NyAKUSAxMzI1IDQxNzMgMTQ1OSA0MTczIApRIDE1ODcgNDE3MyAxNjg2IDQwNjcgClEgMTc4NiAzOTYyIDE3ODYgMzgyNyAKegpNIDE1NzQgMjgwMyAKTCA5MDkgMTc5IApRIDcxMCAtNTk1IDQxOSAtOTYwIApRIDEyOCAtMTMyNSAtMjg4IC0xMzI1IApRIC01MTIgLTEzMjUgLTY1MyAtMTIxNiAKUSAtNzk0IC0xMTA3IC03OTQgLTkzNCAKUSAtNzk0IC04MTkgLTcxNyAtNzM2IApRIC02NDAgLTY1MyAtNTMxIC02NTMgClEgLTI4MiAtNjUzIC0yODIgLTg5MCAKUSAtMjgyIC05NjYgLTMyMCAtMTAxNCAKUSAtMzU4IC0xMDYyIC0zNTggLTExMDcgClEgLTM1OCAtMTE4NCAtMjQzIC0xMTg0IApRIC01MSAtMTE4NCA4MCAtOTM0IApRIDIxMSAtNjg1IDM3OCAtMTkgCkwgODM4IDE4NTAgClEgOTQxIDIyNjYgOTQxIDIzNjIgClEgOTQxIDI0NzAgODczIDI1MTUgClEgODA2IDI1NjAgNjM0IDI1NjAgCkwgNDY3IDI1NjAgCkwgNDY3IDI2NjIgClEgNzU1IDI2ODIgMTU0OSAyODIyIApMIDE1NzQgMjgwMyAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICA8L2RlZnM+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVElYR2VuZXJhbC1JdGFsaWMtNzAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMC4xMzkwNjIpIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVElYR2VuZXJhbC1SZWd1bGFyLTIwMzIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDU2LjU3MzExOSAzNS40MTQwNjIpIHNjYWxlKDAuNykiLz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLUl0YWxpYy02OSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTAuMzk5OTk0IC0yNi4zMTcxODgpIHNjYWxlKDAuNykiLz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLVJlZ3VsYXItM2QiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExNS43MDgxOTcgMC4xMzkwNjIpIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVElYR2VuZXJhbC1JdGFsaWMtNjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI0Ni43MDM4ODkgMzguNzAxNTYzKSBzY2FsZSgwLjcpIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVElYR2VuZXJhbC1JdGFsaWMtNzgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI4Mi4xMDUwNzIgNjMuMzk0MDYzKSBzY2FsZSgwLjQ5KSIvPgogICAgPHVzZSB4bGluazpocmVmPSIjU1RJWEdlbmVyYWwtSXRhbGljLTY5IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMDMuODYxMDY5IDU2LjkxMjI4MSkgc2NhbGUoMC4zNDMpIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVElYR2VuZXJhbC1JdGFsaWMtNjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMyNy4wNjcxMjEgMzguNzAxNTYzKSBzY2FsZSgwLjcpIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVElYR2VuZXJhbC1SZWd1bGFyLTIyMTIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDM2Mi40NjgzMDQgNjMuMzk0MDYzKSBzY2FsZSgwLjQ5KSIvPgogICAgPHVzZSB4bGluazpocmVmPSIjU1RJWEdlbmVyYWwtSXRhbGljLTYzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzOTYuMDMzMjk3IDYzLjM5NDA2Mykgc2NhbGUoMC40OSkiLz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLUl0YWxpYy02NSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjE4LjcwMzg4OSAtNDYuNzIxODc1KSBzY2FsZSgwLjcpIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVElYR2VuZXJhbC1SZWd1bGFyLTIyMTIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI1NC4xMDUwNzIgLTIyLjAyOTM3NSkgc2NhbGUoMC40OSkiLz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLUl0YWxpYy02MyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjg3LjY3MDA2NSAtMjIuMDI5Mzc1KSBzY2FsZSgwLjQ5KSIvPgogICAgPHVzZSB4bGluazpocmVmPSIjU1RJWEdlbmVyYWwtUmVndWxhci0yMjExIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMjAuOTM2MTI0IC00Ni43MjE4NzUpIHNjYWxlKDAuNykiLz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLUl0YWxpYy02YSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzQxLjkzNjEyNCAtMTA5LjkzMDc4MSkgc2NhbGUoMC40OSkiLz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLUl0YWxpYy02NSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzc2Ljc5MzkzNiAtNDYuNzIxODc1KSBzY2FsZSgwLjcpIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVElYR2VuZXJhbC1JdGFsaWMtNzgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQxMi4xOTUxMiAtMjIuMDI5Mzc1KSBzY2FsZSgwLjQ5KSIvPgogICAgPHVzZSB4bGluazpocmVmPSIjU1RJWEdlbmVyYWwtSXRhbGljLTZhIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MzMuOTUxMTE3IC0yOC41MTExNTYpIHNjYWxlKDAuMzQzKSIvPgogICAgPHBhdGggZD0iTSAyMTguNzAzODg5IDEyLjkzNTkzNyAKTCAyMTguNzAzODg5IDE5LjE4NTkzNyAKTCA0NDguNzMzNjY5IDE5LjE4NTkzNyAKTCA0NDguNzMzNjY5IDEyLjkzNTkzNyAKTCAyMTguNzAzODg5IDEyLjkzNTkzNyAKegoiLz4KICAgPC9nPgogIDwvZz4KIDwvZz4KPC9zdmc+Cg==",
+                "aspect": 2.242424242424242,
+                "expression": "p_i' \\;=\\; \\frac{e^{x_i}\\, e^{-c}}{e^{-c}\\, \\sum_{j} e^{x_j}}"
+              },
+              {
+                "src": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgd2lkdGg9IjI3NHB0IiBoZWlnaHQ9Ijk5cHQiIHZpZXdCb3g9IjAgMCAyNzQgOTkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIj4KIDxtZXRhZGF0YT4KICA8cmRmOlJERiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgIDxjYzpXb3JrPgogICAgPGRjOnR5cGUgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIvPgogICAgPGRjOmRhdGU+MjAyNi0wOS0yNlQxMzo1MDo1NS41ODEyMzE8L2RjOmRhdGU+CiAgICA8ZGM6Zm9ybWF0PmltYWdlL3N2Zyt4bWw8L2RjOmZvcm1hdD4KICAgIDxkYzpjcmVhdG9yPgogICAgIDxjYzpBZ2VudD4KICAgICAgPGRjOnRpdGxlPk1hdHBsb3RsaWIgdjMuMTAuMCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy88L2RjOnRpdGxlPgogICAgIDwvY2M6QWdlbnQ+CiAgICA8L2RjOmNyZWF0b3I+CiAgIDwvY2M6V29yaz4KICA8L3JkZjpSREY+CiA8L21ldGFkYXRhPgogPGRlZnM+CiAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4qe3N0cm9rZS1saW5lam9pbjogcm91bmQ7IHN0cm9rZS1saW5lY2FwOiBidXR0fTwvc3R5bGU+CiA8L2RlZnM+CiA8ZyBpZD0iZmlndXJlXzEiPgogIDxnIGlkPSJwYXRjaF8xIj4KICAgPHBhdGggZD0iTSAwIDk5IApMIDI3NCA5OSAKTCAyNzQgMCAKTCAwIDAgCkwgMCA5OSAKegoiIHN0eWxlPSJmaWxsOiBub25lIi8+CiAgPC9nPgogIDxnIGlkPSJ0ZXh0XzEiPgogICA8IS0tICRwX2knIFw7PVw7IFxmcmFje2Vee3hfaX19e1xzdW1fe2p9IGVee3hfan19IFw7PVw7IHBfaSQgLS0+CiAgIDxnIHN0eWxlPSJmaWxsOiAjM2QzOTI5IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDQxKSBzY2FsZSgwLjQ4IC0wLjQ4KSI+CiAgICA8ZGVmcz4KICAgICA8cGF0aCBpZD0iU1RJWEdlbmVyYWwtSXRhbGljLTcwIiBkPSJNIDEzNzYgMjczOSAKTCAxMTkwIDIwOTkgClEgMTY3MCAyODIyIDIyODUgMjgyMiAKUSAyNjM3IDI4MjIgMjgyOSAyNjExIApRIDMwMjEgMjQwMCAzMDIxIDIwMjIgClEgMzAyMSAxMjM1IDI0MjIgNTgyIApRIDE4MjQgLTcwIDExMjAgLTcwIApRIDg5MCAtNzAgNjc4IDM4IApRIDQyMiAtMTAxOCA0MjIgLTEwMjQgClEgNDIyIC0xMTI2IDUwOCAtMTE2OCAKUSA1OTUgLTEyMTAgODE5IC0xMjEwIApMIDgxOSAtMTMxMiAKTCAtNDgwIC0xMzEyIApMIC00ODAgLTEyMTAgClEgLTI3NSAtMTIwMyAtMTg4IC0xMTIwIApRIC0xMDIgLTEwMzcgLTQ1IC04MDYgCkwgNjkxIDE5NTggClEgNzk0IDIzMzAgNzk0IDI0MTMgClEgNzk0IDI1ODYgNTEyIDI1ODYgCkwgMzcxIDI1ODYgCkwgMzU4IDI2ODIgCkwgMTM1NyAyODIyIApRIDEzODkgMjgyMiAxMzg5IDI3OTcgClEgMTM4MiAyNzY1IDEzNzYgMjczOSAKegpNIDI0NDUgMjAwMyAKUSAyNDQ1IDIyODUgMjM1MiAyNDE2IApRIDIyNTkgMjU0NyAyMDQ4IDI1NDcgClEgMTc5OCAyNTQ3IDE1NDggMjMyOSAKUSAxMjk5IDIxMTIgMTE4NCAxODE4IApRIDEwNDMgMTQ1MyA5MDUgOTUzIApRIDc2OCA0NTQgNzY4IDI5NCAKUSA3NjggMTg2IDg1NCAxMTggClEgOTQxIDUxIDEwNzUgNTEgClEgMTU3NCA1MSAyMDAzIDY1OSAKUSAyNDQ1IDEyNzQgMjQ0NSAyMDAzIAp6CiIgdHJhbnNmb3JtPSJzY2FsZSgwLjAxNTYyNSkiLz4KICAgICA8cGF0aCBpZD0iU1RJWEdlbmVyYWwtUmVndWxhci0yMDMyIiBkPSJNIDQ4MCAyNjMwIApMIDkwOSA0MDQ1IApRIDkzNCA0MTQxIDk2MCA0MTk1IApRIDk4NiA0MjUwIDEwNDMgNDI5NCAKUSAxMTAxIDQzMzkgMTE5MCA0MzM5IApRIDEyNzQgNDMzOSAxMzIyIDQyNzggClEgMTM3MCA0MjE4IDEzNzAgNDEyOCAKUSAxMzcwIDQwNTggMTI4MCAzODc4IApMIDYwMiAyNTczIApMIDQ4MCAyNjMwIAp6CiIgdHJhbnNmb3JtPSJzY2FsZSgwLjAxNTYyNSkiLz4KICAgICA8cGF0aCBpZD0iU1RJWEdlbmVyYWwtSXRhbGljLTY5IiBkPSJNIDE2OTAgMzgzNCAKUSAxNjkwIDM2OTkgMTU5NyAzNjAzIApRIDE1MDQgMzUwNyAxMzc2IDM1MDcgClEgMTIzNSAzNTA3IDExNTIgMzYwMCAKUSAxMDY5IDM2OTMgMTA2OSAzODQ2IApRIDEwNjkgMzk5NCAxMTU1IDQwOTAgClEgMTI0MiA0MTg2IDEzNzAgNDE4NiAKUSAxNDk4IDQxODYgMTU5NCA0MDgwIApRIDE2OTAgMzk3NCAxNjkwIDM4MzQgCnoKTSAxNDIxIDczMCAKTCAxNTA0IDY1OSAKUSAxMjM1IDI0MyAxMDQ5IDg2IApRIDg2NCAtNzAgNjI3IC03MCAKUSAzMTQgLTcwIDMxNCAyODIgClEgMzE0IDQ2NyA0NTQgOTkyIApMIDc2MiAyMTI1IApRIDgxOSAyMzMwIDgxOSAyNDA2IApRIDgxOSAyNTAyIDc0NSAyNTI4IApRIDY3MiAyNTU0IDQxMCAyNTYwIApMIDQxMCAyNjYyIApRIDcwNCAyNjg4IDE0MzQgMjgyMiAKTCAxNDU5IDI4MDMgCkwgODU4IDYwOCAKUSA3OTQgMzkwIDc5NCAzMjYgClEgNzk0IDIzMCA4ODMgMjMwIApRIDEwNDMgMjMwIDE0MjEgNzMwIAp6CiIgdHJhbnNmb3JtPSJzY2FsZSgwLjAxNTYyNSkiLz4KICAgICA8cGF0aCBpZD0iU1RJWEdlbmVyYWwtUmVndWxhci0zZCIgZD0iTSA0MDc3IDIwNDggCkwgMzA3IDIwNDggCkwgMzA3IDI0NzAgCkwgNDA3NyAyNDcwIApMIDQwNzcgMjA0OCAKegpNIDQwNzcgNzY4IApMIDMwNyA3NjggCkwgMzA3IDExOTAgCkwgNDA3NyAxMTkwIApMIDQwNzcgNzY4IAp6CiIgdHJhbnNmb3JtPSJzY2FsZSgwLjAxNTYyNSkiLz4KICAgICA8cGF0aCBpZD0iU1RJWEdlbmVyYWwtSXRhbGljLTY1IiBkPSJNIDIyOTEgNjk4IApMIDIzNjggNjIxIApRIDE4MDUgLTcwIDEwNjIgLTcwIApRIDY3MiAtNzAgNDM1IDE3MCAKUSAxOTggNDEwIDE5OCA4MDYgClEgMTk4IDE1NTUgNzk2IDIxODggClEgMTM5NSAyODIyIDIxMTIgMjgyMiAKUSAyMzYyIDI4MjIgMjQ5OSAyNzA3IApRIDI2MzcgMjU5MiAyNjM3IDIzODcgClEgMjYzNyAxOTY1IDIxNDcgMTYzMiAKUSAxNjU4IDEyOTkgODE5IDExOTAgClEgNzU1IDEwNjIgNzU1IDgwMCAKUSA3NTUgNTM4IDkxOCAzNzggClEgMTA4MiAyMTggMTM1MCAyMTggClEgMTU2MiAyMTggMTc1NCAzMTcgClEgMTk0NiA0MTYgMjI5MSA2OTggCnoKTSA5NzMgMTYxMyAKTCA4NjQgMTMzMSAKUSAxNTgxIDE1MDQgMTg5NCAxODA1IApRIDIyMTQgMjExMiAyMjE0IDI0MjYgClEgMjIxNCAyNjc1IDE5OTAgMjY3NSAKUSAxNzIyIDI2NzUgMTQzMCAyMzY0IApRIDExMzkgMjA1NCA5NzMgMTYxMyAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPHBhdGggaWQ9IlNUSVhHZW5lcmFsLUl0YWxpYy03OCIgZD0iTSAxNTU1IDIyNzIgCkwgMTYzMiAxOTA3IApRIDE5NzEgMjQyNiAyMTc5IDI2MjQgClEgMjM4NyAyODIyIDI1OTggMjgyMiAKUSAyNzE0IDI4MjIgMjc4NyAyNzU1IApRIDI4NjEgMjY4OCAyODYxIDI1ODUgClEgMjg2MSAyNDgzIDI4MDAgMjQxOSAKUSAyNzM5IDIzNTUgMjY0MyAyMzU1IApRIDI1ODYgMjM1NSAyNDkwIDI0MDkgClEgMjM5NCAyNDY0IDIzMTAgMjQ2NCAKUSAyMTI1IDI0NjQgMTY4MyAxNjkwIApRIDE2ODMgMTYwNiAxNzM0IDE0MDIgCkwgMTkzOSA1NDQgClEgMjAwMyAyODIgMjEzMSAyODIgClEgMjIzNCAyODIgMjQzMiA1MzggClEgMjQ1MSA1NjMgMjQ3NiA1OTggClEgMjUwMiA2MzQgMjUyMSA2NjIgClEgMjU0MSA2OTEgMjU2NiA3MTcgCkwgMjY2MiA2NTkgClEgMjM4NyAyMzAgMjIyNyA4MCAKUSAyMDY3IC03MCAxODgyIC03MCAKUSAxNzI4IC03MCAxNjQ1IDI2IApRIDE1NjIgMTIyIDE1MDQgMzY1IApMIDEzMTggMTEyNiAKTCA3NTUgMzY1IApRIDU1NyA5NiA0MzIgMTMgClEgMzA3IC03MCAxNDcgLTcwIApRIDAgLTcwIC04NiAwIApRIC0xNzMgNzAgLTE3MyAxOTggClEgLTE3MyAyOTQgLTExMiAzNjEgClEgLTUxIDQyOSA0NSA0MjkgClEgMTIyIDQyOSAyNTAgMzU4IApRIDM0NiAzMDEgNDE2IDMwMSAKUSA1MjUgMzAxIDc0MiA2MTQgCkwgMTI2NyAxMzU3IApMIDEwODggMjE1MCAKUSAxMDI0IDI0MzIgOTY5IDI1MDkgClEgOTE1IDI1ODYgNzk0IDI1ODYgClEgNzE3IDI1ODYgNTQ0IDI1NDEgCkwgNDI5IDI1MDkgCkwgNDEwIDI2MTEgCkwgNDgwIDI2MzcgClEgOTkyIDI4MjIgMTIyOSAyODIyIApRIDEzNTAgMjgyMiAxNDIwIDI3MDcgClEgMTQ5MSAyNTkyIDE1NTUgMjI3MiAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPHBhdGggaWQ9IlNUSVhHZW5lcmFsLVJlZ3VsYXItMjIxMSIgZD0iTSA1NDc4IDI1NiAKTCA1MTM5IC0xNjU4IApMIDM3MSAtMTY1OCAKTCAyODgwIDE2MDYgCkwgNTMxIDQ4ODMgCkwgNTMxMiA0ODgzIApMIDUzMTIgMzI3NyAKTCA1MTIwIDMyNzcgClEgNTAxOCAzOTQ5IDQ3NjUgNDIwNSAKUSA0NTEyIDQ0NjEgMzg5MSA0NDYxIApMIDE4NDMgNDQ2MSAKTCAzNjk5IDE5NTggCkwgMTU0OSAtODE5IApMIDQxOTggLTgxOSAKUSA0Njk4IC04MTkgNDkzNCAtNTUwIApRIDUxNzEgLTI4MiA1Mjg2IDI1NiAKTCA1NDc4IDI1NiAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPHBhdGggaWQ9IlNUSVhHZW5lcmFsLUl0YWxpYy02YSIgZD0iTSAxNzg2IDM4MjcgClEgMTc4NiAzNjk5IDE2OTAgMzYwMyAKUSAxNTk0IDM1MDcgMTQ2NiAzNTA3IApRIDEzMTggMzUwNyAxMjE5IDM2MDAgClEgMTEyMCAzNjkzIDExMjAgMzg0MCAKUSAxMTIwIDM5ODEgMTIyMiA0MDc3IApRIDEzMjUgNDE3MyAxNDU5IDQxNzMgClEgMTU4NyA0MTczIDE2ODYgNDA2NyAKUSAxNzg2IDM5NjIgMTc4NiAzODI3IAp6Ck0gMTU3NCAyODAzIApMIDkwOSAxNzkgClEgNzEwIC01OTUgNDE5IC05NjAgClEgMTI4IC0xMzI1IC0yODggLTEzMjUgClEgLTUxMiAtMTMyNSAtNjUzIC0xMjE2IApRIC03OTQgLTExMDcgLTc5NCAtOTM0IApRIC03OTQgLTgxOSAtNzE3IC03MzYgClEgLTY0MCAtNjUzIC01MzEgLTY1MyAKUSAtMjgyIC02NTMgLTI4MiAtODkwIApRIC0yODIgLTk2NiAtMzIwIC0xMDE0IApRIC0zNTggLTEwNjIgLTM1OCAtMTEwNyAKUSAtMzU4IC0xMTg0IC0yNDMgLTExODQgClEgLTUxIC0xMTg0IDgwIC05MzQgClEgMjExIC02ODUgMzc4IC0xOSAKTCA4MzggMTg1MCAKUSA5NDEgMjI2NiA5NDEgMjM2MiAKUSA5NDEgMjQ3MCA4NzMgMjUxNSAKUSA4MDYgMjU2MCA2MzQgMjU2MCAKTCA0NjcgMjU2MCAKTCA0NjcgMjY2MiAKUSA3NTUgMjY4MiAxNTQ5IDI4MjIgCkwgMTU3NCAyODAzIAp6CiIgdHJhbnNmb3JtPSJzY2FsZSgwLjAxNTYyNSkiLz4KICAgIDwvZGVmcz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLUl0YWxpYy03MCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAwLjEzOTA2MikiLz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLVJlZ3VsYXItMjAzMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTYuNTczMTE5IDM1LjQxNDA2Mikgc2NhbGUoMC43KSIvPgogICAgPHVzZSB4bGluazpocmVmPSIjU1RJWEdlbmVyYWwtSXRhbGljLTY5IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1MC4zOTk5OTQgLTI2LjMxNzE4OCkgc2NhbGUoMC43KSIvPgogICAgPHVzZSB4bGluazpocmVmPSIjU1RJWEdlbmVyYWwtUmVndWxhci0zZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTE1LjcwODE5NyAwLjEzOTA2MikiLz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLUl0YWxpYy02NSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjQ2LjcwMzg4OSAzOC43MDE1NjMpIHNjYWxlKDAuNykiLz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLUl0YWxpYy03OCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjgyLjEwNTA3MiA2My4zOTQwNjMpIHNjYWxlKDAuNDkpIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVElYR2VuZXJhbC1JdGFsaWMtNjkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMwMy44NjEwNjkgNTYuOTEyMjgxKSBzY2FsZSgwLjM0MykiLz4KICAgIDx1c2UgeGxpbms6aHJlZj0iI1NUSVhHZW5lcmFsLVJlZ3VsYXItMjIxMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjE4LjcwMzg4OSAtNDYuNzIxODc1KSBzY2FsZSgwLjcpIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVElYR2VuZXJhbC1JdGFsaWMtNmEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIzOS43MDM4ODkgLTEwOS45MzA3ODEpIHNjYWxlKDAuNDkpIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVElYR2VuZXJhbC1JdGFsaWMtNjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI3NC41NjE3MDEgLTQ2LjcyMTg3NSkgc2NhbGUoMC43KSIvPgogICAgPHVzZSB4bGluazpocmVmPSIjU1RJWEdlbmVyYWwtSXRhbGljLTc4IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMDkuOTYyODg1IC0yMi4wMjkzNzUpIHNjYWxlKDAuNDkpIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVElYR2VuZXJhbC1JdGFsaWMtNmEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMzMS43MTg4ODIgLTI4LjUxMTE1Nikgc2NhbGUoMC4zNDMpIi8+CiAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVElYR2VuZXJhbC1SZWd1bGFyLTNkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzOTMuNDk3MTQxIDAuMTM5MDYyKSIvPgogICAgPHVzZSB4bGluazpocmVmPSIjU1RJWEdlbmVyYWwtSXRhbGljLTcwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0OTYuNDkyODMzIDAuMTM5MDYyKSIvPgogICAgPHVzZSB4bGluazpocmVmPSIjU1RJWEdlbmVyYWwtSXRhbGljLTY5IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1NDYuODkyODI3IC0xMy4wODkwNjMpIHNjYWxlKDAuNykiLz4KICAgIDxwYXRoIGQ9Ik0gMjE4LjcwMzg4OSAxMi45MzU5MzcgCkwgMjE4LjcwMzg4OSAxOS4xODU5MzcgCkwgMzQ2LjUwMTQzNCAxOS4xODU5MzcgCkwgMzQ2LjUwMTQzNCAxMi45MzU5MzcgCkwgMjE4LjcwMzg4OSAxMi45MzU5MzcgCnoKIi8+CiAgIDwvZz4KICA8L2c+CiA8L2c+Cjwvc3ZnPgo=",
+                "aspect": 2.7676767676767677,
+                "expression": "p_i' \\;=\\; \\frac{e^{x_i}}{\\sum_{j} e^{x_j}} \\;=\\; p_i"
+              }
+            ],
+            "cueTimes": [
+              0.3,
+              2.0,
+              5.5,
+              13.5
+            ],
+            "highlightAt": 8.0,
+            "cancelAt": 12.8,
+            "takeawayAt": 15.8,
+            "conditionText": "T = 1",
+            "takeawayText": "COMMON SHIFT  →  SAME SOFTMAX DISTRIBUTION"
+          },
+          "rendered": {
+            "out": "media/B07.mp4",
+            "at": "2026-09-27T02:01:57.878671+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 17.28,
+      "audio_file": "mp3/beat-B07.mp3",
+      "render_duration_s": 17.291666666666668,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B07.mp4",
+        "filled_by": "remotion:SoftmaxDerivation",
+        "at": "2026-09-27T13:48:29"
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "Intentional sparse derivation composition: equations are progressively revealed with surrounding negative space to keep the algebra readable. Manually reviewed."
+      }
+    },
+    {
+      "beat_id": "B08",
+      "act": "ASK — extreme naive [1000, 1000]",
+      "narration": "Now the reason we bother. Constructed example — two scores, a thousand and a thousand. The math says the answer is fifty-fifty. Naive softmax needs e-to-the-thousandth. The arithmetic overflows and never gets there.",
+      "narration_text": "Now the reason we bother. Constructed example — two scores, a thousand and a thousand. The math says the answer is fifty-fifty. Naive softmax needs e-to-the-thousandth. The arithmetic overflows and never gets there.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 12,
+      "shot": {
+        "type": "REMOTION",
+        "source": "remotion",
+        "motion": "type-on",
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Hola.",
+            "topic": "SOFTMAX · NUMERICAL STABILITY",
+            "segment": "Softmax, Shifted.",
+            "command": "softmax([1000, 1000])",
+            "runningText": "constructed example — computing e^1000…",
+            "folderLabel": "@NikBearBrown",
+            "output": [
+              "CONSTRUCTED EXAMPLE",
+              "e^1000  →  OverflowError: math range error",
+              "the math says [0.5, 0.5];  the arithmetic never gets there"
+            ]
+          },
+          "rendered": {
+            "out": "media/B08.mp4",
+            "at": "2026-09-26T16:08:35.072419+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 12.44,
+      "audio_file": "mp3/beat-B08.mp3",
+      "render_duration_s": 12.458333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B08.mp4",
+        "filled_by": "remotion:ClaudeComposerAsk",
+        "at": "2026-09-27T13:48:29"
+      }
+    },
+    {
+      "beat_id": "B09",
+      "act": "shift saves it — [1000, 1000] step-through",
+      "narration": "Shift by the max. Both scores become zero. Exponentiate: one and one. Normalize: point five and point five. The distribution the math promised — computed without ever touching e-to-the-thousand.",
+      "narration_text": "Shift by the max. Both scores become zero. Exponentiate: one and one. Normalize: point five and point five. The distribution the math promised — computed without ever touching e-to-the-thousand.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 12,
+      "shot": {
+        "type": "REMOTION",
+        "source": "remotion",
+        "motion": "step-through",
+        "visual_intent": "Four labelled stages on cream stage, revealed one at a time on the spoken cue for each: (1) '[1000, 1000]'  →  (2) 'subtract max'  →  '[0, 0]'  →  (3) 'exp'  →  '[1, 1]'  →  (4) 'normalize'  →  '[0.5, 0.5]'. Each stage becomes a small card connected by terracotta arrows, ink chips for the numbers. End state: two equal bars at 0.5 with a small equality tick between them. Spark line top: 'The shift computes what the math promised.' CONSTRUCTED EXAMPLE chip lower-right.",
+        "punt_reason": "Resolved with a custom Remotion scene.",
+        "remotion": {
+          "pattern": "SoftmaxStableExtreme",
+          "props": {},
+          "rendered": {
+            "out": "media/B09.mp4",
+            "at": "2026-09-26T16:46:10.722027+00:00"
+          }
+        }
+      },
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B09.mp4",
+        "filled_by": "remotion:SoftmaxStableExtreme",
+        "at": "2026-09-27T13:48:29"
+      },
+      "actual_duration_s": 11.63,
+      "audio_file": "mp3/beat-B09.mp3",
+      "render_duration_s": 11.666666666666666
+    },
+    {
+      "beat_id": "B10",
+      "act": "verdict + limitation",
+      "narration": "So max-subtraction is a numerical trick, not a mathematical change. It avoids unnecessarily large positive exponentials by pinning the biggest score at zero. One honest limit, though. Maximum subtraction avoids unnecessarily large positive exponentials, but this demonstration does not establish that the implementation handles every possible extreme numerical input.",
+      "narration_text": "So max-subtraction is a numerical trick, not a mathematical change. It avoids unnecessarily large positive exponentials by pinning the biggest score at zero. One honest limit, though. Maximum subtraction avoids unnecessarily large positive exponentials, but this demonstration does not establish that the implementation handles every possible extreme numerical input.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "lead_silence_s": 0.5,
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "REMOTION",
+        "source": "remotion",
+        "motion": "stagger",
+        "remotion": {
+          "pattern": "ClaudeVerdictArtifact",
+          "props": {
+            "artifactTitle": "Softmax, Shifted. — one page",
+            "artifactHeading": "The verdict",
+            "brandLabel": "@NikBearBrown",
+            "artifactLines": [
+              "Max-subtraction is a numerical trick, not a mathematical change.",
+              "It pins the biggest score at zero, avoiding unnecessarily large positive exponentials.",
+              "The common e^-c factor cancels in numerator and denominator — the distribution is preserved by algebra.",
+              "LIMITATION — this demonstration does not establish that the implementation handles every possible extreme numerical input."
+            ]
+          },
+          "rendered": {
+            "out": "media/B10.mp4",
+            "at": "2026-09-26T16:11:06.776585+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 21.27,
+      "audio_file": "mp3/beat-B10.mp3",
+      "render_duration_s": 21.291666666666668,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B10.mp4",
+        "filled_by": "remotion:ClaudeVerdictArtifact",
+        "at": "2026-09-27T13:48:29"
+      }
+    },
+    {
+      "beat_id": "B11",
+      "act": "assignment credit",
+      "narration": "This is my week one INFO seven three seven five assignment at Northeastern. Varun Tadimeti.",
+      "narration_text": "INFO 7375 · Northeastern University   ·   Varun Tadimeti · Week 1",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 7,
+      "shot": {
+        "type": "REMOTION",
+        "source": "remotion",
+        "motion": "stagger",
+        "remotion": {
+          "pattern": "FormACard",
+          "props": {
+            "lines": [
+              "INFO 7375  ·  Northeastern University",
+              "Varun Tadimeti  ·  Week 1"
+            ],
+            "meta": [
+              "Assignment · Softmax numerical stability"
+            ],
+            "dark": false
+          },
+          "rendered": {
+            "out": "media/B11.mp4",
+            "at": "2026-09-26T16:13:12.080914+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 7.7,
+      "audio_file": "mp3/beat-B11.mp3",
+      "render_duration_s": 7.708333333333333,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B11.mp4",
+        "filled_by": "remotion:FormACard",
+        "at": "2026-09-27T13:48:29"
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "Intentional sparse assignment credit card containing course, university, student, and week identification. Negative space is part of the credit-card composition."
+      }
+    },
+    {
+      "beat_id": "B12",
+      "act": "your turn (handoff)",
+      "narration": "Your turn. Paste this into Claude. Take the constructed scores four, five, six. Compute softmax at temperature one — first directly, then after subtracting the maximum. Compare the final probability distributions and explain why they match. That last part is the point of the exercise.",
+      "narration_text": "Your turn. Paste this into Claude. Take the constructed scores four, five, six. Compute softmax at temperature one — first directly, then after subtracting the maximum. Compare the final probability distributions and explain why they match. That last part is the point of the exercise.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 18,
+      "shot": {
+        "type": "REMOTION",
+        "source": "remotion",
+        "motion": "type-on",
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Your turn.",
+            "topic": "SOFTMAX · YOUR TURN",
+            "segment": "Softmax, Shifted.",
+            "command": "Take the constructed scores [4, 5, 6]. Compute softmax at temperature 1 first directly, then after subtracting the maximum. Compare the final probability distributions and explain why they match.",
+            "runningText": "paste this into Claude…",
+            "folderLabel": "@NikBearBrown"
+          },
+          "rendered": {
+            "out": "media/B12.mp4",
+            "at": "2026-09-26T16:14:57.052853+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 16.04,
+      "audio_file": "mp3/beat-B12.mp3",
+      "render_duration_s": 16.041666666666668,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B12.mp4",
+        "filled_by": "remotion:ClaudeComposerAsk",
+        "at": "2026-09-27T13:48:29"
+      }
+    },
+    {
+      "beat_id": "B13",
+      "act": "outro (locked)",
+      "narration": "Softmax, Shifted. At Nik Bear Brown.",
+      "narration_text": "Softmax, Shifted. At Nik Bear Brown.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 8,
+      "shot": {
+        "type": "REMOTION",
+        "source": "remotion",
+        "motion": "fade",
+        "remotion": {
+          "pattern": "ClaudeTitleOutro",
+          "props": {
+            "title": "Softmax, Shifted.",
+            "slug": "softmax-shifted",
+            "handle": "@NikBearBrown"
+          },
+          "rendered": {
+            "out": "media/B13.mp4",
+            "at": "2026-09-26T16:15:22.971326+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 2.99,
+      "audio_file": "mp3/beat-B13.mp3",
+      "render_duration_s": 3.0,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B13.mp4",
+        "filled_by": "remotion:ClaudeTitleOutro",
+        "at": "2026-09-27T13:48:29"
+      }
+    }
+  ]
+}
