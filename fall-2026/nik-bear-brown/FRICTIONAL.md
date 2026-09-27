@@ -261,6 +261,11 @@ Every push to GitHub is listed at the bottom with its date and commit note.
     - **weak:** 4 (a clean file made no real difference), 11 (the allow-list built from the permissions table enforced only 6 of 18 needs), 14 (Weave isn't reachable through MCP without a paid Weave account).
   - **Costs:** 61 Figma MCP calls; the CLI reported $3.27 at list price for the headless builds; no Figma AI credits.
   - **Waiting on me:** reviews, the student tests, the merge, the credit-meter reading, and a repeated "Merhaba" greeting on four films.
+- **2026-09-27: my review of the ten overnight films, and what a real review should do.** In my words: "I reviewed them from an educational perspective. They look great." What I'd do in a real-world situation:
+  - **Log my notes in Figma** if it can do this. "I agree with the point of all the films."
+  - **Keep the note with the design.** I'm unlikely to be the only person deciding on a design, so the notes go "not just as random notes, but to Figma," "so it doesn't get lost. Doesn't get disassociated with the thing that it's a note of."
+  - **Write a tool** "with whatever communication system the company uses" (email, Discord, whatever) "to notify whoever needs to look at it. If it's somebody other than me, that this change has been made and the note is in the file itself."
+  - **Change the films:** "add that to all the films where you say I haven't looked at them yet. Now I've looked at them."
 
 ### 2026-09-26 — The assignment went out, and its first worked recipe
 
@@ -370,3 +375,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-27 | docs(fall-2026): log the plan for the next 15 Figma films |
 | 2026-09-27 | docs(fall-2026): log the overnight run of the next Figma films |
 | 2026-09-27 | docs(fall-2026): log the overnight Figma films and their verdicts |
+| 2026-09-27 | docs(fall-2026): log my review of the overnight Figma films and the notes-in-the-file idea |
