@@ -224,6 +224,10 @@ Every push to GitHub is listed at the bottom with its date and commit note.
     - Git **commit** dates *can* be set by the author (`git commit --date`, `GIT_AUTHOR_DATE`); the date GitHub records on its own servers is the **push** time.
     - The MCP server doesn't write dates. Figma's servers stamp each version's `created_at`. Saving a version takes a title and a description but no date, and the REST API can only read versions, so there's no documented way to backdate one.
   - **The principle:** trust the server's clock, not the author's. A show-tell film for the Figma playlist is building with that correction built in.
+  - **Three films finished the same evening,** each a 4K master with every gate passing. None is staged or published, and I haven't watched them yet.
+    - "Plugin or Connector? Connecting Figma to Claude Cowork" (3:38).
+    - "Claude Code + Figma: Connect It, Then Draw the Project" (7:41, built from my real session).
+    - "Hand In the History, Not Just the Design" (2:34). It says out loud that git commit dates can be set by the author and that the date to trust is the server's.
 
 ### 2026-09-26 — The assignment went out, and its first worked recipe
 
@@ -321,3 +325,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-26 | docs(fall-2026): log the Frictional and Figma film request and the date correction |
 | 2026-09-26 | docs(fall-2026): log the Figma version-history idea for Frictional |
 | | ↑ **the row above is the subject this commit actually carries.** The subject intended for it was *"chore(fall-2026): sync the reject sampler from the master"*; a scripting error reused an earlier commit's subject line. The content is correct; history was not rewritten to fix a label. |
+| 2026-09-26 | docs(fall-2026): log the three finished Figma films |
