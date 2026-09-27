@@ -1,6 +1,6 @@
 # TYPECHECK.md — GATE T
 
-Reel: `thousands-of-years-divided`  |  Checked: 2026-09-24T16:10  |  Overall: PASS  |  Beats checked: 8  |  FAILs: 0
+Reel: `thousands-of-years-divided`  |  Checked: 2026-09-27T14:08  |  Overall: PASS  |  Beats checked: 8  |  FAILs: 0
 
 Spec: `skills/make/kerning/reference/type-spec.md` §8.  Floor: 1.9% frame-height.  Contrast: 4.5:1 WCAG.  Kern threshold: 3.5× expected advance.  Wordy budget: 2 elements.
 

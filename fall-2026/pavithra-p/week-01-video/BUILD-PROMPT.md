@@ -18,6 +18,8 @@ brew install ffmpeg cairo pkg-config pango
 
 (On this machine Homebrew needed `HOMEBREW_NO_AUTO_UPDATE=1 HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1` in front; see FRICTIONAL.md.)
 
+**Toolkit revision used:** `brutalist.art` commit `6a8380ae169cca81e0633664a65c958f5c12ab4b` (2026-09-20). To rebuild with the same version: `git -C brutalist.art checkout 6a8380a`. The only local change in that checkout is `runtime/remotion/package-lock.json`, rewritten by `./setup --install` (`npm install`).
+
 ```bash
 cd brutalist.art && python3.12 -m venv .venv && . .venv/bin/activate && ./setup --install
 ```

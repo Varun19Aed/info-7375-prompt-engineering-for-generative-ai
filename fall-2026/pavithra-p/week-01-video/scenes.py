@@ -377,13 +377,15 @@ class B05_MoreGuesses(Scene):
         # ── bars, starting at the nonstop (script output) values ──
         base, xs = -2.2, {300: 0.9, 250: 2.4, 200: 3.9, 150: 5.4}
         scale = 3.1 / EIGHT_H[150]
-        mult = ValueTracker(1.0)
+        # one tracker drives the clock, the bar heights and the numbers, so every
+        # value on screen is years_at(wpm) x 24 / hours for the hours shown
+        hours = ValueTracker(24)
 
         def make_bars():
             g = VGroup()
             for w in RATES:
-                shown = EIGHT_H[w] if mult.get_value() > 2.999 else NONSTOP[w] * mult.get_value()
-                h = max(NONSTOP[w] * mult.get_value() * scale, 0.01)
+                shown = years_at(w) * 24 / round(min(max(hours.get_value(), 8), 24))   # same whole hour as the label
+                h = max(shown * scale, 0.01)
                 col = ACCENT if w == 250 else BLUE
                 r = Rectangle(width=1.0, height=h, fill_color=col, fill_opacity=1, stroke_width=0)
                 r.move_to([xs[w], base + h / 2, 0])
@@ -402,8 +404,7 @@ class B05_MoreGuesses(Scene):
 
         c.at("Second, the calculation")
         c.play(FadeIn(g3, shift=DOWN * 0.1), FadeIn(g3s), rt=0.8)
-        # 24-hour clock
-        hours = ValueTracker(24)
+        # 24-hour clock (same `hours` tracker as the bars)
         ctr = np.array([-4.2, -0.55, 0])
         rim = Circle(1.3, color=MUTED, stroke_width=3).move_to(ctr)
         fill = always_redraw(lambda: AnnularSector(inner_radius=0.0, outer_radius=1.25,
@@ -415,13 +416,10 @@ class B05_MoreGuesses(Scene):
         c.play(Create(rim), FadeIn(fill), FadeIn(hl), rt=0.9)
 
         c.at("Read eight hours a day")
-        banner = chip("CALCULATED EXTENSION  ·  course formula reading_years() × 3  ·  not printed by the original script",
+        banner = chip("CALCULATED EXTENSION  ·  course formula reading_years() × 24 / hours  ·  not printed by the original script",
                       12.2, h=0.55, size=19, fill=ACCENT_SOFT, stroke=ACCENT)
         banner.move_to([0, -3.1, 0])
-        c.play(hours.animate.set_value(8), FadeIn(banner), rt=1.4)
-
-        c.at("every answer triples")
-        c.play(mult.animate.set_value(3.0), rt=2.0)
+        c.play(hours.animate.set_value(8), FadeIn(banner), rt=3.2)
 
         c.at("One thousand, seven hundred and eleven years becomes")
         hi = VGroup(T("250 words/min:", 22, MUTED), T("1,711.2", 26, INK, "BOLD"),

@@ -18,6 +18,7 @@ Every on-screen or spoken claim, what backs it, and how far it was checked.
 | B04 | The slowest answer is twice the fastest | Correct | 150 wpm is half of 300 wpm, and years ∝ 1/wpm. Rounded values: 2,851.9 vs 2 × 1,426.0 = 2,852.0 (0.1 rounding gap). |
 | B05 | The formula assumes 24 hours/day of reading | Correct | `reading_years()` converts minutes straight to years with no hours-per-day term |
 | B05 | At 8 hours/day every answer triples: 1,711.2 → 5,133.5 | **Calculated extension**, labelled on screen | `evidence.json → extension`: `reading_years() × 24/8`. Not printed by `llm_scale.py`. |
+| B05 | In-between values while the clock moves (e.g. 12 h → 3,422.3 years at 250 wpm) | Correct: same formula | `years_at(wpm) × 24 / hours` in `scenes.py`; same function as the extension. Shown only during the transition. |
 | B06 | Every version is far more than one lifetime | Correct | Smallest figure shown is 1,426.0 years |
 | B06 | The calculation does not show understanding, accuracy, or that the tokens were unique | Correct (a limit, not a finding) | Nothing in the inputs of `reading_years()` concerns any of these |
 

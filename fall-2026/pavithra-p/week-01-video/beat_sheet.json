@@ -16,7 +16,7 @@
       "reviewed_at": "2026-09-23"
     },
     "build": {
-      "at": "2026-09-24T16:12:19",
+      "at": "2026-09-27T14:10:22",
       "cut": "master",
       "filled": 8,
       "of": 8,
@@ -50,7 +50,7 @@
         "status": "MANIM",
         "src": "manim/B00.mp4",
         "filled_by": "manim:B00_Hook",
-        "at": "2026-09-24T16:12:19"
+        "at": "2026-09-27T14:10:22"
       }
     },
     {
@@ -79,7 +79,7 @@
         "status": "MANIM",
         "src": "manim/B01.mp4",
         "filled_by": "manim:B01_Reported",
-        "at": "2026-09-24T16:12:19"
+        "at": "2026-09-27T14:10:22"
       }
     },
     {
@@ -107,7 +107,7 @@
         "status": "MANIM",
         "src": "manim/B02.mp4",
         "filled_by": "manim:B02_Words",
-        "at": "2026-09-24T16:12:19"
+        "at": "2026-09-27T14:10:22"
       }
     },
     {
@@ -135,7 +135,7 @@
         "status": "MANIM",
         "src": "manim/B03.mp4",
         "filled_by": "manim:B03_Divide",
-        "at": "2026-09-24T16:12:19"
+        "at": "2026-09-27T14:10:22"
       }
     },
     {
@@ -163,7 +163,7 @@
         "status": "MANIM",
         "src": "manim/B04.mp4",
         "filled_by": "manim:B04_Speed",
-        "at": "2026-09-24T16:12:19"
+        "at": "2026-09-27T14:10:22"
       }
     },
     {
@@ -191,7 +191,7 @@
         "status": "MANIM",
         "src": "manim/B05.mp4",
         "filled_by": "manim:B05_MoreGuesses",
-        "at": "2026-09-24T16:12:19"
+        "at": "2026-09-27T14:10:22"
       }
     },
     {
@@ -219,7 +219,7 @@
         "status": "MANIM",
         "src": "manim/B06.mp4",
         "filled_by": "manim:B06_Boundary",
-        "at": "2026-09-24T16:12:19"
+        "at": "2026-09-27T14:10:22"
       }
     },
     {
@@ -247,7 +247,7 @@
         "status": "MANIM",
         "src": "manim/B07.mp4",
         "filled_by": "manim:B07_Close",
-        "at": "2026-09-24T16:12:19"
+        "at": "2026-09-27T14:10:22"
       }
     }
   ]

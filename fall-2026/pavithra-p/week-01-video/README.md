@@ -1,9 +1,10 @@
-# Week 01 video — Thousands of Years, Divided
+# Week 01 video — A training-scale slogan, restated as a division with its hidden assumptions
 
-**Name:** Pavithra Prasad.
+**Name:** Pavithra Prasad
 **Course:** INFO 7375, Prompt Engineering for Generative AI (Fall 2026)
 **Video:** [`thousands-of-years-divided.mp4`](thousands-of-years-divided.mp4)
 **Runtime:** 2:28 (148.3 s) · 3840×2160 · 24 fps · H.264 + AAC
+**Video SHA-256:** `d3f26f37b3c8ee62a542b9f6a35ad74b4bff2235b5bc86eb4feb479c37daf761` (check with `shasum -a 256 thousands-of-years-divided.mp4`)
 
 > **Video and audio on GitHub:** the `.mp4` and `mp3/*.mp3` files are not in this GitHub folder, because the course repo's `.gitignore` excludes generated audio and video. The video is in the Canvas zip (`Prasad_Pavithra_INFO7375_Week01_Video.zip`) and can be rebuilt with [`BUILD-PROMPT.md`](BUILD-PROMPT.md).
 
