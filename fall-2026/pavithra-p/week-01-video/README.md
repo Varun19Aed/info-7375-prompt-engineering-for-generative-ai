@@ -2,6 +2,7 @@
 
 **Name:** Pavithra Prasad
 **Course:** INFO 7375, Prompt Engineering for Generative AI (Fall 2026)
+**Submitted:** 2026-09-27 (final version)
 **Video:** [`thousands-of-years-divided.mp4`](thousands-of-years-divided.mp4)
 **Runtime:** 2:28 (148.3 s) · 3840×2160 · 24 fps · H.264 + AAC
 **Video SHA-256:** `d3f26f37b3c8ee62a542b9f6a35ad74b4bff2235b5bc86eb4feb479c37daf761` (check with `shasum -a 256 thousands-of-years-divided.mp4`)
