@@ -243,6 +243,15 @@ Every push to GitHub is listed at the bottom with its date and commit note.
 
   The "Figma for Educational AI" playlist now runs: context film → intro → MCP server → Cowork → Claude Code → Hand In the History.
 - **Then: "map out the next 15 films ... what's next?"** Claude wrote `FILMS-NEXT.md` in the Figma repo: 15 films, each tied to an experiment and a line in the Designer Advocate postings. The arc is setup and costs; screenshot vs frame; auto layout, variables and component descriptions as fixes for agent mistakes; the agent drawing while I merge; the Lectern diagram week over week; whiteboard to code; an agent's permissions; "I don't know" interface states; Make; Weave; and a real version log. Films 3–15 each need a real session I run. Suggested start: the sign-up film promised to Figma's Education team, then the cost film, then screenshot vs frame. I haven't picked yet.
+- **Then: "overnight these 15 ... I'll look at them tomorrow."**
+  - **What can't be done without me:** the terminal Claude Code isn't signed in to Figma, so none of these can be my typed sessions. Five are parked until I do them myself:
+    - 5: my Codex account stays out of automated loops;
+    - 9: needs a week of changes and my marks on the board;
+    - 10: needs my own hand-drawn whiteboard;
+    - 13: Figma Make runs in the browser only;
+    - 15: needs a Figma token only I can create.
+  - **What's being built overnight:** the other ten, as **experiment reports**. Agents run real tests on my Figma Education account (through the desktop session's Figma connection) and on headless Claude Code, then build each film from the real artifacts. Each film says an agent ran it and that I haven't reviewed it.
+  - **Status:** `OVERNIGHT-REPORT.md` in the Figma repo. Nothing gets staged or published.
 
 ### 2026-09-26 — The assignment went out, and its first worked recipe
 
@@ -350,3 +359,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-26 | docs(fall-2026): log the finished context film |
 | 2026-09-27 | docs(fall-2026): log the last two Figma films going up unlisted |
 | 2026-09-27 | docs(fall-2026): log the plan for the next 15 Figma films |
+| 2026-09-27 | docs(fall-2026): log the overnight run of the next Figma films |
