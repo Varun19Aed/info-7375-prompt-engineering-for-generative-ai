@@ -335,3 +335,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-26 | chore(fall-2026): sync the title auditor from the master |
 | 2026-09-26 | chore(fall-2026): sync keywords v0.4.0 and the title families from the master |
 | 2026-09-26 | docs(fall-2026): log the Figma repo push and the why-I-am-doing-this film request |
+| 2026-09-26 | chore(fall-2026): sync the demand report and EDU_PRODUCT family from the master |
